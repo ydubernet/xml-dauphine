@@ -72,10 +72,20 @@
             </tr>
             
             <?php
-               $tous = "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter|";
-               //$tab_tous = preg_split("|", $tous);
+               $tous = "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter";
+               $tab_tous = explode("|", $tous);
                print_r($tab_tous);
+               foreach($tab_tous as $un){
+                 ?>
+                    <tr>
+                        <td><?php echo $un; ?></td>
+                        <td><input type="text" id="<?php echo $un . "_add"?>"/></td>
+                    </tr>   
+                  <?php
+               }
+               
             ?>
+            <!--
             <tr>
                 <td>Auteur</td>
                 <td><input type="text" id="author_add"/></td>
@@ -127,13 +137,14 @@
                 <td><input type="text" id="url_add" /></td>
             </tr>
             <tr>
-                <td>EE</td> <!-- TODO : Voir à quoi ça correspond en français dans le texte... -->
+                <td>EE</td> // TODO : Voir à quoi ça correspond en français dans le texte... 
                 <td><input type="text" id="ee_add"/></td>
             </tr>
             <tr>
                 <td>CD Rom</td>
                 <td><input type="text" id="cdrom_add"/></td>
             </tr>
+            -->
             
             <!-- 
                 Et puis flemme !
