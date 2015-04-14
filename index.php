@@ -46,7 +46,7 @@ header('Content-type: text/html; charset=' . ENCODING);
                             <div id="header">
                                 <div id="logo"></div>
                                 <div id="menuheader">
-                                    <div id="logoright"> Projet de XML
+                                    <div id="logoright"> Projet XML Dauphine
 
                                     </div>
                                     <?php
@@ -56,16 +56,13 @@ header('Content-type: text/html; charset=' . ENCODING);
                                 </div>
                             </div>
                             <div class="clr"></div>
-                            <div id="logout">
-                                Bienvenue <?php echo phpCAS::getUser(); ?><br/>
-                                <a href="logout.php" id="lienDeco">Deconnexion</a>
-                            </div>
+                          
                             <div id="middle_in">
                                 <h1> <div id="title"> <?php echo $const_pages[CONTENT][2]; ?> </div> </h1>
                                 <div id="menu_left">
                                     <?php
                                     // Affichage du sous-menu de gauche
-                                    require('includes/views/display/submenus.php');
+                                    //require('includes/views/display/submenus.php');
                                     ?>
                                 </div>
                                 <div id="content">

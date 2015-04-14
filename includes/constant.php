@@ -29,30 +29,11 @@ $const_months = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'ju
 $const_pages = array(
     //URL=>array(Titre de la page, Title au survol de la souris, Titre du contenu de la page)
     'presentation' => array('Accueil', 'Accueil', 'Accueil'),
-    'partenaires' => array('Partenaires', 'Les partenaires', 'Les partenaires'),
-    'contacts' => array('Contacts', 'Les contacts', 'Les contacts'),
-    'roles' => array('Rôles', 'Les rôles', 'Les rôles'),
+    'rechercher' => array('Recherche', 'Rechercher des publications', 'Recherche de publications'),
+    'inserer' => array('Insertion', 'Insérer des publications', 'Insertion de publications'),
+    'supprimer' => array('Suppression', 'Supprimer des publications', 'Suppression de publications'),
+    'modifier' => array('Modification', 'Modifier des publications', 'Suppresssion de publications'),
     'propos' => array('Aide', 'Aide', 'Aide'),
-    /* Sous parties partenaire */
-    'partenaire-chercher' => array('Rechercher un partenaire', 'Chercher', 'Rechercher des partenaires'),
-    'partenaire-chercherAvance' => array('Recherche avancée ', 'Recherche avancée', 'Recherche avancée des partenaires'),
-    'partenaire-taxe' => array('Ajouter une taxe','Ajouter une taxe','Ajouter une taxe d\'apprentissage'),
-    'partenaire-valider' => array('Validation des modifications', 'Valider', 'Validation des modifications'),
-    'partenaire-ajouter' => array('Ajouter un partenaire', 'Ajouter', 'Ajouter un partenaire'),
-    //'partenaire-importer' => array('Importer des partenaires', 'Importer', 'Importer des partenaires'),
-    'partenaire-aide' => array('Aide', 'Aide', 'Aide'),
-    /* Sous parties contacts */
-    'contact-chercher' => array('Rechercher un contact', 'Chercher', 'Rechercher des contacts'),
-    'contact-valider' => array('Validation des modifications', 'Valider', 'Validation des modifications'),
-    'contact-ajouter' => array('Ajouter un contact', 'Ajouter', 'Ajouter un contact'),
-    'contact-importer' => array('Importer des contacts', 'Importer', 'Importer des contacts'),
-    'contact-aide' => array('Aide', 'Aide', 'Aide'),
-    /* Sous parties roles */
-    'role-chercher' => array('Rechercher un rôle', 'Chercher', 'Rechercher des rôles'),
-    'role-ajouter' => array('Ajouter un rôle', 'Attribution', 'Attribuer un rôle'),
-    'role-importer' => array('Importer des rôles', 'Importer', 'Importer des rôles'),
-    'role-exporter' => array('Exporter les rôles', 'Exporter', 'Exporter les rôles'),
-    'role-aide' => array('Aide', 'Aide', 'Aide'),
     //-- ERROR --//
     '404' => array('Erreur 404', 'Erreur 404', 'Erreur 404'),
     '401' => array('Erreur 401', 'Erreur 401', 'Erreur 401'),
@@ -62,18 +43,25 @@ $const_pages = array(
 
 $const_menu = array(
     'presentation',
-    'partenaires',
-    'contacts',
-    'roles',
+    'rechercher',
+    'inserer',
+    'modifier',
+    'supprimer',
     'propos'
 );
 
 
-$const_sub_menu_title = array('part' => 'Partenaires');
-$arrayContact = array('contact-chercher', 'contact-ajouter', 'contact-valider','contact-importer', 'contact-aide', );
-$arrayPartenaire = array('partenaire-chercher'  ,'partenaire-chercherAvance', 'partenaire-ajouter', 'partenaire-taxe', 'partenaire-valider', 'partenaire-aide');
-$arrayRole = array('role-chercher'  , 'role-ajouter', 'role-importer', 'role-exporter', 'role-aide');
+// Les sections ci-dessous servent pour les sous-menus.
 
+$const_sub_menu_title = array('part' => 'Partenaires');
+
+/*
+ * $arrayContact = array('contact-chercher', 'contact-ajouter', 'contact-valider','contact-importer', 'contact-aide', );
+ * $arrayPartenaire = array('partenaire-chercher'  ,'partenaire-chercherAvance', 'partenaire-ajouter', 'partenaire-taxe', 'partenaire-valider', 'partenaire-aide');
+ * $arrayRole = array('role-chercher'  , 'role-ajouter', 'role-importer', 'role-exporter', 'role-aide');
+ */
+
+/*
 $const_sub_menu = array(
     'partenaires' => $arrayPartenaire,
     'contacts' => $arrayContact,
@@ -100,7 +88,8 @@ $const_sub_menu = array(
     'role-aide' => $arrayRole
     
 );
-
+*/
+/*
 $const_submenu_reverse = array(
     'contacts' => 'contacts',
     'contact-chercher' => 'contacts',
@@ -125,7 +114,7 @@ $const_submenu_reverse = array(
     'role-aide' => 'roles',
     'roles' => 'roles'
 );
-
+*/
 
 
 ?>

@@ -130,13 +130,6 @@ div#title_core{
     /*font-family: Verdana, Arial, Helvetica, sans-serif;    */
 }
 
-div#logout{
-    width: 200px;
-    font-size: 10px;
-    position: absolute;
-    font-family: Verdana, Arial, Helvetica, sans-serif;  
-}
-
 
 div#renseignements{
     width: 100%;
@@ -148,7 +141,7 @@ div#renseignements{
 
 #logo{
    
-    background: url(img-logoENSEIRB2.png);
+    background: url(img-logoDAUPHINE.png);
     width:150px;
     height:180px;
     float:left;
