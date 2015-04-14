@@ -1,0 +1,10 @@
+Couleurs du design � appliquer dans le CSS
+
+Header : #eaeaea;
+Background: white
+
+Footer : #ebebeb
+
+
+
+Texte orange : #F69323
