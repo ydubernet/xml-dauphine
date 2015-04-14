@@ -135,12 +135,9 @@ div#renseignements{
     width: 100%;
     font-size:16px;
     font-style: oblique;
-   /*  */
-    
 }
 
 #logo{
-   
     background: url(img-logoDAUPHINE.png);
     width:150px;
     height:180px;
@@ -166,66 +163,66 @@ div#title_header{
     text-align: center;
     position: fixed;
 }
-
+/*
 div#icone-enseirb{
-   /*background-image: url(img-logoENSEIRB.png);*/
+   //background-image: url(img-logoENSEIRB.png);
    float: left;
    width: 150px;
-   
 }
+*/
 
-div#roles_gauche{
+div#modifier_gauche{
     float: left;
     width: 15px;
     background-image: url(img-bordVertMenuGauche.png);
 }
 
-div#roles{
+div#modifier{
     float: left;
     width:1px;
     background-image: url(img-repeatMenuVert.png);
     background-repeat: repeat-x;
 }
 
-div#roles_droit{
+div#modifier_droit{
     float: left;
     width: 15px;
     background-image: url(img-bordVertMenuDroit.png);
 }
 
-div#partenaires_gauche{
+div#recherche_gauche{
     float: left;
     width: 15px;
     background-image: url(img-bordOrangeMenuGauche.png);
 }
 
-div#partenaires{
+div#recherche{
     float: left;
     width:1px;
     background-image: url(img-repeatMenuOrange.png);
     background-repeat: repeat-x;
 }
 
-div#partenaires_droit{
+div#recherche_droit{
     float: left;
     width: 15px;
     background-image: url(img-bordOrangeMenuDroit.png);
 }
 
-div#contacts_gauche{
+div#inserer_gauche{
     float: left;
     width: 15px;
     background-image: url(img-bordRougeMenuGauche.png);
 }
 
-div#contacts{
+div#inserer{
     float: left;
     width:1px;
     background-image: url(img-repeatMenuRouge.png);
     background-repeat: repeat-x;
 }
 
-div#contacts_droit{
+div#inserer_droit{
     float: left;
     width: 15px;
     background-image: url(img-bordRougeMenuDroit.png);
@@ -428,7 +425,7 @@ span .ajout_critere{
     height:70px;
 }
 
-/* Partenaires -> orange */
+/* Presentation -> rose */
 .menu_horiz_left_presentation{
     background:url(img-bordRoseMenuGauche.png);
 }
@@ -441,44 +438,59 @@ span .ajout_critere{
     background:url(img-bordRoseMenuDroit.png);
 }
 
-/* Partenaires -> orange */
-.menu_horiz_left_partenaires{
+/* Recherche -> orange */
+.menu_horiz_left_rechercher{
     background:url(img-bordOrangeMenuGauche.png);
 }
 
-.menu_horiz_repeat_partenaires{
+.menu_horiz_repeat_rechercher{
     background:url(img-repeatMenuOrange.png);
 }
 
-.menu_horiz_right_partenaires{
+.menu_horiz_right_rechercher{
     background:url(img-bordOrangeMenuDroit.png);
 }
 
-/* Contacts -> Rouge */
-.menu_horiz_left_contacts{
+/* Insertion -> Rouge */
+.menu_horiz_left_inserer{
     background:url(img-bordRougeMenuGauche.png);
 }
 
-.menu_horiz_repeat_contacts{
+.menu_horiz_repeat_inserer{
     background:url(img-repeatMenuRouge.png);
 }
 
-.menu_horiz_right_contacts{
+.menu_horiz_right_inserer{
     background:url(img-bordRougeMenuDroit.png);
 }
 
-/* Rôles -> Vert */
-.menu_horiz_left_roles{
+/* Modification -> Vert */
+.menu_horiz_left_modifier{
     background:url(img-bordVertMenuGauche.png);
 }
 
-.menu_horiz_repeat_roles{
+.menu_horiz_repeat_modifier{
     background:url(img-repeatMenuVert.png);
 }
 
-.menu_horiz_right_roles{
+.menu_horiz_right_modifier{
     background:url(img-bordVertMenuDroit.png);
 }
+
+
+/* Suppression -> gris */
+.menu_horiz_left_supprimer{
+    background:url(img-bordGrisMenuGauche.png);
+}
+
+.menu_horiz_repeat_supprimer{
+    background:url(img-repeatMenuGris.png);
+}
+
+.menu_horiz_right_supprimer{
+    background:url(img-bordGrisMenuDroit.png);
+}
+
 
 /* Aide -> Bleu */
 .menu_horiz_left_propos{
@@ -537,29 +549,29 @@ span .ajout_critere{
 #menu_left li.submenuselected{
     text-shadow: 0.1em 0.1em 0.05em #333;
 }
-#menu_left li.submenu_partenaires.submenuselected {
+#menu_left li.submenu_rechercher.submenuselected {
     background-color:#cc6600;
 }
 
-#menu_left .submenu_partenaires {
+#menu_left .submenu_rechercher {
     background-color: #f69323;
 }
 
 /* Contacts */
-#menu_left li.submenu_contacts.submenuselected {
+#menu_left li.submenu_inserer.submenuselected {
     background-color:#eb2227;
 }
 
-#menu_left .submenu_contacts{
+#menu_left .submenu_inserer{
     background-color: #ff6666;
 }
 
 /* Les rôles */
-#menu_left li.submenu_roles.submenuselected {
+#menu_left li.submenu_modifier.submenuselected {
     background-color:#669933;
 }
 
-#menu_left .submenu_roles{
+#menu_left .submenu_modifier{
     background-color: #99cc33;
 }
 
@@ -633,7 +645,7 @@ div #partenaire-aide p{
 
 
 
-#contacts-aideLink{
+#inserer-aideLink{
     color:black;
 }
 
@@ -643,7 +655,7 @@ div #contact-aide p{
   font-size: 11px;
 }
   
-#contacts-aideLink:hover{
+#inserer-aideLink:hover{
     color:black;
     text-decoration: none;
 }

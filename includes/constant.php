@@ -32,7 +32,7 @@ $const_pages = array(
     'rechercher' => array('Recherche', 'Rechercher des publications', 'Recherche de publications'),
     'inserer' => array('Insertion', 'Insérer des publications', 'Insertion de publications'),
     'supprimer' => array('Suppression', 'Supprimer des publications', 'Suppression de publications'),
-    'modifier' => array('Modification', 'Modifier des publications', 'Suppresssion de publications'),
+    'modifier' => array('Modification', 'Modifier des publications', 'Modification de publications'),
     'propos' => array('Aide', 'Aide', 'Aide'),
     //-- ERROR --//
     '404' => array('Erreur 404', 'Erreur 404', 'Erreur 404'),
@@ -53,7 +53,7 @@ $const_menu = array(
 
 // Les sections ci-dessous servent pour les sous-menus.
 
-$const_sub_menu_title = array('part' => 'Partenaires');
+//$const_sub_menu_title = array('part' => 'Partenaires');
 
 /*
  * $arrayContact = array('contact-chercher', 'contact-ajouter', 'contact-valider','contact-importer', 'contact-aide', );
