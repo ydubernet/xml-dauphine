@@ -107,6 +107,7 @@
                  
                   // Gestion de cas particuliers :
                   /* Attributs */
+                  // TODO : Ne les faire apparaître que si l'utilisateur remplit le champ associé
                   if($un === "title"){
                       echo "
                           <tr>
@@ -128,7 +129,7 @@
                   } else if($un === "series"){
                       echo "
                         <tr>
-                           <td>href</td>
+                           <td>href series</td>
                            <td><input type='text' id='href_add'/></td>
                         </tr> ";
                   }
@@ -205,5 +206,5 @@
         <input type="button" value="Ajouter" onclick="ajouterModifierArticle('add');"/>
         <input type="button" value="Effacer" onclick="if(confirm('Souhaitez-vous effacer tous les champs ?'))this.form.reset();"/>  
     </form>
-    <div id="results"></div>
+    <div id="resultAdd"></div>
 </div>

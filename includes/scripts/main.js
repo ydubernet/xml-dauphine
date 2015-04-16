@@ -61,22 +61,23 @@ function rechercherBlabla(){
 }
 
 
-function ajouterModifierArticle(){
+function ajouterModifierArticle(act, val){
     $("#resultAdd").empty();
     $("#resultAdd").append('Envoi en cours  <progress>working...</progress>');
-    if($("#id_add").val() === ""){
+    if($("#key_add").val() === ""){
         alert("Vous devez renseigner l'attribut id de votre article.");
         return false;
     }
-    else if(act != "modifier" && testExistsArticle()){
+    else if(act !== "modifier" && testExistsArticle()){
         //On ne teste l'existance d'un article que si l'on essaye de l'ajouter.
         return false;
     }
     else{
         if(act === "modifier")
-            url = "includes/models/scripts/articleModify.php"
+            url = "includes/models/scripts/articleModify.php";
         else
-            url = "includes/models/scripts/articleAdd.php"
+            url = "includes/models/scripts/articleAdd.php";
+        
         /* Appel ajax - récupération des données selon les critères */
         $.ajax({
             type: "POST",
