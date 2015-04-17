@@ -9,8 +9,9 @@ class articles {
     private $xmlPath;
     private $xslDoc;
     private $xmlDoc;
-
+	
     public function __construct($xmlPath) {
+		
         $_xslDoc = new DOMDocument();
         $_xslDoc->load("includes/xslt/article.xsl");
         
@@ -54,9 +55,21 @@ class articles {
     public function addArticle($isbn, $title, $author, $genre, $chapters) {
         // TODO: add a book to the library 
     }
+	
+	public function getXmlDoc(){
+		return $this->xmlDoc;
+	}
 
-    public function deleteArticle($isbn) {
-        
+    public function deleteArticle($key) {
+        $xpath = new DOMXPath($this->xmlDoc);
+		$query="//dblp/article[@key='$key']";
+		$nodeList = $xpath->query($query);
+		if (!$nodeList || $nodeList->length==0)
+			return false;
+		foreach ($nodeList as $node)
+			$node->parentNode->removeChild($node);
+		$result = $this->xmlDoc->save($this->xmlPath);
+		return !$result?$result:true;
     }
 
 }
