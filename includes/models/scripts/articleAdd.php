@@ -1,8 +1,26 @@
 <?php
+    
+    $result = true;
 
-     echo "<span class='failure'> L'ajout du contact a échoué. </span>";
+    $_xmlDoc = new DOMDocument();
+    $_xmlDoc->validateOnParse = true;
+    $_xmlDoc->load("xml/article.xml");
     
-    print_r($_POST);
+    foreach($_POST as $index=>$valeur){
+        
+        if(!isempty($valeur)){
+            $elements = expand(";", $valeur);
+            foreach($elements as $e){
+                //Ajout dans le XML
+
+            }
+        }
+    }
     
-    echo "<span class='success'> L'id est : " . $_POST['key'] . ".";
+    if($result === false){
+         echo "<span class='failure'> L'ajout de la publication a échoué. </span>";
+    } else {
+        echo "<span class='success'> L'ajout de la publication a réussi. </span>";
+    }
+    
 ?>

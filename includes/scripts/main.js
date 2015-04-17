@@ -33,6 +33,142 @@ function clear_form_elements(ele) {
 
 }
 
+// Presentation functions
+$(document).ready(function() {
+    $('progress').hide();
+    
+    // Premier chargement
+    $("#key").hide();
+    $("#mdate").hide();
+    $("#publtype").hide();
+    $("#reviewid").hide();
+    $("#rating").hide();
+    
+    $("#bibtex_title").hide();
+    $("#bibtex_author").hide();
+    $("#type").hide();
+    $("#label").hide();
+    $("#href_publisher").hide();
+    $("#href_series").hide();
+    $("#href_ref").hide();
+    $("#logo").hide();
+    
+    $("#key_add").change(function(){
+        testExistArticle();
+    });
+    onChangeTypeArticle();
+    onChangeInputsPourAttributs();
+});
+
+function onChangeTypeArticle(){
+    $("#typeArticle_add").change(function(){
+        switch(this.value){
+            case "article":
+                $("#key").show('slow');
+                $("#mdate").show('slow');
+                $("#publtype").show('slow');
+                $("#reviewid").show('slow');
+                $("#rating").show('slow');
+                break;
+                
+            case "inproceedings":
+            case "proceedings" :
+            case "book" :
+            case "incollection" :
+            case "phdthesis" :
+            case "mastersthesis" :
+            case "www":
+                $("#key").show('slow');
+                $("#mdate").show('slow');
+                $("#publtype").show('slow');
+                $("#reviewid").hide();
+                $("#rating").hide();
+                break;
+            default: //Input vide
+                $("#key").hide();
+                $("#mdate").hide();
+                $("#publtype").hide();
+                $("#reviewid").hide();
+                $("#rating").hide();  
+                break;
+        }
+    });
+}
+
+function onChangeInputsPourAttributs(){
+    $("#title_add").blur(function() {
+        if(!$("#title_add").val()){ //Input à valeur vide.
+            $("#bibtext").hide();
+            $("#bibtext_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#bibtext").show('slow');
+        }
+    });
+    
+     $("#author_add").blur(function() {
+        if(!$("#author_add").val()){ //Input à valeur vide.
+            $("#bibtext_author").hide();
+            $("#bibtext_author_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#bibtext_author").show('slow');
+        }
+    });
+    
+     $("#note_add").blur(function() {
+        if(!$("#note_add").val()){ //Input à valeur vide.
+            $("#type").hide();
+            $("#type_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#type").show('slow');
+        }
+    }); 
+    
+    $("#cite_add").blur(function() {
+        if(!$("#cite_add").val()){ //Input à valeur vide.
+            $("#label").hide();
+            $("#label_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#label").show('slow');
+        }
+    }); 
+    
+    $("#href_series_add").blur(function() {
+        if(!$("#href_series_add").val()){ //Input à valeur vide.
+            $("#href_series").hide();
+            $("#href_series_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#href_series").show('slow');
+        }
+    });
+    
+    $("#href_publisher_add").blur(function() {
+        if(!$("#href_publisher_add").val()){ //Input à valeur vide.
+            $("#href_publisher").hide();
+            $("#href_publisher_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#href_publisher").show('slow');
+        }
+    });
+    
+    $("#href_ref_add").blur(function() {
+        if(!$("#href_ref_add").val()){ //Input à valeur vide.
+            $("#href_ref").hide();
+            $("#href_ref_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+        } else { //Input non vide
+            $("#href_ref").show('slow');
+        }
+    });
+    
+    $("#logo_add").blur(function(){
+       if(!$("#logo_add").val()){ //Input à valeur vide.
+           $("#logo").hide();
+           $("#logo_add").empty();// Important pour ne pas envoyer ce champ lors de la soumission.
+       } else { //Input non vide
+           $("#logo").show('slow');
+       }
+    });
+}
+
 
 function rechercherBlabla(){
     $("#resultSearch").empty();
@@ -61,7 +197,7 @@ function rechercherBlabla(){
 }
 
 
-function ajouterModifierArticle(act, val){
+function ajouterModifierArticle(act){
     $("#resultAdd").empty();
     $("#resultAdd").append('Envoi en cours  <progress>working...</progress>');
     if($("#key_add").val() === ""){
@@ -89,10 +225,15 @@ function ajouterModifierArticle(act, val){
                 "publtype":$("#publtype_add").val(),
                 "reviewid":$("#reviewid_add").val(),
                 "rating":$("#rating_add").val(),
-                "bibtex":$("#bibtex_add").val(),
+                "bibtex_title":$("#bibtex_add").val(),
+                "bibtex_author":$("#bibtex_author_add").val(),
                 "type":$("#note_add").val(),
                 "label":$("#label_add").val(),
-                "href":$("#href_add").val(),
+                "href_publisher":$("#href_publisher_add").val(),
+                "href_series":$("#href_series_add").val(),
+                "href_ref":$("#href_ref_add").val(),
+                "logo":$("#logo_add").val(),
+                
                 
                 //Elements
                 "author":$("#author_add").val(),
@@ -150,5 +291,35 @@ function testExistsArticle(){
     });
     return ret;
     
+}
+
+
+function addTitreElement()
+{
+ // Déclaration et initialisation d'une variable statique
+    if ( typeof this.counter == 'undefined' ) this.counter = 0;
+    divCurrent = "recherche_partenaire_"+counter;
+    
+    $("#critere-glob-partenaires").append("<div id=\""+divCurrent+"\" class=\"research\"></div>");
+   
+    $("#"+divCurrent).append("<select name=\"column_partenaire_search_"+counter+"\" id=\"column_partenaire_search_"+counterP+"\">\n\
+    <option value=\"nom\">Nom</option>\n\
+    <option value=\"groupe\">Groupe</option>\n\
+    <option value=\"type\">Type de l'entreprise</option>\n\
+    <option value=\"siret\">Numéro SIRET</option>\n\
+    <option value=\"codePostal\">Code postal</option>\n\
+    <option value=\"ville\">Ville</option>\n\
+    <option value=\"pays\">Pays</option>\n\
+    <option value=\"nbreEmployes\">Nombre d'employés</option>\n\
+    <option value=\"web\">Site Web</option>\n\
+    <option value=\"telephone\">Téléphone</option>\n\
+    </select>");
+    
+    $("#"+divCurrent).append("<select name=\"critere_partenaire_search_"+counter+"\" id=\"critere_partenaire_search_"+counter+"\"><option value=\"egal\">est égal à</option>\n\
+    <option value=\"contient\">contient</option>\n\</select>");
+    
+    $("#"+divCurrent).append("<input type=\"text\" id=\"partenaire_text_"+counter+"\" name=\"partenaire_text_"+counter+"\"/>");
+    $("#nbcriteres").val(counter+1);
+    this.counter++;
 }
 
