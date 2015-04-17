@@ -30,11 +30,13 @@
                                 <xsl:value-of select="title/text()"/>
                             </span>
                             <br/>
-                            <span>
+                            <span>Page:</span> 
+                            <span>   
                                 <xsl:value-of select="pages/text()"/>
                             </span>
                             <br/>
-                            <span>
+                            <span>Volume: </span> 
+                            <span>   
                                 <xsl:value-of select="volume/text()"/>
                             </span>
                             <br/>
