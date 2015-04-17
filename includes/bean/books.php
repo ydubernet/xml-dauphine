@@ -44,7 +44,7 @@ class books {
         // TODO: free memory associated with the DOMDocument
     }
 
-    public function getBookByKey($key) {
+    public function searchBook($searchArray) {
         // TODO: return an array with properties of a book 
     }
 
@@ -55,9 +55,4 @@ class books {
     public function deleteBook($isbn) {
         // TODO: Delete a book from the library
     }
-
-    public function findBooksByGenre($genre) {
-        // TODO: Return an array of books
-    }
-
 }
