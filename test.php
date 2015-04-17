@@ -47,7 +47,7 @@ and open the template in the editor.
         $a = new articles("xml/article.xml");
         //$searchStr = '&apos;journals/acta/Saxena96&apos;';
         //echo $searchStr;
-        $search = array("_title"=>"0", "_author"=>"1", "author"=>"Hans", "title"=>"NULL");
+        $search = array("_title"=>"0", "_author"=>"1", "author"=>"Ha", "title"=>"NULL");
         $abc = $a->searchArticle($search);
         echo $abc;
         ?>
