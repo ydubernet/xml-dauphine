@@ -17,19 +17,23 @@ class books {
     private $domDocument;
 
     public function __construct($xmlPath) {
-        //loads the document 
-        $doc = new DOMDocument();
-        $doc->load($xmlPath);
+         $_xslDoc = new DOMDocument();
+        $_xslDoc->load("includes/xslt/book.xsl");
+        
+        $_xmlDoc = new DOMDocument();
+        $_xmlDoc->validateOnParse = true;
+        $_xmlDoc->load($xmlPath);
 
         //is this a library xml file? 
-        If ($doc->doctype->name != "dblp" ||
-                $doc->doctype->systemId != "dblp.dtd") {
+        If ($_xmlDoc->doctype->name != "dblp" ||
+                $_xmlDoc->doctype->systemId != "dblp.dtd") {
             throw new Exception("Incorrect document type");
         }
 
         //is the document valid and well-formed? 
-        if ($doc->validate()) {
-            $this->domDocument = $doc;
+        if ($_xmlDoc->validate()) {
+            $this->xmlDoc = $_xmlDoc;
+            $this->xslDoc = $_xslDoc;
             $this->xmlPath = $xmlPath;
         } else {
             throw new Exception("Document did not validate");
