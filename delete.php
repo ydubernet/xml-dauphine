@@ -8,7 +8,7 @@ if (!is_null($key)){
 	$xpath = new DOMXPath($doc);
 	$query="//dblp/article[@key='$key']";
 	$result = $xpath->query($query);
-	if (!$result){
+	if (!$result)){
 		$dblp_xml->removeChild($result);
 	}
 }	
