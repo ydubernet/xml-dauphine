@@ -19,7 +19,6 @@
     <xsl:template match="/dblp">
 		<html>
 		<body>
-        <form>
 		<h2 style="text-align:center;">Les articles</h2>
 			<table width="100%" style="text-align:center;">
 				<th>Auteur(s)</th>
@@ -29,7 +28,40 @@
 				<th>Journal</th>
             <xsl:apply-templates select="article"/>
 			</table>
-        </form> 
+			<br/> <br/>
+			<form method="POST">
+				<input type="hidden" name="MODE"  value="C"/>
+				<table style="margin-left: auto; margin-right: auto;text-align:center;"><caption>Création d'un article</caption>
+					<tr>
+						<td>Titre :</td>
+						<td><input type="text" name="title"/></td>
+					</tr>
+					<tr>
+						<td>Pages :</td>
+						<td><input type="text" name="pages"/></td>
+					</tr>
+					<tr>
+						<td>Volume :</td>
+						<td><input type="text" name="volume"/></td>
+					</tr>
+					<tr>
+						<td>Journal :</td>
+						<td><input type="text" name="journal"/></td>
+					</tr>
+					<tr>
+						<td>Number :</td>
+						<td><input type="text" name="number"/></td>
+					</tr>
+					<tr>
+						<td>Url :</td>
+						<td><input type="text" name="url"/></td>
+					</tr>
+					
+					<tr>
+						<td colspan="2"><input type="submit" value="Ajouter"/></td>
+					</tr>
+				</table>
+			</form>
 			
 	</body>
 	</html>
@@ -37,7 +69,7 @@
 	
 	<xsl:template match="article">
 		<tr>
-			<td>
+			<td style="width:20%;">
 				<ul>
 					<xsl:for-each select="author">
 					<li>
@@ -46,28 +78,63 @@
 					</xsl:for-each>
 				</ul>
 			</td>
-			<td>
-				<xsl:value-of select="title"/>
-			</td>
-			<td>   
-				<xsl:value-of select="pages"/>
-			</td>
-			<td>   
-				<xsl:value-of select="volume"/>
-			</td>
-			<td>
-				<xsl:value-of select="journal"/>
-			</td>
-			<!--<td>
-				<xsl:value-of select="number"/>
-			</td>
-			<td>
-				<a>
-					<xsl:value-of select="url"/>
-				</a>
-			</td>-->
-			<td>
-			<button type="submit">Supprimer</button>
+			<form method="POST">
+				<input type="hidden" name="REF" >
+					<xsl:attribute name="value">
+						<xsl:value-of select="@key"/>
+					</xsl:attribute>
+				</input>
+				<input type="hidden" name="MODE"  value="M"/>
+				<td>
+					<input style="width:100%;" type="text" name="title">
+						<xsl:attribute name="value">
+							<xsl:value-of select="title"/>
+						</xsl:attribute>
+					</input>
+				</td>
+				<td style="width:6%;">   
+					<input style="width:100%;" type="text" name="pages">
+						<xsl:attribute name="value">
+							<xsl:value-of select="pages"/>
+						</xsl:attribute>
+					</input>
+				</td>
+				<td style="width:4%;">   
+					<input style="width:100%;" type="text" name="volume">
+						<xsl:attribute name="value">
+							<xsl:value-of select="volume"/>
+						</xsl:attribute>
+					</input>
+				</td>
+				<td style="width:15%;">
+					<input style="width:100%;" type="text" name="journal">
+						<xsl:attribute name="value">
+							<xsl:value-of select="journal"/>
+						</xsl:attribute>
+					</input>
+				</td>
+				<!--<td>
+					<xsl:value-of select="number"/>
+				</td>
+				<td>
+					<a>
+						<xsl:value-of select="url"/>
+					</a>
+				</td>-->
+				<td style="width:5%;">
+					<input type="submit" value="Modifier"/>
+				</td>
+			</form>
+			<td style="width:5%;">
+			<form method="POST">
+				<input type="hidden" name="REF" >
+					<xsl:attribute name="value">
+						<xsl:value-of select="@key"/>
+					</xsl:attribute>
+				</input>
+				<input type="hidden" name="MODE"  value="S"/>
+				<input type="submit" value="Supprimer"/>
+			</form>
 			</td>
 		</tr>
 	</xsl:template>
