@@ -8,7 +8,7 @@ define('TIMEZONE', 'Europe/Paris');
 date_default_timezone_set(TIMEZONE);
 
 // Chargement des librairies
-require('includes/libs.php'); // Fichier d'inclusion des librairies
+require_once('includes/libs.php'); // Fichier d'inclusion des librairies
 
 ini_set("url_rewriter.tags", "input=src");
 
