@@ -24,32 +24,6 @@
 	
 	require_once "includes/bean/articles.php";
 	$a = new articles("xml/article.xml");
-<<<<<<< HEAD
 
-=======
-	//$title
->>>>>>> origin/master
-	//Gestion de la suppression et de la modification
-	if (isset($_POST['REF'])){	
-		if ($_POST['MODE']=='S'){
-			echo 'demande delete : '.$_POST['REF'];		
-			echo(var_dump($a->deleteArticle($_POST['REF'])));
-		}
-		else if ($_POST['MODE']=='M'){
-			echo 'demande modif : '.$_POST['REF'];
-		}
-	}
-
-	if (isset($_POST['MODE']) && $_POST['MODE']=='R'){
-		echo $_POST['r_title'];
-		echo $_POST['r_author'];
-		$search['title']=$_POST['r_title'];
-		$search['author']=$_POST['r_author'];
-		$abc = $a->searchArticle($search);
-	}
-	else
-		$abc = $a->getAllArticles();
-	
-	echo $abc;
 ?>
 
