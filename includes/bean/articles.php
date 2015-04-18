@@ -125,5 +125,4 @@ class articles {
         // save the document 
         $this->xmlDoc->save($this->xmlPath);
     }
-
 }
