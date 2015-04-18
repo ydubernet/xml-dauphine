@@ -9,19 +9,17 @@ class articles {
     private $xmlPath;
     private $xslDoc;
     private $xmlDoc;
-	
-    public function __construct($xmlPath) {
+	const DIR = "../../";
+    public function __construct($xmlFileName) {
 		
-        $_xslDoc = new DOMDocument();
-        $_xslDoc->load("includes/xslt/articles.xsl");
+        $this->xslDoc = new DOMDocument();
+        $this->xslDoc->load(self::DIR."xslt/articles.xsl");
         
-        $_xmlDoc = new DOMDocument();
-        $_xmlDoc->validateOnParse = true;
-        $_xmlDoc->load($xmlPath);
+		$this->xmlPath = self::DIR. "xml/".$xmlFileName;
+        $this->xmlDoc = new DOMDocument();
+        $this->xmlDoc->validateOnParse = true;
+        $this->xmlDoc->load($this->xmlPath);
 
-		$this->xmlDoc = $_xmlDoc;
-		$this->xslDoc = $_xslDoc;
-		$this->xmlPath = $xmlPath;
 
     }
 
