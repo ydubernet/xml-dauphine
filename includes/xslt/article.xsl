@@ -16,7 +16,7 @@
     -->
     <xsl:template match="dblp">
         <form> 
-            <div border="1">
+            <div id="rcorners2">
                 <xsl:for-each select="article">
                     <xsl:if test="$_author=1 and $_title=1 and contains(author/text(),$author) and contains(title/text(),$title)">
                         <li>
@@ -27,7 +27,9 @@
                             </span>
                             <br/>
                             <span>
-                                <xsl:value-of select="title/text()"/>
+                                <p class="title_doc">
+                                    <xsl:value-of select="title/text()"/>
+                                </p>
                             </span>
                             <br/>
                             <span>Page:</span> 
