@@ -54,7 +54,7 @@ $(document).ready(function() {
     $("#logo").hide();
     
     $("#key_add").change(function(){
-        testExistArticle();
+        testExistsArticle();
     });
     onChangeTypeArticle();
     onChangeInputsPourAttributs();
@@ -277,6 +277,7 @@ function testExistsArticle(){
         url: "includes/models/scripts/articleExists.php",
         async: false,
         data: {
+            key:$("#key_add").val()
         },
         dataType: "html"
     }).done(function(data){
@@ -284,7 +285,7 @@ function testExistsArticle(){
             $("#key_add").css('border', '');
             
         }else if(data === "0"){
-            alert("La clé associée a cet article existe déjà.\n Merci de le modifier.");
+            alert("La clé associée a cet article existe déjà.\n Merci de la modifier.");
             $("#key_add").css('border', '2px solid red');
             ret = false;
         }

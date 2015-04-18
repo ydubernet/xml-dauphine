@@ -3,5 +3,6 @@
 Dans l’icône de WampServer située dans la barre des tâches, effectuer un clic gauche
 puis aller dans :
 - PHP > php.ini > décommenter la ligne extension=php_curl.dll (en supprimant le ; )
+-¨PHP > php.ini > décommenter la ligne extension=php_xsl.dll (en supprimant le ; )
 - Apache > httpd.conf > décommenter la ligne LoadModule rewrite_module modules/mod_rewrite.so
 - Redémarrer tous les services pour pouvoir prendre en compte ces modifications.
