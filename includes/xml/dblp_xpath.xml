@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<dblp>
+<article mdate="2011-01-11" key="journals/acta/Saxena96">
+<author>Sanjeev Saxena</author>
+<title>Parallel Integer Sorting and Simulation Amongst CRCW Models.</title>
+<pages>607-619</pages>
+<year>1996</year>
+<volume>33</volume>
+<journal>Acta Inf.</journal>
+<number>7</number>
+<url>db/journals/acta/acta33.html#Saxena96</url>
+<ee>http://dx.doi.org/10.1007/BF03036466</ee>
+</article>
+<article mdate="2011-01-11" key="journals/acta/Blum82">
+<author>Norbert Blum</author>
+<title>On the Power of Chain Rules in Context Free Grammars.</title>
+<pages>425-433</pages>
+<year>1982</year>
+<volume>17</volume>
+<journal>Acta Inf.</journal>
+<url>db/journals/acta/acta17.html#Blum82</url>
+<ee>http://dx.doi.org/10.1007/BF00264161</ee>
+</article>
+<article mdate="2011-01-11" key="journals/acta/Martin83">
+<author>Alain J. Martin</author>
+<title>A General Proof Rule for Procedures in Predicate Transformer Semantics.</title>
+<pages>301-313</pages>
+<year>1983</year>
+<volume>20</volume>
+<journal>Acta Inf.</journal>
+<url>db/journals/acta/acta20.html#Martin83</url>
+<ee>http://dx.doi.org/10.1007/BF00264276</ee>
+</article>
+<article mdate="2011-01-11" key="journals/acta/AdamsGV79">
+<author>Colin Adams</author>
+<author>Erol Gelenbe</author>
+<author>Jean Vicard</author>
+<title>An Experimentally Validated Model of the Paging Drum.</title>
+<pages>103-117</pages>
+<year>1979</year>
+<volume>11</volume>
+<journal>Acta Inf.</journal>
+<url>db/journals/acta/acta11.html#AdamsGV79</url>
+<ee>http://dx.doi.org/10.1007/BF00264019</ee>
+</article>
+<article mdate="2011-01-11" key="journals/acta/BookC76">
+<author>Ronald V. Book</author>
+<author>Ashok K. Chandra</author>
+<title>Inherently Nonplanar Automata.</title>
+<pages>89-94</pages>
+<year>1976</year>
+<volume>6</volume>
+<journal>Acta Inf.</journal>
+<url>db/journals/acta/acta6.html#BookC76</url>
+<ee>http://dx.doi.org/10.1007/BF00263745</ee>
+</article>
+<article mdate="2003-11-25" key="journals/acta/CoffmanDW02">
+<author>Edward G. Coffman Jr.</author>
+<author>Peter J. Downey</author>
+<author>Peter M. Winkler</author>
+<title>Packing rectangles in a strip.</title>
+<pages>673-693</pages>
+<year>2002</year>
+<volume>38</volume>
+<journal>Acta Inf.</journal>
+<number>10</number>
+<ee>http://link.springer.de/link/service/journals/00236/bibs/2038010/20380673.htm</ee>
+<url>db/journals/acta/acta38.html#CoffmanDW02</url>
+</article>
+<article mdate="2006-11-22" key="journals/acta/AroraJSMC06">
+<author>Amrinder Arora</author>
+<author>Fanchun Jin</author>
+<author>Gokhan Sahin</author>
+<author>Hosam Mahmoud</author>
+<author>Hyeong-Ah Choi</author>
+<title>Throughput analysis in wireless networks with multiple users and multiple channels.</title>
+<pages>147-164</pages>
+<year>2006</year>
+<volume>43</volume>
+<journal>Acta Inf.</journal>
+<number>3</number>
+<ee>http://dx.doi.org/10.1007/s00236-006-0012-1</ee>
+<url>db/journals/acta/acta43.html#AroraJSMC06</url>
+</article>
+<article mdate="2011-01-11" key="journals/acta/Deussen78">
+<author>Peter Deussen</author>
+<title>A Unified Approach to the Generation and the Acception of Formal Languages.</title>
+<pages>377-390</pages>
+<year>1978</year>
+<volume>9</volume>
+<journal>Acta Inf.</journal>
+<url>db/journals/acta/acta9.html#Deussen78</url>
+<ee>http://dx.doi.org/10.1007/BF00289049</ee>
+</article>
+<phdthesis mdate="2012-04-18" key="phd/ch/Andronache2006">
+<author>Adrian Stefan Andronache</author>
+<title>Multi-modal non-rigid registration of volumetric medical images.</title>
+<year>2006</year>
+<school>ETH Zurich</school>
+<pages>1-136</pages>
+<isbn>978-3-86628-112-7</isbn>
+<note type="dnb">http://d-nb.info/98174043X</note>
+</phdthesis>
+<phdthesis mdate="2012-04-18" key="phd/ch/Moglestue2004">
+<author>Andreas Moglestue</author>
+<title>CIP model checking.</title>
+<year>2004</year>
+<school>ETH Zurich</school>
+<pages>1-238</pages>
+<isbn>3-8322-3424-1</isbn>
+<note type="dnb">http://d-nb.info/972904387</note>
+</phdthesis>
+<phdthesis mdate="2012-04-18" key="phd/ch/Margulies2009">
+<author>Simon B. Margulies</author>
+<title>Digitale Daten als Quelle der Geschichtswissenschaft: eine Einfuhrung.</title>
+<year>2009</year>
+<school>University of Basel</school>
+<pages>1-433</pages>
+<isbn>978-3-8300-4136-8</isbn>
+<note type="dnb">http://d-nb.info/991373200</note>
+</phdthesis>
+<phdthesis mdate="2015-01-09" key="phd/ch/Huang2011">
+<author>Kai Huang 0001</author>
+<title>Towards many core real-time embedded systems: software design of streaming systems at system level.</title>
+<year>2011</year>
+<school>ETH Zurich</school>
+<pages>1-156</pages>
+<isbn>978-3-8440-0013-9</isbn>
+<note type="dnb">http://d-nb.info/1011871831</note>
+</phdthesis>
+<phdthesis mdate="2012-04-18" key="phd/ch/Woehrle2010">
+<author>Matthias Woehrle</author>
+<title>Testing of wireless sensor networks.</title>
+<year>2010</year>
+<school>ETH Zurich</school>
+<pages>1-144</pages>
+<isbn>978-3-8322-9479-3</isbn>
+<note type="dnb">http://d-nb.info/1007774517</note>
+</phdthesis>
+<mastersthesis mdate="2002-01-03" key="phd/Schulte92">
+<author>Christian Schulte</author>
+<title>Entwurf und Implementierung eines obersetzenden Systems for das intuitionistische logische Programmieren auf der Warren Abstract Machine.</title>
+<year>1991</year>
+<school>Universite Karlsruhe, Institut for Logik, Komplexitet und Deduktionssysteme</school>
+</mastersthesis>
+<phdthesis mdate="2002-01-03" key="phd/Hellerstein95">
+<author>Joseph M. Hellerstein</author>
+<title>Optimization and Execution Techniques for Queries With Expensive Methods</title>
+<year>1995</year>
+<school>Univ. of Wisconsin-Madison</school>
+</phdthesis>
+</dblp>

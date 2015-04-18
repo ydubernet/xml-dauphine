@@ -10,12 +10,13 @@ class articles {
     private $xslDoc;
     private $xmlDoc;
 	const DIR = "../../";
-    public function __construct($xmlFileName) {
+    public function __construct() {
 		
         $this->xslDoc = new DOMDocument();
         $this->xslDoc->load(self::DIR."xslt/articles.xsl");
         
-		$this->xmlPath = self::DIR. "xml/".$xmlFileName;
+		//$this->xmlPath = self::DIR. "xml/".$const_xmlfile;
+		$this->xmlPath = self::DIR. "xml/dblp_100000_lignes.xml";
         $this->xmlDoc = new DOMDocument();
         $this->xmlDoc->validateOnParse = true;
         $this->xmlDoc->load($this->xmlPath);

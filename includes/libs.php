@@ -1,5 +1,5 @@
 <?php
 // Listes des bibliothèques nécessaires
-require('includes/constant.php'); // Fichier de constantes
-require('includes/libs/functions.php'); //Fonctions
+require_once('includes/constant.php'); // Fichier de constantes
+require_once('includes/libs/functions.php'); //Fonctions
 ?>
