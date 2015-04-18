@@ -93,7 +93,6 @@ header('Content-type: text/html; charset=' . ENCODING);
                     <td id="backgroundDroite"> </td>
                 </tr>
             </table>
-
         </div>
     </body>
 </html>
