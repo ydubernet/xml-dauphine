@@ -3,7 +3,7 @@
     print_r($_POST);
     $result = true;
     
-    $xmlPath = "xml/article.xml";
+    $xmlPath = "../../../xml/article.xml";
 
     $xmlDoc = new DOMDocument();
     $xmlDoc->validateOnParse = true;
