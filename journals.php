@@ -11,7 +11,7 @@
 				<tr>
 					<td>Titre :</td>
 					<td><input type="text" name="r_title" value="<?php isset($_POST['r_title'])?$_POST['r_title']:''?>"/></td>
-				</tr
+                                </tr>
 				<tr>
 					<td colspan="2">
 						<input type="submit" value="Rechercher"/>
@@ -24,7 +24,11 @@
 	
 	require_once "includes/bean/articles.php";
 	$a = new articles("xml/article.xml");
+<<<<<<< HEAD
 
+=======
+	//$title
+>>>>>>> origin/master
 	//Gestion de la suppression et de la modification
 	if (isset($_POST['REF'])){	
 		if ($_POST['MODE']=='S'){

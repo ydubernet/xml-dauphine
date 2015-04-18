@@ -1,0 +1,17 @@
+key : journal/test/Test42
+mdate : 2015-04-16
+publtype : sci
+reviewid : 45
+author : yoann;eugen;nicolas
+editor : dauphine
+title : Comment se faire enfler par Dauphine
+pages : 758
+year : 2015
+address : Université Paris-Dauphine, 12 Rue du Maréchal de Lattre de Tassigny 75016 Paris
+journal : La plume
+volume : 4
+number : 3
+month : 04/2015
+url : http://localhost/xml-dauphine
+isbn : 42
+school : Dauphine

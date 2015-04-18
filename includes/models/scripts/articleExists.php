@@ -1,18 +1,19 @@
 <?php
+    $key = $_POST['key'];
+    
+    $document = new DOMDocument();
+    $document->validateOnParse = true;
+    $document->load("../../../xml/dblp_100000_lignes.xml");
+    
+    $xpath = new DOMXPath($document);
+    
+    $query="//*[@key='$key']";
 
-//$query = "//[@key='".$_POST["key_add"]."']";
-
-//TODO : Faire des appels aux fonctions DOM.
-
-/*
-if ($result->rowCount() > 0){
-    echo "0";
-}
-else
-{
- */
-    //echo "1";
-//}
-
-echo "0";
+    $nodeList = $xpath->query($query);
+    
+    if ($nodeList && $nodeList->length==1) {
+        echo "0";
+    } else {
+        echo "1";
+    }
 ?>
