@@ -5088,7 +5088,7 @@
 </article>
 <article mdate="2011-01-11" key="journals/acta/Kaufholz74"> 
 <author>Gerd Kaufholz</author>
-<title>&Uuml;ber die Vernetzungsstruktur von Maschinen.</title>
+<title>Über die Vernetzungsstruktur von Maschinen.</title>
 <journal>Acta Inf.</journal>
 <volume>3</volume> 
 <year>1974</year> 
@@ -71420,19 +71420,7 @@
 <ee>http://dx.doi.org/10.1016/j.tele.2011.11.002</ee>
 <url>db/journals/tele/tele30.html#Xiong13</url>
 </article>
-<article mdate="2015-03-12" key="journals/tele/ParkKN15">
-<author>Jieun Park</author>
-<author>Seongcheol Kim</author>
-<author>Changi Nam</author>
-<title>Why has a Korean telecommunications technology failed: A case study on WiBro.</title>
-<pages>603-612</pages>
-<year>2015</year>
-<volume>32</volume>
-<journal>Telematics and Informatics</journal>
-<number>4</number>
-<ee>http://dx.doi.org/10.1016/j.tele.2015.01.002</ee>
-<url>db/journals/tele/tele32.html#ParkKN15</url>
-</article>
+
 <article mdate="2011-12-19" key="journals/tele/BaeldenAV12">
 <author>Dorien Baelden</author>
 <author>Leo Van Audenhove</author>
