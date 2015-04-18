@@ -7,7 +7,7 @@
     
     <article mdate="2011-01-11" key="journals/acta/Blum82">
         <author>Norbert Blum</author>
-        <title>On the Power of Chain Rules in Context Free Grammars.</title>
+        <title>On the Power of Chain Rules in Context Free Grammars.ttg</title>
         <pages>425-433</pages>
         <year>1982</year>
         <volume>17</volume>
@@ -41,16 +41,7 @@
         <url>db/journals/acta/acta25.html#FinkelC87</url>
         <ee>http://dx.doi.org/10.1007/BF00268843</ee>
     </article>
-    <article mdate="2011-01-11" key="journals/acta/Biskup78">
-        <author>Joachim Biskup</author>
-        <title>On the Complementation Rule for Multivalued Dependencies in Database Relations.</title>
-        <pages>297-305</pages>
-        <year>1978</year>
-        <volume>10</volume>
-        <journal>Acta Inf.</journal>
-        <url>db/journals/acta/acta10.html#Biskup78</url>
-        <ee>http://dx.doi.org/10.1007/BF00264322</ee>
-    </article>
+    
     <article mdate="2012-01-27" key="journals/acta/BozapalidisFR12">
         <author>Symeon Bozapalidis</author>
         <author>Zolt&aacute;n F&uuml;l&ouml;p</author>

@@ -12,27 +12,8 @@
 <url>db/journals/acta/acta33.html#Saxena96</url>
 <ee>http://dx.doi.org/10.1007/BF03036466</ee>
 </article>
-<article mdate="2011-01-11" key="journals/acta/Simon83">
-<author>Hans-Ulrich Simon</author>
-<title>Pattern Matching in Trees and Nets.</title>
-<pages>227-248</pages>
-<year>1983</year>
-<volume>20</volume>
-<journal>Acta Inf.</journal>
-<url>db/journals/acta/acta20.html#Simon83</url>
-<ee>http://dx.doi.org/10.1007/BF01257084</ee>
-</article>
-<article mdate="2011-01-11" key="journals/acta/GoodmanS83">
-<author>Nathan Goodman</author>
-<author>Oded Shmueli</author>
-<title>NP-complete Problems Simplified on Tree Schemas.</title>
-<pages>171-178</pages>
-<year>1983</year>
-<volume>20</volume>
-<journal>Acta Inf.</journal>
-<url>db/journals/acta/acta20.html#GoodmanS83</url>
-<ee>http://dx.doi.org/10.1007/BF00289414</ee>
-</article>
+
+
 <article mdate="2011-01-11" key="journals/acta/Blum82">
 <author>Norbert Blum</author>
 <title>On the Power of Chain Rules in Context Free Grammars.</title>
@@ -7146,7 +7127,7 @@
 <article mdate="2003-11-25" key="journals/acta/BurriezaG03">
 <author>Alfredo Burrieza</author>
 <author>Inman P. de Guzm&aacute;n</author>
-<title>A functional approach for temporal &#215; modal logics.</title>
+<title>A functional approach for temporal × modal logics.</title>
 <pages>71-96</pages>
 <year>2003</year>
 <volume>39</volume>
@@ -17344,7 +17325,7 @@
 <author>Rajesh Kumar</author>
 <author>J. K. Makrandi</author>
 <author>S. P. Khatkar</author>
-<title>Synthesis and characterization of luminescent Eu(HMAP)<sub>3</sub>&#183;2H<sub>2</sub>O and Tb(HMAP)<sub>3</sub>&#183;2H<sub>2</sub>O complexes.</title>
+<title>Synthesis and characterization of luminescent Eu(HMAP)<sub>3</sub>·2H<sub>2</sub>O and Tb(HMAP)<sub>3</sub>·2H<sub>2</sub>O complexes.</title>
 <pages>170-174</pages>
 <year>2009</year>
 <volume>30</volume>
@@ -27671,7 +27652,7 @@
 <author>Zezhong C. Chen</author>
 <author>Zuomin Dong</author>
 <author>Geoffrey W. Vickers</author>
-<title>Automated surface subdivision and tool path generation for 3&#189;&#189;-axis CNC machining of sculptured parts.</title>
+<title>Automated surface subdivision and tool path generation for 3½½-axis CNC machining of sculptured parts.</title>
 <pages>319-331</pages>
 <year>2003</year>
 <volume>50</volume>
@@ -96466,7 +96447,7 @@
 <article mdate="2011-11-03" key="journals/tkde/BeimelP10">
 <author>Dizza Beimel</author>
 <author>Mor Peleg</author>
-<title>The Context and the SitBAC Models for Privacy Preservation&#x2014;An Experimental Comparison of Model Comprehension and Synthesis.</title>
+<title>The Context and the SitBAC Models for Privacy Preservation&#8212;An Experimental Comparison of Model Comprehension and Synthesis.</title>
 <pages>1475-1488</pages>
 <year>2010</year>
 <volume>22</volume>
@@ -99998,3 +99979,5 @@
 <cite>conf/sigmod/AikenWH92</cite>
 <cite>conf/icde/AlashqurSL90</cite>
 <cite>conf/sigmod/AnwarMC93</cite>
+</article>
+</dblp>
