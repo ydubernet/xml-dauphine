@@ -72,8 +72,8 @@
 
 	
 <?php
-	require_once "includes/bean/articles.php";
-	$a = new articles("xml/dblp_100000_lignes.xml");
+	require_once "../../bean/articles.php";
+	$a = new articles("dblp_1000_lignes.xml");
 	
 	//Gestion de la suppression et de la modification
 	if (isset($_POST['REF'])){	
