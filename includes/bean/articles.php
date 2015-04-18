@@ -34,7 +34,10 @@ class articles {
         $xsltProcessor->registerPHPFunctions();
         $xsltProcessor->importStyleSheet($this->xslDoc);
         $xsltProcessor->setParameter('', 'title', $search['title']);
-        $xsltProcessor->setParameter('', 'author', $search['author']);  
+        $xsltProcessor->setParameter('', 'author', $search['author']);
+		$xsltProcessor->setParameter('', 'year', $search['year']);
+		$xsltProcessor->setParameter('', 'order', $search['order']);
+		$xsltProcessor->setParameter('', 'order_type', $search['order_type']);
         $result =  $xsltProcessor->transformToXML($this->xmlDoc);
         return $result;
     }

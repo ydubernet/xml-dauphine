@@ -10,12 +10,16 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:param name="author"/>
 	<xsl:param name="title"/>
+	<xsl:param name="year"/>
+	<xsl:param name="order"/>
+	<xsl:param name="order_type"/>
     <xsl:output method="html"/>
 
 	
 	
     <xsl:template match="/dblp">
 		<h2 style="text-align:center;">Les articles</h2>
+
 			<table width="100%" style="text-align:center;">
 				<th>Auteur(s)</th>
 				<th>Titre</th>
@@ -24,7 +28,9 @@
 				<th>Journal</th>
 				<th>Année</th>
 				<th>Lien</th>
-            <xsl:apply-templates select="article[contains(title,$title)][contains(author,$author)]"/>
+            <xsl:apply-templates select="article[contains(title,$title)][contains(author,$author)][contains(year,$year)]">
+				<xsl:sort select="*[name()=$order]" data-type="text" order="{$order_type}" />
+			</xsl:apply-templates>
 			</table>
 			
     </xsl:template>
@@ -92,7 +98,6 @@
 					<input type="submit" value="Modifier"/>
 				</td>
 			</form>
-			<td style="width:5%;">
 			<form method="POST">
 				<input type="hidden" name="REF" >
 					<xsl:attribute name="value">
@@ -100,9 +105,11 @@
 					</xsl:attribute>
 				</input>
 				<input type="hidden" name="MODE"  value="S"/>
+			<td style="width:5%;">
 				<input type="submit" value="Supprimer"/>
-			</form>
+			
 			</td>
+			</form>
 		</tr>
 	</xsl:template>
 	
