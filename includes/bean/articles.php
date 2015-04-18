@@ -38,6 +38,8 @@ class articles {
 		$xsltProcessor->setParameter('', 'year', $search['year']);
 		$xsltProcessor->setParameter('', 'order', $search['order']);
 		$xsltProcessor->setParameter('', 'order_type', $search['order_type']);
+		$xsltProcessor->setParameter('', 'end', $search['end']);
+		$xsltProcessor->setParameter('', 'begin', $search['begin']);
         $result =  $xsltProcessor->transformToXML($this->xmlDoc);
         return $result;
     }
