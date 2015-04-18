@@ -95,10 +95,9 @@
 	<?php
 		$xslDoc = new DOMDocument();
         $xslDoc->load("includes/xslt/stats.xsl");
-		$xmlPath = "includes/xml/".$const_xmlfile;
         $xmlDoc = new DOMDocument();
         $xmlDoc->validateOnParse = true;
-        $xmlDoc->load($xmlPath);
+        $xmlDoc->load($const_xmlfile);
 		$xsltProcessor = new XSLTProcessor();
         $xsltProcessor->importStyleSheet($xslDoc); 
         $result =  $xsltProcessor->transformToXML($xmlDoc);

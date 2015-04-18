@@ -14,10 +14,10 @@ class articles {
     public function __construct() {
 
         $_xslDoc = new DOMDocument();
-        $_xslDoc->load("includes/xslt/articles.xsl");
-
-		$xmlPath = $const_xmlfile;
-		$xmlPath = "dblp_100000_lignes.xml";
+        //$_xslDoc->load("includes/xslt/articles.xsl");
+		$_xslDoc->load("../../xslt/articles.xsl");
+		//$xmlPath = $const_xmlfile;
+		$xmlPath = "../../xml/dblp_100000_lignes.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->validateOnParse = true;
         $_xmlDoc->load($xmlPath);
