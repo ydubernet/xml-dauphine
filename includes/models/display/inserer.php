@@ -56,32 +56,41 @@
         <p>Exemple : votre article a 3 auteurs, pour author, faire : "Toi;Moi;Lui". Mais vous ne pouvez pas faire key : "journals/acta/Saxena96;journals/acta/Saxena95".</p>
         <table cellpadding="15px" cellspacing="0">
             <tr>
-                <td>Type de contenu </td>
+                <td>Type de contenu *</td>
                 <td>
-                    <select id='typeArticle_add_part' >
-                        <option value="article">Article</option>
-                        <option value="inproceedings">Inproceedings</option>
-                        <option value="proceedings">Proceedings</option>
-                        <option value="book">Book</option>
-                        <option value="incollection">Incollection</option>
-                        <option value="phdthesis">Phd Thesis</option>
-                        <option value="masterthesis">Master Thesis</option>
-                        <option value="www">WWW</option>
+                    <select id='typeArticle_add' >
+                        <?php
+                          echo "<option value='' selected></option>";
+                          foreach(explode("|",$const_xml["dblp"]) as $dblp){
+                              echo "<option value='".$dblp."'>".ucwords($dblp)."</option>";
+                          }
+                          ?>
+                          <!-- 
+                            <option value="article">Article</option>
+                            <option value="inproceedings">Inproceedings</option>
+                            <option value="proceedings">Proceedings</option>
+                            <option value="book">Book</option>
+                            <option value="incollection">Incollection</option>
+                            <option value="phdthesis">Phd Thesis</option>
+                            <option value="masterthesis">Master Thesis</option>
+                            <option value="www">WWW</option>
+                          -->
                     </select>
+                          
                     
                 </td>
             </tr>
             
             <!-- Attributs -->
-            <tr>
+            <tr id="key">
                 <td>key *</td>
                 <td><input type="text" id="key_add"/></td>
             </tr>
-            <tr>
+            <tr id="mdate">
                 <td>mdate</td>
                 <td><input type="text" id="mdate_add"/></td>
             </tr>
-            <tr>
+            <tr id="publtype">
                 <td>publtype</td>
                 <td><input type="text" id="publtype_add"/></td>
             </tr>
@@ -96,7 +105,7 @@
             </tr>
             
             <?php
-               $tous = "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter";
+            $tous = $const_xml["field"];
                $tab_tous = explode("|", $tous);
                foreach($tab_tous as $un){
                  echo "
@@ -107,101 +116,69 @@
                  
                   // Gestion de cas particuliers :
                   /* Attributs */
-                  // TODO : Ne les faire apparaître que si l'utilisateur remplit le champ associé
                   if($un === "title"){
                       echo "
-                          <tr>
-                            <td>bibtext title</td>
-                            <td><input type='text' id='bibtex_add'/></td>
+                          <tr id='bibtex'>
+                            <td>bibtex title</td>
+                            <td><input type='text' class='bibtex' id='bibtex_add'/></td>
                           </tr> ";
+                      
+                      
+                      //Code structure de la publication (titres, sous-titres, etc...)
+                      echo "
+                      <div id='addCritereTitre'>
+                        <img class='img_clickable' onclick='javascript:addTitreElement();' alt='ajouter une structure' src='img-PlusOrange.png'>
+                        <a class='clickLink' href='javascript:addTitreElement();'>Ajouter un critère</a>
+                      </div> ";
+                      
+                    
+                  } else if($un === "author"){
+                      echo "
+                          <tr id='bibtex_author'>
+                            <td>bibtex author title</td>
+                            <td><input type='text' class='bibtex' id='bibtex_author_add'/></td>
+                          </tr> ";
+                  
                   } else if($un === "note"){
                       echo "
-                         <tr>
+                         <tr id='type'>
                             <td>type note</td>
-                            <td><input type='text' id='type_add'/></td>
+                            <td><input type='text' class='type' id='type_add'/></td>
                          </tr> ";
                   } else if($un === "cite"){
                       echo "
-                        <tr>
+                        <tr id='label'>
                            <td>label cite</td>
-                           <td><input type='text' id='label_add'/></td>
+                           <td><input type='text' class='label' id='label_add'/></td>
                         </tr> ";
+                  } else if($un === "publisher") {
+                      echo "
+                       <tr id='href_publisher'>
+                          <td>href publisher</td>
+                          <td><input type='text' class='href' id='href_publisher_add' /></td>
+                       </tr> ";
                   } else if($un === "series"){
                       echo "
-                        <tr>
+                        <tr id='href_series'>
                            <td>href series</td>
-                           <td><input type='text' id='href_add'/></td>
+                           <td><input type='text' class='href' id='href_series_add'/></td>
+                        </tr> ";
+                  } else if($un === "layout") {
+                       echo "
+                        <tr id='logo'>
+                           <td>logo</td>
+                           <td><input type='text' class='logo' id='logo_add'/></td>
+                        </tr> ";
+                  } else if($un === "ref"){
+                       echo "
+                        <tr id='href_ref'>
+                           <td>href ref</td>
+                           <td><input type='text' class='href' id='href_ref_add'/></td>
                         </tr> ";
                   }
                }
                
-            ?>
-            <!--
-            <tr>
-                <td>Auteur</td>
-                <td><input type="text" id="author_add"/></td>
-            </tr>
-            
-            <tr>
-                <td>Editeur</td>
-                <td><input type="text" id="editor_add"/>
-            </tr>
-            <tr>
-                <td>Titre</td>
-                <td><input type="text" id="titre_add"/></td>
-            </tr>
-            <tr>
-                <td>Titre du livre</td>
-                <td><input type="text" id="booktitle_add"/></td>
-            </tr>
-            <tr>
-                <td>Nombre de pages</td>
-                <td><input type="text" id="pages_add"/></td>
-            </tr>
-            <tr>
-                <td>Année de publication</td>
-                <td><input type="text" id="year_add"/></td>
-            </tr>
-            <tr>
-                <td>Adresse</td>
-                <td><textarea id="address_add"></textarea></td>
-            </tr>
-            
-            <tr>
-                <td>Journal de publication</td>
-                <td><input type="text" id="journal_add"/></td>
-            </tr>
-            <tr>
-                <td>Volume</td>
-                <td><input type="text" id="volume_add"/></td>
-            </tr>
-            <tr>
-                <td>Nombre</td>
-                <td><input type="text" id="nombre_add"/></td>
-            </tr>
-            <tr>
-                <td>Mois</td>
-                <td><input type="text" id="month_add" /></td>
-            </tr>
-            <tr>
-                <td>URL</td>
-                <td><input type="text" id="url_add" /></td>
-            </tr>
-            <tr>
-                <td>EE</td> // TODO : Voir à quoi ça correspond en français dans le texte... 
-                <td><input type="text" id="ee_add"/></td>
-            </tr>
-            <tr>
-                <td>CD Rom</td>
-                <td><input type="text" id="cdrom_add"/></td>
-            </tr>
-            -->
-            
-            <!-- 
-                Et puis flemme !
-                On va automatiser tout ça... 
-            -->
-            
+            ?>            
         </table>
         <input type="button" value="Ajouter" onclick="ajouterModifierArticle('add');"/>
         <input type="button" value="Effacer" onclick="if(confirm('Souhaitez-vous effacer tous les champs ?'))this.form.reset();"/>  
