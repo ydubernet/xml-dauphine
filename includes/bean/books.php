@@ -49,7 +49,13 @@ class books {
     }
 
     public function addBook($isbn, $title, $author, $genre, $chapters) {
-        // TODO: add a book to the library 
+        $xsltProcessor = new XSLTProcessor();
+        $xsltProcessor->registerPHPFunctions();
+        $xsltProcessor->importStyleSheet($this->xslDoc);
+        $xsltProcessor->setParameter('', 'booktitle', $search['booktitle']);
+        $xsltProcessor->setParameter('', 'publisher', $search['publisher']);  
+        $result =  $xsltProcessor->transformToXML($this->xmlDoc);
+        return $result;
     }
 
     public function deleteBook($isbn) {
