@@ -44,7 +44,7 @@ header('Content-type: text/html; charset=' . ENCODING);
                     <td id="backgroundGauche"></td>
                     <td>            <div id="in">
                             <div id="header">
-                                <div id="logo"></div>
+                                <div id="logoDauphine"></div>
                                 <div id="menuheader">
                                     <div id="logoright"> Projet XML Dauphine
 
