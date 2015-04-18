@@ -99,72 +99,80 @@ function onChangeInputsPourAttributs(){
     $("#title_add").blur(function() {
         if(!$("#title_add").val()){ //Input à valeur vide.
             $("#bibtex").hide();
-            $(this).val(''); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#bibtex_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#bibtex").show('slow');
+            $("#bibtex_add").prop('disabled', false);
         }
     });
     
      $("#author_add").blur(function() {
         if(!$("#author_add").val()){ //Input à valeur vide.
             $("#bibtex_author").hide();
-            $(":input","#bibtex_author_add").val(''); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#bibtex_author_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#bibtex_author").show('slow');
+            $("#bibtex_author_add").prop('disabled', false);
         }
     });
     
      $("#note_add").blur(function() {
         if(!$("#note_add").val()){ //Input à valeur vide.
             $("#type").hide();
-            $("#type_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#type_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#type").show('slow');
+            $("#type_add").prop('disabled', false);
         }
     }); 
     
     $("#cite_add").blur(function() {
         if(!$("#cite_add").val()){ //Input à valeur vide.
             $("#label").hide();
-            $("#label_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#label_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#label").show('slow');
+            $("#label_add").prop('disabled', false);
         }
     }); 
     
-    $("#href_series_add").blur(function() {
-        if(!$("#href_series_add").val()){ //Input à valeur vide.
+    $("#series_add").blur(function() {
+        if(!$("#series_add").val()){ //Input à valeur vide.
             $("#href_series").hide();
-            $("#href_series_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#href_series_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#href_series").show('slow');
+            $("#href_series_add").prop('disabled', false);
         }
     });
     
-    $("#href_publisher_add").blur(function() {
-        if(!$("#href_publisher_add").val()){ //Input à valeur vide.
+    $("#publisher_add").blur(function() {
+        if(!$("#publisher_add").val()){ //Input à valeur vide.
             $("#href_publisher").hide();
-            $("#href_publisher_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#href_publisher_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#href_publisher").show('slow');
+            $("#href_publisher_add").prop('disabled', false);
         }
     });
     
-    $("#href_ref_add").blur(function() {
-        if(!$("#href_ref_add").val()){ //Input à valeur vide.
+    $("#ref_add").blur(function() {
+        if(!$("#ref_add").val()){ //Input à valeur vide.
             $("#href_ref").hide();
-            $("#href_ref_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#href_ref_add").prop('disabled', true); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
             $("#href_ref").show('slow');
+            $("#href_ref_add").prop('disabled', false);
         }
     });
     
-    $("#logo_add").blur(function(){
-       if(!$("#logo_add").val()){ //Input à valeur vide.
+    $("#layout_add").blur(function(){
+       if(!$("#layout_add").val()){ //Input à valeur vide.
            $("#logo").hide();
-           $("#logo_add").empty();// Important pour ne pas envoyer ce champ lors de la soumission.
+           $("#logo_add").prop('disabled', true);// Important pour ne pas envoyer ce champ lors de la soumission.
        } else { //Input non vide
            $("#logo").show('slow');
+           $("#logo_add").prop('disabled', false);
        }
     });
 }
@@ -201,7 +209,7 @@ function ajouterModifierArticle(act){
     $("#resultAdd").empty();
     $("#resultAdd").append('Envoi en cours  <progress>working...</progress>');
     if($("#key_add").val() === ""){
-        alert("Vous devez renseigner l'attribut id de votre article.");
+        alert("Vous devez renseigner l'attribut key de votre article.");
         return false;
     }
     else if(act !== "modifier" && testExistsArticle()){
@@ -219,6 +227,9 @@ function ajouterModifierArticle(act){
             type: "POST",
             url: url,
             data: {
+                //Type de la publication
+                "typeArticle":$("#typeArticle_add").val(),
+                
                 // Attributs
                 "key":$("#key_add").val(),
                 "mdate":$("#mdate_add").val(),
@@ -257,7 +268,8 @@ function ajouterModifierArticle(act){
                 "isbn":$("#isbn_add").val(),
                 "series":$("#series_add").val(),
                 "school":$("#school_add").val(),
-                "chapter":$("#chapter_add").val()
+                "chapter":$("#chapter_add").val(),
+                "layout":$("#layout_add").val()
                 
             },
             dataType: "html"
@@ -270,7 +282,7 @@ function ajouterModifierArticle(act){
     
 
 function testExistsArticle(){
-     var ret = true;
+     var ret = false;
     /* Vérification que le nom n'existe pas déjà en base */
     $.ajax({
         type: "POST",
@@ -281,46 +293,15 @@ function testExistsArticle(){
         },
         dataType: "html"
     }).done(function(data){
-        if(data === "1"){
+        if(data === "0"){
             $("#key_add").css('border', '');
             
-        }else if(data === "0"){
+        }else if(data === "1"){
             alert("La clé associée a cet article existe déjà.\n Merci de la modifier.");
             $("#key_add").css('border', '2px solid red');
-            ret = false;
+            ret = true;
         }
     });
     return ret;
     
 }
-
-
-function addTitreElement()
-{
- // Déclaration et initialisation d'une variable statique
-    if ( typeof this.counter == 'undefined' ) this.counter = 0;
-    divCurrent = "recherche_partenaire_"+counter;
-    
-    $("#critere-glob-partenaires").append("<div id=\""+divCurrent+"\" class=\"research\"></div>");
-   
-    $("#"+divCurrent).append("<select name=\"column_partenaire_search_"+counter+"\" id=\"column_partenaire_search_"+counterP+"\">\n\
-    <option value=\"nom\">Nom</option>\n\
-    <option value=\"groupe\">Groupe</option>\n\
-    <option value=\"type\">Type de l'entreprise</option>\n\
-    <option value=\"siret\">Numéro SIRET</option>\n\
-    <option value=\"codePostal\">Code postal</option>\n\
-    <option value=\"ville\">Ville</option>\n\
-    <option value=\"pays\">Pays</option>\n\
-    <option value=\"nbreEmployes\">Nombre d'employés</option>\n\
-    <option value=\"web\">Site Web</option>\n\
-    <option value=\"telephone\">Téléphone</option>\n\
-    </select>");
-    
-    $("#"+divCurrent).append("<select name=\"critere_partenaire_search_"+counter+"\" id=\"critere_partenaire_search_"+counter+"\"><option value=\"egal\">est égal à</option>\n\
-    <option value=\"contient\">contient</option>\n\</select>");
-    
-    $("#"+divCurrent).append("<input type=\"text\" id=\"partenaire_text_"+counter+"\" name=\"partenaire_text_"+counter+"\"/>");
-    $("#nbcriteres").val(counter+1);
-    this.counter++;
-}
-

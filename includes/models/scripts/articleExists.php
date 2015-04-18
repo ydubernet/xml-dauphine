@@ -12,8 +12,8 @@
     $nodeList = $xpath->query($query);
     
     if ($nodeList && $nodeList->length==1) {
-        echo "0";
-    } else {
         echo "1";
+    } else {
+        echo "0";
     }
 ?>

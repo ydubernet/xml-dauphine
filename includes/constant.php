@@ -27,7 +27,7 @@ $const_months = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'ju
 /* --[ XML MAIN ATTRIBUTES ] -- */
 $const_xml = array(
     "dblp" => "article|inproceedings|proceedings|book|incollection|phdthesis|mastersthesis|www",
-    "field" => "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter",
+    "field" => "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter|layout",//On rajoute layout car il est dépendant de rien du tout.
     "titlecontents" => "sub|sup|i|tt|ref"
 );
 

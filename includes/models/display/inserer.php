@@ -109,7 +109,7 @@
                $tab_tous = explode("|", $tous);
                foreach($tab_tous as $un){
                  echo "
-                    <tr>
+                    <tr id='".$un."' >
                         <td>$un</td>
                         <td><input type='text' id='".$un . "_add'/></td>
                     </tr>  ";
@@ -119,36 +119,37 @@
                   if($un === "title"){
                       echo "
                           <tr id='bibtex'>
-                            <td>bibtex title</td>
+                            <td>Bibtex Title</td>
                             <td><input type='text' class='bibtex' id='bibtex_add'/></td>
                           </tr> ";
                       
                       
                       //Code structure de la publication (titres, sous-titres, etc...)
-                      echo "
+                   /*   echo "
                       <div id='addCritereTitre'>
                         <img class='img_clickable' onclick='javascript:addTitreElement();' alt='ajouter une structure' src='img-PlusOrange.png'>
                         <a class='clickLink' href='javascript:addTitreElement();'>Ajouter un critère</a>
                       </div> ";
+                    */
                       
                     
                   } else if($un === "author"){
                       echo "
                           <tr id='bibtex_author'>
-                            <td>bibtex author title</td>
+                            <td>Bibtex Author Title</td>
                             <td><input type='text' class='bibtex' id='bibtex_author_add'/></td>
                           </tr> ";
                   
                   } else if($un === "note"){
                       echo "
                          <tr id='type'>
-                            <td>type note</td>
+                            <td>Type Note</td>
                             <td><input type='text' class='type' id='type_add'/></td>
                          </tr> ";
                   } else if($un === "cite"){
                       echo "
                         <tr id='label'>
-                           <td>label cite</td>
+                           <td>Label cite</td>
                            <td><input type='text' class='label' id='label_add'/></td>
                         </tr> ";
                   } else if($un === "publisher") {
@@ -166,7 +167,7 @@
                   } else if($un === "layout") {
                        echo "
                         <tr id='logo'>
-                           <td>logo</td>
+                           <td>Logo</td>
                            <td><input type='text' class='logo' id='logo_add'/></td>
                         </tr> ";
                   } else if($un === "ref"){
