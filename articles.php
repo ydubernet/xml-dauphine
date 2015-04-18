@@ -5,12 +5,23 @@
 	isset($_POST['pp_YEAR'])?$pp_YEAR = $_POST['pp_YEAR']:$pp_YEAR='';
 	isset($_POST['pp_ORDER_TYPE'])?$pp_ORDER_TYPE = $_POST['pp_ORDER_TYPE']:$pp_ORDER_TYPE='descending';
 	isset($_POST['pp_ORDER'])?$pp_ORDER = $_POST['pp_ORDER']:$pp_ORDER='title';
-	
+	isset($_POST['pp_SIZE'])?$pp_SIZE = $_POST['pp_SIZE']:$pp_SIZE=50;
+	isset($_POST['pp_BEGIN'])?$pp_BEGIN = $_POST['pp_BEGIN']:$pp_BEGIN=0;
 ?>
 
 <form method="POST">
 <table style="margin-left: auto; margin-right: auto;" cellpadding=20 >
 <tr>
+	<td>
+		Taille du tableau : 
+		<select name="pp_SIZE" onChange="submit()">
+			   <option value="25" <?php if ($pp_SIZE==25){echo 'selected';} ?> >25</option>
+			   <option value="50" <?php if ($pp_SIZE==50){echo 'selected';} ?>>50</option>
+			   <option value="75" <?php if ($pp_SIZE==75){echo 'selected';} ?>>75</option>
+			   <option value="100" <?php if ($pp_SIZE==100){echo 'selected';} ?>>100</option>
+			</select>
+	</td>
+	
 	<td>	
 	<table style="text-align:center;"><caption>Tri</caption>
 		<tr>
@@ -59,7 +70,7 @@
 	
 <?php
 	require_once "includes/bean/articles.php";
-	$a = new articles("xml/dblp_1000_lignes.xml");
+	$a = new articles("xml/dblp_100000_lignes.xml");
 	
 	//Gestion de la suppression et de la modification
 	if (isset($_POST['REF'])){	
@@ -78,6 +89,8 @@
 	$search['year']=$pp_YEAR;
 	$search['order']=$pp_ORDER;
 	$search['order_type']=$pp_ORDER_TYPE;
+	$search['begin']=$pp_BEGIN;
+	$search['end']=($pp_BEGIN+$pp_SIZE);
 	$abc = $a->searchArticle($search);
 	
 	echo $abc;
