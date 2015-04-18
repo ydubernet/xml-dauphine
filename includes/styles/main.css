@@ -254,7 +254,7 @@ div.header{
     font-size: 12px;
     width:100%;
     padding: 20px 0px 20px 0px;
-    background: #FFFFFF;
+    background: #000000; //#FFFFFF;
     text-align:center;
     /*color:white;*/  
 }
@@ -407,7 +407,7 @@ span .ajout_critere{
 }
 #menu_horiz_repeat a{
     text-decoration: none;
-    color: white;
+    color: black;//white;
     line-height:70px;
     font-size:20px;
     display:block;
@@ -525,7 +525,7 @@ span .ajout_critere{
 }
 
 #menu_left a{
-    color: white;
+    color: black;//white;
     text-decoration: none;
     padding: 10px 5px;
 }

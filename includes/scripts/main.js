@@ -44,7 +44,7 @@ $(document).ready(function() {
     $("#reviewid").hide();
     $("#rating").hide();
     
-    $("#bibtex_title").hide();
+    $("#bibtex").hide();
     $("#bibtex_author").hide();
     $("#type").hide();
     $("#label").hide();
@@ -98,19 +98,19 @@ function onChangeTypeArticle(){
 function onChangeInputsPourAttributs(){
     $("#title_add").blur(function() {
         if(!$("#title_add").val()){ //Input à valeur vide.
-            $("#bibtext").hide();
-            $("#bibtext_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#bibtex").hide();
+            $(this).val(''); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
-            $("#bibtext").show('slow');
+            $("#bibtex").show('slow');
         }
     });
     
      $("#author_add").blur(function() {
         if(!$("#author_add").val()){ //Input à valeur vide.
-            $("#bibtext_author").hide();
-            $("#bibtext_author_add").empty(); // Important pour ne pas envoyer ce champ lors de la soumission.
+            $("#bibtex_author").hide();
+            $(":input","#bibtex_author_add").val(''); // Important pour ne pas envoyer ce champ lors de la soumission.
         } else { //Input non vide
-            $("#bibtext_author").show('slow');
+            $("#bibtex_author").show('slow');
         }
     });
     
