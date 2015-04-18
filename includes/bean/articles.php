@@ -9,29 +9,20 @@ class articles {
     private $xmlPath;
     private $xslDoc;
     private $xmlDoc;
-
+	
     public function __construct($xmlPath) {
+		
         $_xslDoc = new DOMDocument();
-        $_xslDoc->load("includes/xslt/article.xsl");
+        $_xslDoc->load("includes/xslt/articles.xsl");
         
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->validateOnParse = true;
         $_xmlDoc->load($xmlPath);
 
-        //is this a library xml file? 
-        If ($_xmlDoc->doctype->name != "dblp" ||
-                $_xmlDoc->doctype->systemId != "dblp.dtd") {
-            throw new Exception("Incorrect document type");
-        }
+		$this->xmlDoc = $_xmlDoc;
+		$this->xslDoc = $_xslDoc;
+		$this->xmlPath = $xmlPath;
 
-        //is the document valid and well-formed? 
-        if ($_xmlDoc->validate()) {
-            $this->xmlDoc = $_xmlDoc;
-            $this->xslDoc = $_xslDoc;
-            $this->xmlPath = $xmlPath;
-        } else {
-            throw new Exception("Document did not validate");
-        }
     }
 
     public function __destruct() {
@@ -39,24 +30,49 @@ class articles {
     }
 
     public function searchArticle($search) {
-
         $xsltProcessor = new XSLTProcessor();
         $xsltProcessor->registerPHPFunctions();
         $xsltProcessor->importStyleSheet($this->xslDoc);
-        $xsltProcessor->setParameter('', '_title', $search['_title']);
-        $xsltProcessor->setParameter('', '_author', $search['_author']);
-        $xsltProcessor->setParameter('', 'title', $search['_title']);
+        $xsltProcessor->setParameter('', 'title', $search['title']);
         $xsltProcessor->setParameter('', 'author', $search['author']);  
         $result =  $xsltProcessor->transformToXML($this->xmlDoc);
         return $result;
     }
-
-    public function addArticle($isbn, $title, $author, $genre, $chapters) {
-        // TODO: add a book to the library 
+	
+	public function getAllArticles() {
+        $xsltProcessor = new XSLTProcessor();
+        $xsltProcessor->importStyleSheet($this->xslDoc); 
+        $result =  $xsltProcessor->transformToXML($this->xmlDoc);
+        return $result;
     }
 
-    public function deleteArticle($isbn) {
-        
+    public function updateArticle($key, $title, $pages, $volume,$journal) {
+        $xpath = new DOMXPath($this->xmlDoc);
+		$query="//dblp/article[@key='$key']";
+		$nodeList = $xpath->query($query);
+		if (!$nodeList || $nodeList->length==0)
+			return false;
+		foreach ($nodeList as $node){
+			$node->getElementsByTagName('title')[0]->nodeValue = $title;
+			$node->getElementsByTagName('pages')[0]->nodeValue = $pages;
+			$node->getElementsByTagName('volume')[0]->nodeValue = $volume;
+			$node->getElementsByTagName('journal')[0]->nodeValue = $journal;
+		}
+		$result = $this->xmlDoc->save($this->xmlPath);
+		return !$result?$result:true;
     }
+
+    public function deleteArticle($key) {
+        $xpath = new DOMXPath($this->xmlDoc);
+		$query="//dblp/article[@key='$key']";
+		$nodeList = $xpath->query($query);
+		if (!$nodeList || $nodeList->length==0)
+			return false;
+		foreach ($nodeList as $node)
+			$node->parentNode->removeChild($node);
+		$result = $this->xmlDoc->save($this->xmlPath);
+		return !$result?$result:true;
+    }
+
 
 }

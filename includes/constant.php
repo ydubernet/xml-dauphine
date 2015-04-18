@@ -23,6 +23,17 @@ $const_langs['fr'] = array('title' => 'Français', 'timezone' => 'Europe/Paris')
 $const_days = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche');
 $const_months = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre');
 
+
+/* --[ XML MAIN ATTRIBUTES ] -- */
+$const_xml = array(
+    "dblp" => "article|inproceedings|proceedings|book|incollection|phdthesis|mastersthesis|www",
+    "field" => "author|editor|title|booktitle|pages|year|address|journal|volume|number|month|url|ee|cdrom|cite|publisher|note|crossref|isbn|series|school|chapter",
+    "titlecontents" => "sub|sup|i|tt|ref"
+);
+
+// Pour vérifier que l'utilisateur rentre une seule valeur pour un attribut donné.
+$const_attributs = array("key", "mdate", "publtype", "reviewid", "rating", "bibtex", "href", "type", "label", "logo");
+
 /* --[ PAGES ]-- */
 
 
