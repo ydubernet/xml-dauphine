@@ -47,7 +47,7 @@ $const_pages = array(
     // Sous-menu section recherche
     'journals' => array('Rechercher sur les journaux', 'Rechercher sur les journaux', 'Recherche de journaux'),
     'articles' => array('Rechercher sur les articles', 'Rechercher sur les articles', 'Recherche d\'articles'),
-    'auteurs' => array('Rechercher sur les auteurs', 'Rechercher sur les auteurs', 'Rechercher d\'auteurs'),
+    'auteurs' => array('Rechercher sur les auteurs', 'Rechercher sur les auteurs', 'Recherche d\'auteurs'),
     
     //-- ERROR --//
     '404' => array('Erreur 404', 'Erreur 404', 'Erreur 404'),
@@ -74,7 +74,7 @@ $const_sub_menu = array(
     'inserer' => array(),
     'propos' => array()
     //'modifier' => array(),
-    //'supprimer' => array()   
+    //'supprimer' => array()
 );
 
 

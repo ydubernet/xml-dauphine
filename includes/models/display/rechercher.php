@@ -36,10 +36,6 @@
                                 this.form.reset();"/>  
                 </td>
             </tr>
-            <!-- 
-                Et puis flemme !
-                On va automatiser tout ça... 
-            -->
 
         </table>
     </form>

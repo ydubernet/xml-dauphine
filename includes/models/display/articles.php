@@ -40,8 +40,9 @@
                     <tr>
                             <td colspan="2"><input type="submit" value="Trier"/><td>
                     </tr>
-            </td>
+            
             </table>
+            </td>
             <td>
             <table style="text-align:center;"><caption>Recherche</caption>
                     <tr>
