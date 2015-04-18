@@ -42,9 +42,9 @@ header('Content-type: text/html; charset=' . ENCODING);
             <table cellspacing="0" cellpadding="0" id="tableGeneral">
                 <tr>
                     <td>            
-                        <div id="in">
+                        <div id="in"><div id="logo"></div>
                             <div id="header">
-                                <div id="logo"></div>
+                                
                                 <div id="menuheader">
                                     <div id="logoright"> Projet XML Dauphine
                                     </div>
@@ -67,14 +67,13 @@ header('Content-type: text/html; charset=' . ENCODING);
                                         echo $_POST['r_author'];
                                         $search['title'] = "";
                                         $search['author'] = "";
-                                        $search['_title'] = '0';
-                                        $search['_author'] = '0';
+                                        
                                         if (isset($_POST['r_title'])) {
-                                            $search['_title'] = '0';
+                                            //$search['_title'] = '0';
                                             $search['title'] = $_POST['r_title'];
                                         }
                                         if (isset($_POST['r_author'])) {
-                                            $search['_author'] = '1';
+                                            //$search['_author'] = '1';
                                             $search['author'] = $_POST['r_author'];
                                         }
                                         //$search = ["_title" => "0", "_author" => "1", "author" => $_POST['r_author'], "title" => $_POST['r_title']];
