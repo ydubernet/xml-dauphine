@@ -17,104 +17,36 @@
     <xsl:template match="dblp">
         <form> 
             <div id="rcorners2">
-                <xsl:for-each select="article">
-                    <xsl:if test="$_author=1 and $_title=1 and contains(author/text(),$author) and contains(title/text(),$title)">
-                        <li>
-                            <span>
-                                <xsl:for-each select="author">
-                                    <xsl:value-of select="text()"/>,
-                                </xsl:for-each>
-                            </span>
-                            <br/>
-                            <span>
-                                <p class="title_doc">
-                                    <xsl:value-of select="title/text()"/>
-                                </p>
-                            </span>
-                            <br/>
-                            <span>Page:</span> 
-                            <span>   
-                                <xsl:value-of select="pages/text()"/>
-                            </span>
-                            <br/>
-                            <span>Volume: </span> 
-                            <span>   
-                                <xsl:value-of select="volume/text()"/>
-                            </span>
-                            <br/>
-                            <!--<span>
-                                <xsl:value-of select="journal/text()"/>
-                            </span><br/>-->
-                            <!--<span>
-                                <xsl:value-of select="number/text()"/>
-                            </span><br/>-->
-                            <!--<span>
-                                <xsl:value-of select="url/text()"/>
-                            </span><br/>-->
-                        </li>
-                    </xsl:if>
-                    <xsl:if test="$_author=0 and $_title=1 and contains(title/text(),$title)">
-                        <li>
-                            <span>
-                                <xsl:for-each select="author">
-                                    <xsl:value-of select="text()"/>,
-                                </xsl:for-each>
-                            </span>
-                            <br/>
-                            <span>
-                                <xsl:value-of select="title/text()"/>
-                            </span>
-                            <br/>
-                            <span>
-                                <xsl:value-of select="pages/text()"/>
-                            </span>
-                            <br/>
-                            <span>
-                                <xsl:value-of select="volume/text()"/>
-                            </span>
-                            <br/>
-                            <!--<span>
-                                <xsl:value-of select="journal/text()"/>
-                            </span><br/>-->
-                            <!--<span>
-                                <xsl:value-of select="number/text()"/>
-                            </span><br/>-->
-                            <!--<span>
-                                <xsl:value-of select="url/text()"/>
-                            </span><br/>-->
-                        </li>
-                    </xsl:if>
-                    <xsl:if test="$_author=1 and $_title=0 and contains(author/text(),$author)">
-                        <li>
-                            <span>
-                                <xsl:for-each select="author">
-                                    <xsl:value-of select="text()"/>,
-                                </xsl:for-each>
-                            </span>
-                            <br/>
-                            <span>
-                                <xsl:value-of select="title/text()"/>
-                            </span>
-                            <br/>
-                            <span>
-                                <xsl:value-of select="pages/text()"/>
-                            </span>
-                            <br/>
-                            <span>
-                                <xsl:value-of select="volume/text()"/>
-                            </span>
-                            <br/>
-                            <!--<span>
-                                <xsl:value-of select="journal/text()"/>
-                            </span><br/>-->
-                            <!--<span>
-                                <xsl:value-of select="number/text()"/>
-                            </span><br/>-->
-                            <!--<span>
-                                <xsl:value-of select="url/text()"/>
-                            </span><br/>-->
-                        </li>
-                    </xsl:if>
+                <xsl:for-each select="article[contains(title/text(),$title) and contains(author/text(),$author)]">
+                    <li>
+                        <span>
+                            <xsl:for-each select="author">
+                                <xsl:value-of select="text()"/>,
+                            </xsl:for-each>
+                        </span>
+                        <br/>
+                        <span>
+                            <xsl:value-of select="title/text()"/>
+                        </span>
+                        <br/>
+                        <span>
+                            <xsl:value-of select="pages/text()"/>
+                        </span>
+                        <br/>
+                        <span>
+                            <xsl:value-of select="volume/text()"/>
+                        </span>
+                        <br/>
+                        <!--<span>
+                            <xsl:value-of select="journal/text()"/>
+                        </span><br/>-->
+                        <!--<span>
+                            <xsl:value-of select="number/text()"/>
+                        </span><br/>-->
+                        <!--<span>
+                            <xsl:value-of select="url/text()"/>
+                        </span><br/>-->
+                    </li>
                 </xsl:for-each>
             </div>  
         </form> 
