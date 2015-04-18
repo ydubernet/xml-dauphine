@@ -14,7 +14,6 @@
                     if (CONTENT == $menu)
                         echo ' selected';
                     echo '">';
-              
                     echo '<div class="menu_horiz_left_'.$menu.'" id="menu_horiz_left"></div>
                         <div class="menu_horiz_repeat_'.$menu.'" id="menu_horiz_repeat" style="width:'.$taille.'px;">';
                     echo '<a title="', $const_pages[$menu][1], '" href="', $menu, '.html">', $const_pages[$menu][0], '</a>';
