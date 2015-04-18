@@ -283,4 +283,14 @@
         <url>db/journals/acta/acta8.html#Russell77</url>
         <ee>http://dx.doi.org/10.1007/BF00289244</ee>
     </article>
+    <article key="abc" mdate="abc">
+        <title>abc</title>
+        <author>abc</author>
+        <page>abc</page>
+        <year>abc</year>
+        <volume>abc</volume>
+        <journal>abc</journal>
+        <url>abc</url>
+        <ee>abc</ee>
+    </article>
 </dblp>
