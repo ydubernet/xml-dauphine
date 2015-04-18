@@ -1,6 +1,6 @@
 <?php
 	
-	require_once "includes/bean/articles.php";
+	require_once "includes/bean/Articles.php";
 	$a = new articles("xml/article.xml");
 
 	//Gestion de la suppression et de la modification
