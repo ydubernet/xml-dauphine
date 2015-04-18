@@ -1,39 +1,4 @@
 
-/* *******************
-*
-*   INFOS BULLES
-* 
-********************* */
-
-a.info{
-position:relative;
-z-index:24;
-color:#000;
-text-decoration: none;
-border-bottom: 1px dotted #000000;
-cursor:help;
-}
- 
-a.info:hover{
-z-index:25;
-}
- 
-a.info span{
-display: none
-}
- 
-a.info:hover span{
-display:block;
-position:absolute;
-top:2em; left:2em; width:15em;
-border:1px solid #000;
-background-color:#FFF;
-color:#000;
-text-align: justify;
-font-weight:none;
-padding:5px;
-}
-
 
 body{
     padding:0;
@@ -49,7 +14,7 @@ body{
 }
 
 #in{
-    background:white url(img-ombreContent.png) left repeat-y;
+    background:white url(img-ombreContent.png) repeat-y;
     width:1024px;
     font-family: "trebuchet ms",sans-serif ;    
     /*margin:0 auto;*/
@@ -84,7 +49,6 @@ body{
     text-decoration: none;
 }
 
-
 .clr{
     clear:both;
 }
@@ -99,13 +63,6 @@ body{
 .tdActions img{
     float:left;
     padding:0px 5px;
-}
-
-a img{
-    border:none;
-}
-.img_clickable{
-    cursor: pointer;
 }
 
 #backgroundGauche{
@@ -137,8 +94,8 @@ div#renseignements{
     font-style: oblique;
 }
 
-#logo{
-    background:url(img-logoDAUPHINE.png);
+#logoDauphine{
+    //background: url(img-logoDAUPHINE.png);
     width:150px;
     height:180px;
     float:left;
@@ -171,6 +128,7 @@ div#icone-enseirb{
 }
 */
 
+/*
 div#modifier_gauche{
     float: left;
     width: 15px;
@@ -189,6 +147,7 @@ div#modifier_droit{
     width: 15px;
     background-image: url(img-bordVertMenuDroit.png);
 }
+*/
 
 div#recherche_gauche{
     float: left;
@@ -311,29 +270,6 @@ table tr td div p:hover {
 span .ajout_critere{
     cursor: pointer;
 }
-
-
-/*
-#menu_left ul li p
-{
-    display: block;
-    margin: 0;
-    text-decoration: none;
-    background-color: #9999FF;
-}
-
-#menu .menuderoulant tr tdp:hover
-{
-    background-color: #9900FF;
-}
-
-#menu .menuderoulant tr td p:visited {
-   background-color: #9933CC;
-}
-
-#menu tr td:hover > .menuderoulant { display: block; }
-
-*/
 
 #middle_in{
 
@@ -465,6 +401,7 @@ span .ajout_critere{
 }
 
 /* Modification -> Vert */
+/*
 .menu_horiz_left_modifier{
     background:url(img-bordVertMenuGauche.png);
 }
@@ -476,9 +413,10 @@ span .ajout_critere{
 .menu_horiz_right_modifier{
     background:url(img-bordVertMenuDroit.png);
 }
-
+*/
 
 /* Suppression -> gris */
+/*
 .menu_horiz_left_supprimer{
     background:url(img-bordGrisMenuGauche.png);
 }
@@ -490,7 +428,7 @@ span .ajout_critere{
 .menu_horiz_right_supprimer{
     background:url(img-bordGrisMenuDroit.png);
 }
-
+*/
 
 /* Aide -> Bleu */
 .menu_horiz_left_propos{
@@ -579,74 +517,9 @@ span .ajout_critere{
 #presentation, #propos{
     padding-left:150px;
 }
-/************************
-*
-* PARTENAIRES
-*
-**************************/
-
-
-div #partenaire-aide p{
-  font-weight: normal;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 11px;
-}
-  
-
-.research{
-    padding:10px 0px; 
-}
-
-.research input, .research select{
-    margin-left: 20px;
-}
-
-#critere-glob div {
-    padding: 15px 0px;
-}
 
 #addCritereTitre{
     padding:20px;
-}
-
-
-#partenaire-aideLink{
-    color: black;
-}
-
-#partenaire-aideLink:hover{
-    color:black;
-    text-decoration: none;
-    
-}
-
-#resultSearchPartenaireTable tr:nth-child(odd), #toValidPartenaireTable:nth-child(old){
-    background-color:#eeeeee;
-}
-
-#resultSearchPartenaireTable tr td, #resultSearchPartenaireTable tr th, #toValidPartenaireTable tr td, #toValidPartenaireTable tr th{
-    padding:10px 10px;
-}
-
-#resultSearchPartenaireTable tr th, #toValidPartenaireTable tr th{
-    background-color:#F69323;
-}
-
-
-#addSecteur{
-    padding-top: 15px;
-}
-
-/**********************
-*
-* CONTACTS
-*
-***********************/
-
-
-
-#inserer-aideLink{
-    color:black;
 }
 
 div #contact-aide p{
@@ -678,42 +551,6 @@ div #contact-aide p{
 }
 
 
-/**********************
-*
-* ROLES
-*
-***********************/
-
-
-div #role-aide li {
- list-style-image: url(img-bullet-green.png); /* Attention IE 7 */
-}
-
-div #role-aide p {
-  font-weight: normal;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 11px;
-}
-
-#resultSearchRoleTable tr td, #resultSearchRoleTable tr th{
-    padding:10px 20px;
-}
-    
-#resultSearchRoleTable tr th{
-    background-color:#F69323;
-}
-
-#resultSearchRole{
-   left :-200px;
-}
-
-#login_role_modify{
-    /*border:0px;*/
-    color:grey;
-}
-
-
-
 
 
 #resultSearch{
@@ -725,15 +562,6 @@ div #role-aide p {
     text-align:justify;
 }
 
-#exportTable{
-    float:right;
-    padding: 10px 20px;
-}
-
-#exportTable a{
-    cursor: pointer;
-    text-decoration: underline;
-}
 
 /******************
 ****** AIDE *******
@@ -759,10 +587,6 @@ div #propos p b a:hover{
     border-radius: 25px;
     border: 2px solid #8AC007;
     padding: 20px; 
-    width: 97%;
-    text-align: left;
-}
-
-p.title_doc{
-    font-weight: bold;
+    width: 300px;
+    height: 150px;    
 }

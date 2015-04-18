@@ -69,11 +69,10 @@
     </form>
 </div>
 	
-
 	
 <?php
 	require_once "../../bean/articles.php";
-	$a = new articles("dblp_1000_lignes.xml");
+	$a = new articles();
 	
 	//Gestion de la suppression et de la modification
 	if (isset($_POST['REF'])){	
