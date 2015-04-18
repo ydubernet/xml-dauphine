@@ -24,7 +24,7 @@
 	
 	require_once "includes/bean/articles.php";
 	$a = new articles("xml/article.xml");
-	$title
+
 	//Gestion de la suppression et de la modification
 	if (isset($_POST['REF'])){	
 		if ($_POST['MODE']=='S'){
