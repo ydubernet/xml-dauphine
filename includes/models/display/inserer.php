@@ -50,7 +50,7 @@
 -->
 
 
-<div id="article-inserer">
+<div id="inserer">
     <form>
         <p>Pour chaque élément, il est possible d'en préciser plusieurs en les séparant par un ; . Ceci n'est pas possible pour les attributs.</p>
         <p>Exemple : votre article a 3 auteurs, pour author, faire : "Toi;Moi;Lui". Mais vous ne pouvez pas faire key : "journals/acta/Saxena96;journals/acta/Saxena95".</p>

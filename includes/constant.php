@@ -35,16 +35,20 @@ $const_xml = array(
 $const_attributs = array("key", "mdate", "publtype", "reviewid", "rating", "bibtex", "href", "type", "label", "logo");
 
 /* --[ PAGES ]-- */
-
-
 $const_pages = array(
     //URL=>array(Titre de la page, Title au survol de la souris, Titre du contenu de la page)
     'presentation' => array('Accueil', 'Accueil', 'Accueil'),
     'rechercher' => array('Recherche', 'Rechercher des publications', 'Recherche de publications'),
     'inserer' => array('Insertion', 'Insérer des publications', 'Insertion de publications'),
-    'supprimer' => array('Suppression', 'Supprimer des publications', 'Suppression de publications'),
-    'modifier' => array('Modification', 'Modifier des publications', 'Modification de publications'),
+    //'supprimer' => array('Suppression', 'Supprimer des publications', 'Suppression de publications'),
+    //'modifier' => array('Modification', 'Modifier des publications', 'Modification de publications'),
     'propos' => array('Aide', 'Aide', 'Aide'),
+    
+    // Sous-menu section recherche
+    'journals' => array('Rechercher sur les journaux', 'Rechercher sur les journaux', 'Recherche de journaux'),
+    'articles' => array('Rechercher sur les articles', 'Rechercher sur les articles', 'Recherche d\'articles'),
+    'auteurs' => array('Rechercher sur les auteurs', 'Rechercher sur les auteurs', 'Rechercher d\'auteurs'),
+    
     //-- ERROR --//
     '404' => array('Erreur 404', 'Erreur 404', 'Erreur 404'),
     '401' => array('Erreur 401', 'Erreur 401', 'Erreur 401'),
@@ -56,76 +60,31 @@ $const_menu = array(
     'presentation',
     'rechercher',
     'inserer',
-    'modifier',
-    'supprimer',
+    //'modifier',
+    //'supprimer',
     'propos'
 );
 
+$arrayRecherche = array('articles', 'journals', 'auteurs');
 
 // Les sections ci-dessous servent pour les sous-menus.
 
-//$const_sub_menu_title = array('part' => 'Partenaires');
-
-/*
- * $arrayContact = array('contact-chercher', 'contact-ajouter', 'contact-valider','contact-importer', 'contact-aide', );
- * $arrayPartenaire = array('partenaire-chercher'  ,'partenaire-chercherAvance', 'partenaire-ajouter', 'partenaire-taxe', 'partenaire-valider', 'partenaire-aide');
- * $arrayRole = array('role-chercher'  , 'role-ajouter', 'role-importer', 'role-exporter', 'role-aide');
- */
-
-/*
 $const_sub_menu = array(
-    'partenaires' => $arrayPartenaire,
-    'contacts' => $arrayContact,
-    'roles' => $arrayRole,
-    
-    'contact-valider' => $arrayContact,
-    'contact-chercher' => $arrayContact,
-    'contact-ajouter' => $arrayContact,
-    'contact-aide' => $arrayContact,
-    'contact-importer' => $arrayContact,
-    
-    'partenaire-valider' => $arrayPartenaire,
-    'partenaire-chercher' => $arrayPartenaire,
-    'partenaire-chercherAvance' => $arrayPartenaire,
-    'partenaire-taxe' => $arrayPartenaire,
-    'partenaire-ajouter' => $arrayPartenaire,
-
-    'partenaire-aide' => $arrayPartenaire,
-    
-    'role-chercher' => $arrayRole,
-    'role-ajouter' => $arrayRole,
-    'role-importer' => $arrayRole,
-    'role-exporter' => $arrayRole,
-    'role-aide' => $arrayRole
-    
+    'rechercher' => $arrayRecherche,
+    'inserer' => array(),
+    'propos' => array()
+    //'modifier' => array(),
+    //'supprimer' => array()   
 );
-*/
-/*
+
+
+
 $const_submenu_reverse = array(
-    'contacts' => 'contacts',
-    'contact-chercher' => 'contacts',
-    'contact-valider' => 'contacts',
-    'contact-ajouter' => 'contacts',
-    'contact-aide' => 'contacts',
-    'contact-importer' => 'contacts',
-    
-    'partenaire-valider' => 'partenaires',
-    'partenaire-chercher' => 'partenaires',
-    'partenaire-chercherAvance' => 'partenaires',
-    'partenaire-ajouter' => 'partenaires',
-    'partenaire-taxe' => 'partenaires',
-
-    'partenaire-aide' => 'partenaires',
-    'partenaires' => 'partenaires',
-    
-    'role-chercher' => 'roles',
-    'role-ajouter' => 'roles',
-    'role-importer' => 'roles',
-    'role-exporter' => 'roles',
-    'role-aide' => 'roles',
-    'roles' => 'roles'
+    'rechercher' => 'rechercher',
+    'articles' => 'rechercher',
+    'journals' => 'rechercher',
+    'auteurs' => 'rechercher'
 );
-*/
 
 
 ?>

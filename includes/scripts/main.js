@@ -177,34 +177,6 @@ function onChangeInputsPourAttributs(){
     });
 }
 
-
-function rechercherBlabla(){
-    $("#resultSearch").empty();
-    /* Construction du Json */
-    jsondata ={
-        "data":[]
-    };
-    
-    for(i=0; i< this.counterP; i++){
-        jsondata.data.push({
-            "column": $("#blabla_search_"+i).val(),
-            "type": $("#blibli_search_"+i).val(), 
-            "value": $("#bloblo_text_"+i).val()
-        });
-    }
-    /* Appel ajax - récupération des données selon les critères */
-    $.ajax({
-        type: "POST",
-        url: "includes/models/scripts/blabla.php",
-        data: jsondata,
-        dataType: "html"
-    }).done(function(data){
-        $("#resultSearch").append(data);
-    });
-    
-}
-
-
 function ajouterModifierArticle(act){
     $("#resultAdd").empty();
     $("#resultAdd").append('Envoi en cours  <progress>working...</progress>');

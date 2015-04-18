@@ -62,7 +62,7 @@ header('Content-type: text/html; charset=' . ENCODING);
                                 <div id="menu_left">
                                     <?php
                                     // Affichage du sous-menu de gauche
-                                    //require('includes/views/display/submenus.php');
+                                    require('includes/views/display/submenus.php');
                                     ?>
                                 </div>
                                 <div id="content">
