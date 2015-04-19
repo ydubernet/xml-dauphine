@@ -12,14 +12,15 @@
    <xsl:template match="/dblp">
 		<h2 style="text-align:center;">Les auteurs</h2>
 			<ul style="width: 100% ;">
-            <xsl:apply-templates select="descendant::author[not(preceding::author/. = .)][contains(.,$author)][starts-with(.,$begin_author)]">
+            <xsl:apply-templates select="descendant::author[contains(.,$author)][starts-with(.,$begin_author)][not(preceding::author/. = .) and not(preceding::editor/. = .)]
+							|descendant::editor[contains(.,$author)][starts-with(.,$begin_author)][not(preceding::author/. = .) and not(preceding::editor/. = .)]">
 				<xsl:sort select="." data-type="text" />
 			</xsl:apply-templates>
 			</ul>
     </xsl:template>
 	
 	
-	<xsl:template match="author">
+	<xsl:template match="author|editor">
 		<xsl:if test="position() = ($begin + 1) ">
 			<table>
 			<tr>

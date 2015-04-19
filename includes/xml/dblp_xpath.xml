@@ -150,4 +150,18 @@
 <year>1995</year>
 <school>Univ. of Wisconsin-Madison</school>
 </phdthesis>
+<book mdate="2008-08-26" key="series/sci/2008-127">
+<editor>Régis Gras</editor>
+<editor>Einoshin Suzuki</editor>
+<editor>Fabrice Guillet</editor>
+<editor>Filippo Spagnolo</editor>
+<title>Statistical Implicative Analysis, Theory and Applications</title>
+<booktitle>Statistical Implicative Analysis</booktitle>
+<volume>127</volume>
+<year>2008</year>
+<isbn>978-3-540-78982-6</isbn>
+<series href="db/series/sci/index.html">Studies in Computational Intelligence</series>
+<publisher>Springer</publisher>
+<url>db/series/sci/sci127.html</url>
+</book>
 </dblp>

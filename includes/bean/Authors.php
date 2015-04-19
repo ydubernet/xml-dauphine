@@ -14,10 +14,9 @@ class authors {
 		//$xmlPath = $const_xmlfile;
 		//Pour Florian :
 		$_xslDoc->load("../../xslt/authors.xsl");
-		$xmlPath = "../../xml/dblp_100000_lignes.xml";
+		$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
-        $_xmlDoc->validateOnParse = true;
-        $_xmlDoc->load($xmlPath);
+        $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
 
         $this->xmlDoc = $_xmlDoc;
         $this->xslDoc = $_xslDoc;

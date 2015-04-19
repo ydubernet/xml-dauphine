@@ -12,7 +12,7 @@
    <xsl:template match="/dblp">
 		<h2 style="text-align:center;">Les Journals</h2>
 			<ul style="width: 100% ;">
-            <xsl:apply-templates select="descendant::journal[not(preceding::journal/. = .)][contains(.,$journal)][starts-with(.,$begin_journal)]">
+            <xsl:apply-templates select="descendant::journal[contains(.,$journal)][starts-with(.,$begin_journal)][not(preceding::journal/. = .)]">
 				<xsl:sort select="." data-type="text" />
 			</xsl:apply-templates>
 			</ul>

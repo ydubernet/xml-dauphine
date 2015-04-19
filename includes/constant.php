@@ -35,7 +35,7 @@ $const_xml = array(
 $const_attributs = array("key", "mdate", "publtype", "reviewid", "rating", "bibtex", "href", "type", "label", "logo");
 
 // Fichier de lecture du XML
-$const_xmlfile = 'includes/xml/dblp_100000_lignes.xml';
+$const_xmlfile = 'includes/xml/dblp_prod.xml';
 
 /* --[ PAGES ]-- */
 $const_pages = array(
