@@ -1,10 +1,6 @@
 <?php
 
-/**
- * Description of articles
- *
- * @author MinhHieu
- */
+
 class articles {
 
     private $xmlPath;
