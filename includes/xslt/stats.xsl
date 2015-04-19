@@ -17,11 +17,12 @@
     <xsl:template match="/dblp">
 
             <div id="rcorners2">
+			<h3> Statistiques</h3>
                <ul>
-					<li>#Articles : <xsl:value-of select="count(article)"/></li>
-					<li>#Auteurs : <xsl:value-of select="count(descendant::author[not(preceding::author/. = .)])"/></li>
-					<li>#Editeurs : <xsl:value-of select="count(descendant::editor[not(preceding::editor/. = .)])"/></li>
-					<li>#Journaux : <xsl:value-of select="count(descendant::journal[not(preceding::journal/. = .)])"/></li>
+					<li># Articles : <xsl:value-of select="count(article)"/></li>
+					<li># Auteurs : <xsl:value-of select="count(descendant::author[not(preceding::author/. = .)])"/></li>
+					<li># Editeurs : <xsl:value-of select="count(descendant::editor[not(preceding::editor/. = .)])"/></li>
+					<li># Journaux : <xsl:value-of select="count(descendant::journal[not(preceding::journal/. = .)])"/></li>
 			   </ul>
             </div>
     </xsl:template>

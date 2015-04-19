@@ -38,6 +38,94 @@
 
 	
 	<xsl:template match="article">
+		<xsl:if test="position() = ($begin + 1) ">
+			<xsl:if test="$begin &gt; 0">
+				<form method="POST">
+					<input type="hidden" name="pp_BEGIN" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="($begin - ($end - $begin))"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_AUTHOR" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$author"/>
+						</xsl:attribute>
+					</input>
+					
+					<input type="hidden" name="pp_TITLE" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$title"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_YEAR" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$year"/>
+						</xsl:attribute>
+					</input>
+					
+					<input type="hidden" name="pp_ORDER_TYPE" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$order_type"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_ORDER" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$order"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_SIZE" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$end - $begin"/>
+						</xsl:attribute>
+					</input>
+					<input type="submit" value="Précédent"/>
+				</form>
+			</xsl:if>
+			<xsl:if test="last() &gt; $end">
+				<form method="POST">
+					<input type="hidden" name="pp_AUTHOR" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$author"/>
+						</xsl:attribute>
+					</input>
+					
+					<input type="hidden" name="pp_TITLE" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$title"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_YEAR" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$year"/>
+						</xsl:attribute>
+					</input>
+					
+					<input type="hidden" name="pp_ORDER_TYPE" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$order_type"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_ORDER" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$order"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_SIZE" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$end - $begin"/>
+						</xsl:attribute>
+					</input>
+					<input type="hidden" name="pp_BEGIN" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$end"/>
+						</xsl:attribute>
+					</input>
+					<input type="submit" value="Suivant"/>
+				</form>				
+			</xsl:if>	
+		</xsl:if>
+	
+	
 
 		<xsl:if test="position()&gt; $begin and position()&lt; ($end+1)">
 		<tr>
@@ -187,93 +275,6 @@
 			</td>
 			</form>
 		</tr>
-		
-		<xsl:if test="position() = $end and $begin &gt; 0">
-			<form method="POST">
-			<input type="hidden" name="pp_BEGIN" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="($begin - ($end - $begin))"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_AUTHOR" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$author"/>
-					</xsl:attribute>
-				</input>
-				
-				<input type="hidden" name="pp_TITLE" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$title"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_YEAR" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$year"/>
-					</xsl:attribute>
-				</input>
-				
-				<input type="hidden" name="pp_ORDER_TYPE" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$order_type"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_ORDER" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$order"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_SIZE" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$end - $begin"/>
-					</xsl:attribute>
-				</input>
-				<input type="submit" value="Précédent"/>
-			</form>
-		</xsl:if>
-		
-		
-		<xsl:if test="position() = $end and last() &gt; $end">
-			<form method="POST">
-				<input type="hidden" name="pp_AUTHOR" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$author"/>
-					</xsl:attribute>
-				</input>
-				
-				<input type="hidden" name="pp_TITLE" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$title"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_YEAR" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$year"/>
-					</xsl:attribute>
-				</input>
-				
-				<input type="hidden" name="pp_ORDER_TYPE" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$order_type"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_ORDER" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$order"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_SIZE" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$end - $begin"/>
-					</xsl:attribute>
-				</input>
-				<input type="hidden" name="pp_BEGIN" >
-				<xsl:attribute name="value">
-						<xsl:value-of select="$end"/>
-					</xsl:attribute>
-				</input>
-				<input type="submit" value="Suivant"/>
-			</form>
-		</xsl:if>
 		
 		</xsl:if>
 	</xsl:template>

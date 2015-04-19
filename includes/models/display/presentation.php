@@ -6,7 +6,7 @@
 	 <div>
         <ul>
 			<li>Auteurs / Editeurs</li>
-				<a href="http://dblp.uni-trier.de/pers?prefix=A">A</a>
+				<a href="includes/models/display/auteurs.php?pg_BEGIN_AUTHOR=A"">A</a>
 				<a href="http://dblp.uni-trier.de/pers?prefix=B">B</a>
 				<a href="http://dblp.uni-trier.de/pers?prefix=C">C</a>
 				<a href="http://dblp.uni-trier.de/pers?prefix=D">D</a>

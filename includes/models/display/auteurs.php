@@ -1,61 +1,35 @@
 <?php
-	//Recup des POST
-	isset($_POST['pp_AUTHOR'])?$pp_AUTHOR = $_POST['pp_AUTHOR']:$pp_AUTHOR='';
-	isset($_POST['pp_TITLE'])?$pp_TITLE = $_POST['pp_TITLE']:$pp_TITLE='';
-	isset($_POST['pp_YEAR'])?$pp_YEAR = $_POST['pp_YEAR']:$pp_YEAR='';
-	isset($_POST['pp_ORDER_TYPE'])?$pp_ORDER_TYPE = $_POST['pp_ORDER_TYPE']:$pp_ORDER_TYPE='descending';
-	isset($_POST['pp_ORDER'])?$pp_ORDER = $_POST['pp_ORDER']:$pp_ORDER='title';
-	isset($_POST['pp_SIZE'])?$pp_SIZE = $_POST['pp_SIZE']:$pp_SIZE=50;
-	isset($_POST['pp_BEGIN'])?$pp_BEGIN = $_POST['pp_BEGIN']:$pp_BEGIN=0;
+	//Recup des GET
+	isset($_GET['pg_AUTHOR'])?$pg_AUTHOR = $_GET['pg_AUTHOR']:$pg_AUTHOR='';
+	isset($_GET['pg_BEGIN_AUTHOR'])?$pg_BEGIN_AUTHOR = $_GET['pg_BEGIN_AUTHOR']:$pg_BEGIN_AUTHOR='';
+	isset($_GET['pg_SIZE'])?$pg_SIZE = $_GET['pg_SIZE']:$pg_SIZE=100;
+	isset($_GET['pg_BEGIN'])?$pg_BEGIN = $_GET['pg_BEGIN']:$pg_BEGIN=0;
 ?>
 
-<div id="articles">
-    <form method="POST">
+<div id="auteurs">
+    <form method="GET">
     <table style="margin-left: auto; margin-right: auto;" cellpadding=20 >
     <tr>
             <td>
-                    Taille du tableau : 
-                    <select name="pp_SIZE" onChange="submit()">
-                               <option value="25" <?php if ($pp_SIZE==25){echo 'selected';} ?> >25</option>
-                               <option value="50" <?php if ($pp_SIZE==50){echo 'selected';} ?>>50</option>
-                               <option value="75" <?php if ($pp_SIZE==75){echo 'selected';} ?>>75</option>
-                               <option value="100" <?php if ($pp_SIZE==100){echo 'selected';} ?>>100</option>
+                    Nombre d'entrées : 
+                    <select name="pg_SIZE" onChange="submit()">
+                               <option value="100" <?php if ($pg_SIZE==100){echo 'selected';} ?> >100</option>
+                               <option value="200" <?php if ($pg_SIZE==200){echo 'selected';} ?>>200</option>
+                               <option value="300" <?php if ($pg_SIZE==300){echo 'selected';} ?>>300</option>
+                               <option value="400" <?php if ($pg_SIZE==400){echo 'selected';} ?>>400</option>
                             </select>
             </td>
 
-            <td>	
-            <table style="text-align:center;"><caption>Tri</caption>
-                    <tr>
-                            <td><input type="radio" name="pp_ORDER_TYPE" value="ascending" <?php if ($pp_ORDER_TYPE=='ascending'){echo 'checked';} ?>/>Ascendant</td>
-                            <td><input type="radio" name="pp_ORDER_TYPE" value="descending" <?php if ($pp_ORDER_TYPE=='descending'){echo 'checked';} ?>/>Descendant</td>
-                    </tr>
-                    <tr>
-                            <td>Champ : </td>
-                            <td><select name="pp_ORDER">
-                               <option value="title" <?php if ($pp_ORDER=='title'){echo 'selected';} ?> >Titres</option>
-                               <option value="author" <?php if ($pp_ORDER=='author'){echo 'selected';} ?>>Auteurs</option>
-                               <option value="year" <?php if ($pp_ORDER=='year'){echo 'selected';} ?>>Années</option>
-                            </select></td>
-                    </tr>
-                    <tr>
-                            <td colspan="2"><input type="submit" value="Trier"/><td>
-                    </tr>
             
-            </table>
-            </td>
             <td>
             <table style="text-align:center;"><caption>Recherche</caption>
                     <tr>
-                            <td>Auteur :</td>
-                            <td><input type="text" name="pp_AUTHOR" value="<?php echo $pp_AUTHOR ?>"/></td>
+                            <td>Commence par :</td>
+                            <td><input type="text" name="pg_BEGIN_AUTHOR" value="<?php echo $pg_BEGIN_AUTHOR ?>"/></td>
                     </tr>
                     <tr>
-                            <td>Titre :</td>
-                            <td><input type="text" name="pp_TITLE" value="<?php echo $pp_TITLE ?>"/></td>
-                    </tr>
-                    <tr>
-                            <td>Année :</td>
-                            <td><input type="text" name="pp_YEAR" value="<?php echo $pp_YEAR ?>"/></td>
+                            <td>Contient :</td>
+                            <td><input type="text" name="pg_AUTHOR" value="<?php echo $pg_AUTHOR ?>"/></td>
                     </tr>
                     <tr>
                             <td colspan="2">
@@ -65,35 +39,53 @@
             </table>
             </td>
     </tr>
+	<tr>
+	<td colspan=2>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=A'.'&pg_SIZE='.$pg_SIZE; ?>">A</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=B'.'&pg_SIZE='.$pg_SIZE; ?>">B</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=C'.'&pg_SIZE='.$pg_SIZE; ?>">C</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=D'.'&pg_SIZE='.$pg_SIZE; ?>">D</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=E'.'&pg_SIZE='.$pg_SIZE; ?>">E</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=F'.'&pg_SIZE='.$pg_SIZE; ?>">F</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=G'.'&pg_SIZE='.$pg_SIZE; ?>">G</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=H'.'&pg_SIZE='.$pg_SIZE; ?>">H</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=I'.'&pg_SIZE='.$pg_SIZE; ?>">I</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=J'.'&pg_SIZE='.$pg_SIZE; ?>">J</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=K'.'&pg_SIZE='.$pg_SIZE; ?>">K</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=L'.'&pg_SIZE='.$pg_SIZE; ?>">L</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=M'.'&pg_SIZE='.$pg_SIZE; ?>">M</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=N'.'&pg_SIZE='.$pg_SIZE; ?>">N</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=O'.'&pg_SIZE='.$pg_SIZE; ?>">O</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=P'.'&pg_SIZE='.$pg_SIZE; ?>">P</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=Q'.'&pg_SIZE='.$pg_SIZE; ?>">Q</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=R'.'&pg_SIZE='.$pg_SIZE; ?>">R</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=S'.'&pg_SIZE='.$pg_SIZE; ?>">S</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=T'.'&pg_SIZE='.$pg_SIZE; ?>">T</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=U'.'&pg_SIZE='.$pg_SIZE; ?>">U</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=V'.'&pg_SIZE='.$pg_SIZE; ?>">V</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=W'.'&pg_SIZE='.$pg_SIZE; ?>">W</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=X'.'&pg_SIZE='.$pg_SIZE; ?>">X</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=Y'.'&pg_SIZE='.$pg_SIZE; ?>">Y</a>
+		<a href="<?php echo '?pg_BEGIN_AUTHOR=Z'.'&pg_SIZE='.$pg_SIZE; ?>">Z</a>
+	</td>
+	</tr>
     </table>
     </form>
 </div>
 	
 	
 <?php
-	require_once "includes/bean/Articles.php";
-	$a = new articles();
+	//En production :
+	//require_once "includes/bean/Authors.php";
+	//Pour Florian :
+	require_once "../../bean/Authors.php";
+	$a = new authors();
 	
-	//Gestion de la suppression et de la modification
-	if (isset($_POST['REF'])){	
-		if ($_POST['MODE']=='S'){
-			echo 'demande delete : '.$_POST['REF'];
-			$a->deleteArticle($_POST['REF']);
-		}
-		else if ($_POST['MODE']=='M'){
-			echo 'demande modif : '.$_POST['REF'];
-			$a->updateArticle($_POST['REF'],$_POST['title'],$_POST['pages'],$_POST['volume'],$_POST['journal']);
-		}
-	}
-	
-	$search['title']=$pp_TITLE;
-	$search['author']=$pp_AUTHOR;
-	$search['year']=$pp_YEAR;
-	$search['order']=$pp_ORDER;
-	$search['order_type']=$pp_ORDER_TYPE;
-	$search['begin']=$pp_BEGIN;
-	$search['end']=($pp_BEGIN+$pp_SIZE);
-	$abc = $a->searchArticle($search);
+	$search['begin_author']=$pg_BEGIN_AUTHOR;
+	$search['author']=$pg_AUTHOR;
+	$search['begin']=$pg_BEGIN;
+	$search['end']=($pg_BEGIN+$pg_SIZE);
+	$abc = $a->searchAuthor($search);
 	
 	echo $abc;
 

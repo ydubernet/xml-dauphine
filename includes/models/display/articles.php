@@ -72,7 +72,10 @@
 
 	
 <?php
-	require_once ("includes/bean/Articles.php");
+	//En production :
+	//require_once ("includes/bean/Articles.php");
+	//Pour Florian :
+	require_once ("../../bean/Articles.php");
 	$a = new articles();
 	
 	//Gestion de la suppression et de la modification
