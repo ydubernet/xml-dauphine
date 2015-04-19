@@ -8,7 +8,7 @@ class articles {
 
     public function __construct() {
 
-        $_xslDoc = new DOMDocument();
+        $_xslDoc = new DOMDocument(); 
 		//En production :
         //$_xslDoc->load("includes/xslt/articles.xsl");
 		//$xmlPath = $const_xmlfile;
