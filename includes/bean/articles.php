@@ -13,9 +13,13 @@ class articles {
 
     public function __construct($xmlPath) {
 
-        $_xslDoc = new DOMDocument();
-        $_xslDoc->load("includes/xslt/articles.xsl");
-
+        $_xslDoc = new DOMDocument(); 
+		//En production :
+        //$_xslDoc->load("includes/xslt/articles.xsl");
+		//$xmlPath = $const_xmlfile;
+		//Pour Florian :
+		$_xslDoc->load("../../xslt/articles.xsl");
+		$xmlPath = "../../xml/dblp_100000_lignes.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->validateOnParse = true;
         $_xmlDoc->load($xmlPath);
