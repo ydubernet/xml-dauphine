@@ -1,20 +1,21 @@
 <?php
 
+/**
+ * Description of articles
+ *
+ * @author MinhHieu
+ */
 class articles {
 
     private $xmlPath;
     private $xslDoc;
     private $xmlDoc;
 
-    public function __construct() {
+    public function __construct($xmlPath) {
 
-        $_xslDoc = new DOMDocument(); 
-		//En production :
-        //$_xslDoc->load("includes/xslt/articles.xsl");
-		//$xmlPath = $const_xmlfile;
-		//Pour Florian :
-		$_xslDoc->load("../../xslt/articles.xsl");
-		$xmlPath = "../../xml/dblp_100000_lignes.xml";
+        $_xslDoc = new DOMDocument();
+        $_xslDoc->load("includes/xslt/articles.xsl");
+
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->validateOnParse = true;
         $_xmlDoc->load($xmlPath);
