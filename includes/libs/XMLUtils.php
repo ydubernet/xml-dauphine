@@ -1,5 +1,8 @@
 <?php
 
+
+class XMLUtils {
+
 // XML -> PHP
 
 /**
@@ -8,7 +11,7 @@
  * @param type $fileName
  * @return \stdClass|boolean
  */
-  function fileToObject($fileName) {
+  public static function fileToObject($fileName) {
  
     // création du nouvel objet document
     $dom = new DomDocument();
@@ -46,7 +49,7 @@
    * @param type $dom_element
    * @param type $object_element
    */
-   function getElement($dom_element, $object_element) {
+   public static function getElement($dom_element, $object_element) {
  
     // récupération du nom de l'élément
     $object_element->name = $dom_element->nodeName;
@@ -86,7 +89,7 @@
  * 
  * @param type $xmlObject
  */
- function ObjectToFile($xmlObject) {
+ public static function ObjectToFile($xmlObject) {
  
     // Création d'un nouvel objet document
     $dom = new DomDocument();
@@ -110,7 +113,7 @@
    * @param type $object_element
    * @param type $dom_element
    */
-   function setElement($dom_document, $object_element, $dom_element) {
+   public static function setElement($dom_document, $object_element, $dom_element) {
  
     // récupération de la valeur CDATA de l'élément
     if (isset($object_element->textValue)) {
@@ -134,3 +137,6 @@
       }
     }	
   }
+  
+  
+}

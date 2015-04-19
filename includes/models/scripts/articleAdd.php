@@ -1,21 +1,9 @@
 <?php
-    
-    print_r($_POST);
+    require_once '../../bean/Articles.php';
+    //print_r($_POST);
     $result = true;
     
-    $xmlPath = "../../../xml/article.xml";
-
-    $xmlDoc = new DOMDocument();
-    $xmlDoc->validateOnParse = true;
-    $xmlDoc->load($xmlPath);
-    
-    // On crée un nouvel élément de type typeArticle au xml déjà existant.
-    $root = $xmlDoc->createElement($_POST["typeArticle"]);
-    $xmlDoc->appendChild($root);
-    
-    $xpath = new DOMXPath($xmlDoc);
-    $query="//dblp/".$_POST['typeArticle'];
-    $nodeList = $xpath->query($query);
+    $a = new articles();
     
     foreach($_POST as $index=>$valeur){
         if($index==="typeArticle"){

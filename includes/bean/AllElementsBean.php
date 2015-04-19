@@ -31,6 +31,23 @@ class allElementsBean {
     private $series;
     private $school;
     private $chapter;
+    private $layout;
+    
+    
+    // All possible field attributes
+     private $key;
+     private $mdate;
+     private $publtype;
+     private $reviewid;
+     private $rating;
+     private $bibtexTitle;
+     private $bibtexAuthor;
+     private $type;
+     private $label;
+     private $hrefPublisher;
+     private $hrefSeries;
+     private $hrefRef;
+     private $logo;
         
     
     public function getDblp() {
@@ -215,6 +232,118 @@ class allElementsBean {
 
     public function setChapter($chapter) {
         $this->chapter = $chapter;
+    }
+
+    public function getLayout() {
+        return $this->layout;
+    }
+
+    public function getKey() {
+        return $this->key;
+    }
+
+    public function getMdate() {
+        return $this->mdate;
+    }
+
+    public function getPubltype() {
+        return $this->publtype;
+    }
+
+    public function getReviewid() {
+        return $this->reviewid;
+    }
+
+    public function getRating() {
+        return $this->rating;
+    }
+
+    public function getBibtexTitle() {
+        return $this->bibtexTitle;
+    }
+
+    public function getBibtexAuthor() {
+        return $this->bibtexAuthor;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function getLabel() {
+        return $this->label;
+    }
+
+    public function getHrefPublisher() {
+        return $this->hrefPublisher;
+    }
+
+    public function getHrefSeries() {
+        return $this->hrefSeries;
+    }
+
+    public function getHrefRef() {
+        return $this->hrefRef;
+    }
+
+    public function getLogo() {
+        return $this->logo;
+    }
+
+    public function setLayout($layout) {
+        $this->layout = $layout;
+    }
+
+    public function setKey($key) {
+        $this->key = $key;
+    }
+
+    public function setMdate($mdate) {
+        $this->mdate = $mdate;
+    }
+
+    public function setPubltype($publtype) {
+        $this->publtype = $publtype;
+    }
+
+    public function setReviewid($reviewid) {
+        $this->reviewid = $reviewid;
+    }
+
+    public function setRating($rating) {
+        $this->rating = $rating;
+    }
+
+    public function setBibtexTitle($bibtexTitle) {
+        $this->bibtexTitle = $bibtexTitle;
+    }
+
+    public function setBibtexAuthor($bibtexAuthor) {
+        $this->bibtexAuthor = $bibtexAuthor;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function setLabel($label) {
+        $this->label = $label;
+    }
+
+    public function setHrefPublisher($hrefPublisher) {
+        $this->hrefPublisher = $hrefPublisher;
+    }
+
+    public function setHrefSeries($hrefSeries) {
+        $this->hrefSeries = $hrefSeries;
+    }
+
+    public function setHrefRef($hrefRef) {
+        $this->hrefRef = $hrefRef;
+    }
+
+    public function setLogo($logo) {
+        $this->logo = $logo;
     }
 
 
