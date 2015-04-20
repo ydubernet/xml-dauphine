@@ -1,7 +1,7 @@
 <?php
 
 
-class books {
+class thesis {
 
     private $xmlPath;
     private $xslDoc;
@@ -11,10 +11,10 @@ class books {
 
         $_xslDoc = new DOMDocument(); 
 		//En production :
-        //$_xslDoc->load("includes/xslt/book.xsl");
+        //$_xslDoc->load("includes/xslt/thesis.xsl");
 		//$xmlPath = $const_xmlfile;
 		//Pour Florian :
-		$_xslDoc->load("../../xslt/books.xsl");
+		$_xslDoc->load("../../xslt/thesis.xsl");
 		$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
@@ -28,14 +28,14 @@ class books {
         unset($this->domDocument);
     }
 
-    public function searchBook($search) {
+    public function searchThesis($search) {
         $xsltProcessor = new XSLTProcessor();
         $xsltProcessor->registerPHPFunctions();
         $xsltProcessor->importStyleSheet($this->xslDoc);
         $xsltProcessor->setParameter('', 'title', $search['title']);
         $xsltProcessor->setParameter('', 'author', $search['author']);
         $xsltProcessor->setParameter('', 'year', $search['year']);
-		$xsltProcessor->setParameter('', 'publisher', $search['publisher']);
+		$xsltProcessor->setParameter('', 'school', $search['school']);
         $xsltProcessor->setParameter('', 'order', $search['order']);
         $xsltProcessor->setParameter('', 'order_type', $search['order_type']);
         $xsltProcessor->setParameter('', 'end', $search['end']);
@@ -44,32 +44,23 @@ class books {
         return $result;
     }
 
-    public function updateBook($key, $title,$series,$volume,$pages,$publisher,$isbn) {
+    public function updateThesis($key, $author, $title,$school,$isbn,$pages) {
         $xpath = new DOMXPath($this->xmlDoc);
-        $query = "/dblp/book[@key='$key']";
+        $query = "/dblp/phdthesis[@key='$key']|/dblp/mastersthesis[@key='$key']";
         $nodeList = $xpath->query($query);
         if (!$nodeList || $nodeList->length == 0)
             return false;
         foreach ($nodeList as $node) {
-            $node->getElementsByTagName('series')[0]->nodeValue = $series;
+            $node->getElementsByTagName('author')[0]->nodeValue = $author;
             $node->getElementsByTagName('title')[0]->nodeValue = $title;
-			$test = $node->getElementsByTagName('volume');
+            $test = $node->getElementsByTagName('school');
 			if ($test->length==0){
-				$nod = $this->xmlDoc->createElement('volume');
-				$nod->nodeValue = $volume;
+				$nod = $this->xmlDoc->createElement('school');
+				$nod->nodeValue = $school;
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('volume')[0]->nodeValue = $volume;
-			}
-            $test = $node->getElementsByTagName('publisher');
-			if ($test->length==0){
-				$nod = $this->xmlDoc->createElement('publisher');
-				$nod->nodeValue = $publisher;
-				$node->appendChild($nod);
-			}
-			else{
-				$node->getElementsByTagName('publisher')[0]->nodeValue = $publisher;
+				$node->getElementsByTagName('school')[0]->nodeValue = $school;
 			}
 			$test = $node->getElementsByTagName('isbn');
 			if ($test->length==0){
@@ -95,9 +86,9 @@ class books {
         return !$result ? $result : true;
     }
 
-    public function deleteBook($key) {
+    public function deleteThesis($key) {
         $xpath = new DOMXPath($this->xmlDoc);
-        $query = "//dblp/book[@key='$key']";
+        $query = "//dblp/phdthesis[@key='$key']|/dblp/mastersthesis[@key='$key']";
         $nodeList = $xpath->query($query);
         if (!$nodeList || $nodeList->length == 0)
             return false;

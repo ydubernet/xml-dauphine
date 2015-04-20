@@ -5,6 +5,7 @@
     <xsl:param name="author"/>
 	<xsl:param name="title"/>
 	<xsl:param name="year"/>
+	<xsl:param name="publisher"/>
 	<xsl:param name="order"/>
 	<xsl:param name="order_type"/>
 	<xsl:param name="begin"/>
@@ -14,16 +15,18 @@
 	
 	
     <xsl:template match="/dblp">
-		<h2 style="text-align:center;">Les articles</h2>
+		<h2 style="text-align:center;">Les Livres</h2>
 			<table width="100%" style="text-align:center;">
 				<th>Auteur(s)</th>
 				<th>Titre</th>
-				<th>Pages</th>
+				<th>Série</th>
 				<th>Volume</th>
-				<th>Journal</th>
 				<th>Année</th>
+				<th>Pages</th>
+				<th>Publieur</th>
+				<th>ISBN</th>
 				<th>Lien</th>
-            <xsl:apply-templates select="article[contains(title,$title)][contains(year,$year)]/author[contains(.,$author)]/parent::*">
+            <xsl:apply-templates select="book[contains(title,$title)][contains(year,$year)][contains(author,$author)][contains(publisher,$publisher)]">
 				<xsl:sort select="*[name()=$order]" data-type="text" order="{$order_type}" />
 			</xsl:apply-templates>
 			</table>
@@ -31,7 +34,7 @@
 	
 
 	
-	<xsl:template match="article">
+	<xsl:template match="book">
 		<xsl:if test="position() = ($begin + 1) ">
 			<xsl:if test="$begin &gt; 0">
 				<form method="POST">
@@ -56,7 +59,11 @@
 							<xsl:value-of select="$year"/>
 						</xsl:attribute>
 					</input>
-					
+					<input type="hidden" name="pp_PUBLISHER" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$publisher"/>
+						</xsl:attribute>
+					</input>
 					<input type="hidden" name="pp_ORDER_TYPE" >
 					<xsl:attribute name="value">
 							<xsl:value-of select="$order_type"/>
@@ -93,7 +100,11 @@
 							<xsl:value-of select="$year"/>
 						</xsl:attribute>
 					</input>
-					
+					<input type="hidden" name="pp_PUBLISHER" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$publisher"/>
+						</xsl:attribute>
+					</input>
 					<input type="hidden" name="pp_ORDER_TYPE" >
 					<xsl:attribute name="value">
 							<xsl:value-of select="$order_type"/>
@@ -123,15 +134,7 @@
 
 		<xsl:if test="position()&gt; $begin and position()&lt; ($end+1)">
 		<tr>
-			<td style="width:20%;">
-					<xsl:for-each select="author">
-						<xsl:if test="position()>1">
-							<br/>
-						</xsl:if>
-						<xsl:value-of select="."/>
-					</xsl:for-each>
-
-			</td>
+			
 			<form method="POST">
 				<input type="hidden" name="pp_AUTHOR" >
 				<xsl:attribute name="value">
@@ -149,7 +152,11 @@
 						<xsl:value-of select="$year"/>
 					</xsl:attribute>
 				</input>
-				
+				<input type="hidden" name="pp_PUBLISHER" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$publisher"/>
+						</xsl:attribute>
+					</input>
 				<input type="hidden" name="pp_ORDER_TYPE" >
 				<xsl:attribute name="value">
 						<xsl:value-of select="$order_type"/>
@@ -176,6 +183,14 @@
 					</xsl:attribute>
 				</input>
 				<input type="hidden" name="MODE"  value="M"/>
+				<td style="width:12%;">
+					<xsl:for-each select="author">
+						<xsl:if test="position()>1">
+							<br/>
+						</xsl:if>
+						<xsl:value-of select="."/>
+					</xsl:for-each>
+				</td>
 				<td>
 					<input style="width:100%;" type="text" name="title">
 						<xsl:attribute name="value">
@@ -183,38 +198,53 @@
 						</xsl:attribute>
 					</input>
 				</td>
-				<td style="width:6%;">   
-					<input style="width:100%;" type="text" name="pages">
+				<td style="width:15%;">   
+					<input style="width:100%;" type="text" name="series">
 						<xsl:attribute name="value">
-							<xsl:value-of select="pages"/>
+							<xsl:value-of select="series"/>
 						</xsl:attribute>
 					</input>
 				</td>
-				<td style="width:4%;">   
+				<td style="width:3%;">
 					<input style="width:100%;" type="text" name="volume">
 						<xsl:attribute name="value">
 							<xsl:value-of select="volume"/>
 						</xsl:attribute>
 					</input>
 				</td>
-				<td style="width:15%;">
-					<input style="width:100%;" type="text" name="journal">
+				<td style="width:3%;">   
+					<xsl:value-of select="year"/>
+				</td>
+				<td style="width:5%;">
+					<input style="width:100%;" type="text" name="pages">
 						<xsl:attribute name="value">
-							<xsl:value-of select="journal"/>
+							<xsl:value-of select="pages"/>
 						</xsl:attribute>
 					</input>
 				</td>
-				<td style="width:3%;">
-					<xsl:value-of select="year"/>
+				<td style="width:7%;">
+					<input style="width:100%;" type="text" name="publisher">
+						<xsl:attribute name="value">
+							<xsl:value-of select="publisher"/>
+						</xsl:attribute>
+					</input>
 				</td>
+				<td style="width:10%;">
+					<input style="width:100%;" type="text" name="isbn">
+						<xsl:attribute name="value">
+							<xsl:value-of select="isbn"/>
+						</xsl:attribute>
+					</input>
+				</td>
+				
 				<td style="width:3%;">
 					<a target="_blank">
 						<xsl:if test="ee">
 							<xsl:attribute name="href">
 								<xsl:value-of select="ee"/>
-							</xsl:attribute>
-							lien
+							</xsl:attribute>lien
 						</xsl:if>
+						
 					</a>
 				</td>
 				<td style="width:5%;">
@@ -238,7 +268,11 @@
 						<xsl:value-of select="$year"/>
 					</xsl:attribute>
 				</input>
-				
+				<input type="hidden" name="pp_PUBLISHER" >
+					<xsl:attribute name="value">
+							<xsl:value-of select="$publisher"/>
+						</xsl:attribute>
+				</input>
 				<input type="hidden" name="pp_ORDER_TYPE" >
 				<xsl:attribute name="value">
 						<xsl:value-of select="$order_type"/>
