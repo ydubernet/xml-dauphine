@@ -169,7 +169,7 @@ class articles {
         
         // booktitle
         foreach(explode(";", $this->element->getBooktitle()) as $e){
-            $booktitle = $this->xmlDoc->createElement("boktitle", $e);
+            $booktitle = $this->xmlDoc->createElement("booktitle", $e);
             $newArticle->appendChild($booktitle);
         }
         
@@ -316,7 +316,7 @@ class articles {
         
         
         // layout
-        $i = 0;
+        /*$i = 0;
         foreach(explode(";", $this->element->getLayout()) as $e){
             $layouts[$i] = $this->xmlDoc->createElement("layout", $e);
             $i++;
@@ -326,11 +326,11 @@ class articles {
         foreach(explode(";", $this->element->getLogo()) as $a){
             $layouts[$i]->setAttributeNode(new DOMAttr("logo", $a));
             $i++;
-        }
+        }*/
         
-        foreach($layouts as $layout){
+        /*foreach($layouts as $layout){
             $newArticle->appendChild($layout);
-        }
+        }*/
         
         // save the document 
         $result = $this->xmlDoc->save($this->xmlPath);

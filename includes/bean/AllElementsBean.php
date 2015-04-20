@@ -31,7 +31,7 @@ class allElementsBean {
     private $series;
     private $school;
     private $chapter;
-    private $layout;
+    //private $layout;
     
     
     // All possible field attributes
@@ -46,7 +46,7 @@ class allElementsBean {
      private $label;
      private $hrefPublisher;
      private $hrefSeries;
-     private $logo;
+     //private $logo;
         
     
     public function getDblp() {
@@ -233,9 +233,9 @@ class allElementsBean {
         $this->chapter = $chapter;
     }
 
-    public function getLayout() {
+    /*public function getLayout() {
         return $this->layout;
-    }
+    }*/
 
     public function getKey() {
         return $this->key;
@@ -281,13 +281,13 @@ class allElementsBean {
         return $this->hrefSeries;
     }
     
-    public function getLogo() {
+    /*public function getLogo() {
         return $this->logo;
-    }
+    }*/
 
-    public function setLayout($layout) {
+    /*public function setLayout($layout) {
         $this->layout = $layout;
-    }
+    }*/
 
     public function setKey($key) {
         $this->key = $key;
@@ -333,9 +333,9 @@ class allElementsBean {
         $this->hrefSeries = $hrefSeries;
     }
 
-    public function setLogo($logo) {
+    /*public function setLogo($logo) {
         $this->logo = $logo;
-    }
+    }*/
 
 
 }

@@ -14,10 +14,10 @@
 					<li># Articles : <xsl:value-of select="count(article)"/></li>
 					<li># Auteurs : <xsl:value-of select="count(descendant::author)"/></li>
 					<!--<li># Auteurs : <xsl:value-of select="count(descendant::author[not(preceding::author/. = .)])"/></li>-->
-					<!--<li># Editeurs : <xsl:value-of select="count(descendant::editor)"/></li>-->
 					<li># Editeurs : <xsl:value-of select="count(descendant::editor[not(preceding::editor/. = .)])"/></li>
-					<!--<li># Journaux : <xsl:value-of select="count(descendant::journal)"/></li>>-->
 					<li># Journaux : <xsl:value-of select="count(descendant::journal[not(preceding::journal/. = .)])"/></li>
+					<li># Séries : <xsl:value-of select="count(descendant::series[not(preceding::series/. = .)])"/></li>
+					<li># Conférences / Workshops : <xsl:value-of select="count(proceedings)"/></li>
 			   </ul>
             </div>
     </xsl:template>
