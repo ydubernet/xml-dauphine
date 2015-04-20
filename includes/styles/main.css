@@ -128,26 +128,26 @@ div#icone-enseirb{
 }
 */
 
-/*
-div#modifier_gauche{
+
+div#stats_gauche{
     float: left;
     width: 15px;
     background-image: url(img-bordVertMenuGauche.png);
 }
 
-div#modifier{
+div#stats{
     float: left;
     width:1px;
     background-image: url(img-repeatMenuVert.png);
     background-repeat: repeat-x;
 }
 
-div#modifier_droit{
+div#stats_droit{
     float: left;
     width: 15px;
     background-image: url(img-bordVertMenuDroit.png);
 }
-*/
+
 
 div#recherche_gauche{
     float: left;
@@ -401,19 +401,19 @@ span .ajout_critere{
 }
 
 /* Modification -> Vert */
-/*
-.menu_horiz_left_modifier{
+
+.menu_horiz_left_stats{
     background:url(img-bordVertMenuGauche.png);
 }
 
-.menu_horiz_repeat_modifier{
+.menu_horiz_repeat_stats{
     background:url(img-repeatMenuVert.png);
 }
 
-.menu_horiz_right_modifier{
+.menu_horiz_right_stats{
     background:url(img-bordVertMenuDroit.png);
 }
-*/
+
 
 /* Suppression -> gris */
 /*

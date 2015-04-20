@@ -11,7 +11,7 @@
 <number>7</number>
 <url>db/journals/acta/acta33.html#Saxena96</url>
 <ee>http://dx.doi.org/10.1007/BF03036466</ee>
-</article>
+</article>test
 <article mdate="2011-01-11" key="journals/acta/Blum82">
 <author>Norbert Blum</author>
 <title>On the Power of Chain Rules in Context Free Grammars.</title>
@@ -78401,4 +78401,4 @@
 <year>1995</year>
 <school>Univ. of Wisconsin-Madison</school>
 </phdthesis>
-</dblp>
+<article key="test" mdate="" publtype="" reviewid="" rating=""><author bibtex=""/><editor/><address/><title bibtex=""/><boktitle/><pages/><year/><journal/><volume/><number/><month/><url/><ee/><cite label=""/><school/><publisher href="test">t</publisher><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href=""/><layout logo="">redgxf</layout></article></dblp>

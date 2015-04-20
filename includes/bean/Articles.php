@@ -1,11 +1,13 @@
 <?php
 
+require_once 'Element.php';
 
 class articles {
 
     private $xmlPath;
     private $xslDoc;
     private $xmlDoc;
+    private $element;
 
     public function __construct() {
 
@@ -105,29 +107,29 @@ class articles {
 
     
     public function addArticles($tabInput){
-        $element = new Element($tabInput);
+        $this->element = new Element($tabInput);
         
         $newArticle = $this->xmlDoc->createElement("article");    
         $this->xmlDoc->documentElement
                 ->appendChild($newArticle);
         
         // Attributs de article
-        $newArticle->setAttributeNode(new DOMAttr("key", $element->getBean()->getKey()));
-        $newArticle->setAttributeNode(new DOMAttr("mdate", $element->getBean()->getMdate()));
-        $newArticle->setAttributeNode(new DOMAttr("publtype", $element->getBean()->getPubltype()));
-        $newArticle->setAttributeNode(new DOMAttr("reviewid", $element->getBean()->getReviewid()));
-        $newArticle->setAttributeNode(new DOMAttr("rating", $element->getBean()->getRating()));
+        $newArticle->setAttributeNode(new DOMAttr("key", $this->element->getKey()));
+        $newArticle->setAttributeNode(new DOMAttr("mdate", $this->element->getMdate()));
+        $newArticle->setAttributeNode(new DOMAttr("publtype", $this->element->getPubltype()));
+        $newArticle->setAttributeNode(new DOMAttr("reviewid", $this->element->getReviewid()));
+        $newArticle->setAttributeNode(new DOMAttr("rating", $this->element->getRating()));
         
         // Eléments de article, et leurs attributs si nécessaire
         // author
         $i = 0;
-        foreach(explode(";", $element->getBean()->getAuthor()) as $e){
+        foreach(explode(";", $this->element->getAuthor()) as $e){
             $authors[$i] = $this->xmlDoc
                 ->createElement("author", $e);
             $i ++;
         }
         $i = 0;
-        foreach(explode(";", $element->getBean()->getBibtexAuthor()) as $a){
+        foreach(explode(";", $this->element->getBibtexAuthor()) as $a){
             $authors[$i]->setAttributeNode(new DOMAttr("bibtex", $a));
             $i++;
         }
@@ -137,26 +139,26 @@ class articles {
         }
         
         // editor
-        foreach(explode(";", $element->getBean()->getEditor()) as $e){
+        foreach(explode(";", $this->element->getEditor()) as $e){
             $editor = $this->xmlDoc->createElement("editor", $e);
             $newArticle->appendChild($editor);
         }
         
         // address
-        foreach(explode(";", $element->getBean()->getAddress()) as $e){
+        foreach(explode(";", $this->element->getAddress()) as $e){
             $address = $this->xmlDoc->createElement("address", $e);
             $newArticle->appendChild($address);
         }
         
         // title
         $i = 0;
-        foreach(explode(";", $element->getBean()->getTitle()) as $e){
+        foreach(explode(";", $this->element->getTitle()) as $e){
             $titles[$i] = $this->xmlDoc->createElement("title", $e);
             $i++;     
         }
         
         $i = 0;
-        foreach(explode(";", $element->getBean()->getBibtexTitle()) as $a){
+        foreach(explode(";", $this->element->getBibtexTitle()) as $a){
             $titles[$i]->setAttributeNode(new DOMAttr("bibtex", $a));
             $i++;
         }
@@ -166,67 +168,67 @@ class articles {
         }
         
         // booktitle
-        foreach(explode(";", $element->getBean()->getBooktitle()) as $e){
+        foreach(explode(";", $this->element->getBooktitle()) as $e){
             $booktitle = $this->xmlDoc->createElement("boktitle", $e);
             $newArticle->appendChild($booktitle);
         }
         
         // pages
-        foreach(explode(";", $element->getBean()->getPages()) as $e){
+        foreach(explode(";", $this->element->getPages()) as $e){
             $pages = $this->xmlDoc->createElement("pages", $e);
             $newArticle->appendChild($pages);
         } 
         
         // year
-        foreach(explide(";", $element->getBean()->getYear()) as $e){
+        foreach(explode(";", $this->element->getYear()) as $e){
             $year = $this->xmlDoc->createElement("year", $e);
             $newArticle->appendChild($year);
         }
         
         // journal
-        foreach(explode(";", $element->getBean()->getJournal()) as $e){
+        foreach(explode(";", $this->element->getJournal()) as $e){
             $journal = $this->xmlDoc->createElement("journal", $e);
             $newArticle->appendChild($journal);
         }
         
         // volume
-        foreach(explode(";", $element->getBean()->getVolume()) as $e){
+        foreach(explode(";", $this->element->getVolume()) as $e){
             $volume = $this->xmlDoc->createElement("volume", $e);
             $newArticle->appendChild($volume);
         }
         
         // number
-        foreach(explode(";", $element->getBean()->getNumber()) as $e){
+        foreach(explode(";", $this->element->getNumber()) as $e){
             $number = $this->xmlDoc->createElement("number", $e);
             $newArticle->appendChild($number);
         }
         
         // month
-        foreach(explode(";", $element->getBean()->getMonth()) as $e){
+        foreach(explode(";", $this->element->getMonth()) as $e){
             $month = $this->xmlDoc->createElement("month", $e);
             $newArticle->appendChild($month);
         }
         
         // url
-        foreach(explode(";", $element->getBean()->getUrl()) as $e){
+        foreach(explode(";", $this->element->getUrl()) as $e){
             $url = $this->xmlDoc->createElement("url", $e);
             $newArticle->appendChild($url);
         }
         
         // ee
-        foreach(explode(";", $element->getBean()->getEe()) as $e){
+        foreach(explode(";", $this->element->getEe()) as $e){
             $ee = $this->xmlDoc->createElement("ee", $e);
             $newArticle->appendChild($ee);
         }
         
         // cite
         $i = 0;
-        foreach(explode(";", $element->getBean()->getCite()) as $e){
+        foreach(explode(";", $this->element->getCite()) as $e){
             $cites[$i] = $this->xmlDoc->createElement("cite", $e);
             $i++;
         }
         $i = 0;
-        foreach(explode(";", $element->getBean()->getLabel()) as $a){
+        foreach(explode(";", $this->element->getLabel()) as $a){
             $cites[$i]->setAttributeNode(new DOMAttr("label", $a));
         }
         
@@ -235,19 +237,19 @@ class articles {
         }
         
         // school
-        foreach(explode(";", $element->getBean()->getSchool()) as $e){
+        foreach(explode(";", $this->element->getSchool()) as $e){
             $school = $this->xmlDoc->createElement("school", $e);
             $newArticle->appendChild($school);
         }
         
         // publisher
         $i = 0;
-        foreach(explode(";", $element->getBean()->getPublisher()) as $e){
+        foreach(explode(";", $this->element->getPublisher()) as $e){
             $publishers[$i] = $this->xmlDoc->createElement("publisher", $e);
             $i++;
         }
         $i = 0;
-        foreach(explode(";", $element->getBean()->getHrefPublisher()) as $a){
+        foreach(explode(";", $this->element->getHrefPublisher()) as $a){
             $publishers[$i]->setAttributeNode(new DOMAttr("href", $a));
         }
         
@@ -257,13 +259,13 @@ class articles {
         
         // note
         $i = 0;
-        foreach(explode(";", $element->getBean()->getNote()) as $e){
+        foreach(explode(";", $this->element->getNote()) as $e){
             $notes[$i] = $this->xmlDoc->createElement("note", $e);
             $i++;
         }
         
         $i = 0;
-        foreach(explode(";", $element->getBean()->getType()) as $a){
+        foreach(explode(";", $this->element->getType()) as $a){
             $notes[$i]->setAttributeNode(new DOMAttr("type", $a));
         }
         
@@ -272,38 +274,38 @@ class articles {
         }
         
         // cdrom
-        foreach(explode(";", $element->getBean()->getCdrom()) as $e){
+        foreach(explode(";", $this->element->getCdrom()) as $e){
             $cdrom = $this->xmlDoc->createElement("cdrom", $e);
             $newArticle->appendChild($cdrom);
         }
         
         // crossref
-        foreach(explode(";", $element->getBean()->getCrossref()) as $e){
+        foreach(explode(";", $this->element->getCrossref()) as $e){
             $crossref = $this->xmlDoc->createElement("crossref", $e);
             $newArticle->appendChild($crossref);
         }
         
         // isbn
-        foreach(explode(";", $element->getBean()->getIsbn()) as $e){
+        foreach(explode(";", $this->element->getIsbn()) as $e){
             $isbn = $this->xmlDoc->createElement("isbn", $e);
             $newArticle->appendChild($isbn);
         }
         
         // chapter
-        foreach(explode(";", $element->getBean()->getChapter()) as $e){
+        foreach(explode(";", $this->element->getChapter()) as $e){
             $chapter = $this->xmlDoc->createElement("chapter", $e);
             $newArticle->appendChild($chapter);
         }
         
         // series
         $i = 0;
-        foreach(explode(";", $element->getBean()->getSeries()) as $e){
+        foreach(explode(";", $this->element->getSeries()) as $e){
             $series[$i] = $this->xmlDoc->createElement("series", $e);
             $i++;
         }
         
         $i = 0;
-        foreach(explode(";", $element->getBean()->getHrefSeries()) as $a){
+        foreach(explode(";", $this->element->getHrefSeries()) as $a){
             $series[$i]->setAttributeNode(new DOMAttr("href", $a));
             $i++;
         }
@@ -315,13 +317,13 @@ class articles {
         
         // layout
         $i = 0;
-        foreach(explode(";", $element->getBean()->getLayout()) as $e){
+        foreach(explode(";", $this->element->getLayout()) as $e){
             $layouts[$i] = $this->xmlDoc->createElement("layout", $e);
             $i++;
         }
         
         $i = 0;
-        foreach(explode(";", $element->getBean()->getLogo()) as $a){
+        foreach(explode(";", $this->element->getLogo()) as $a){
             $layouts[$i]->setAttributeNode(new DOMAttr("logo", $a));
             $i++;
         }
@@ -331,7 +333,8 @@ class articles {
         }
         
         // save the document 
-        $this->xmlDoc->save($this->xmlPath);
+        $result = $this->xmlDoc->save($this->xmlPath);
+        return !$result ? $result : true;
     }
 
 }

@@ -68,16 +68,6 @@
                             <td>Bibtex Title</td>
                             <td><input type='text' class='bibtex' id='bibtex_add'/></td>
                           </tr> ";
-                      
-                      
-                      //Code structure de la publication (titres, sous-titres, etc...)
-                   /*   echo "
-                      <div id='addCritereTitre'>
-                        <img class='img_clickable' onclick='javascript:addTitreElement();' alt='ajouter une structure' src='img-PlusOrange.png'>
-                        <a class='clickLink' href='javascript:addTitreElement();'>Ajouter un critère</a>
-                      </div> ";
-                    */
-                      
                     
                   } else if($un === "author"){
                       echo "
@@ -127,7 +117,7 @@
                
             ?>            
         </table>
-        <input type="button" value="Insérer" onclick="ajouterModifierArticle('add');"/>
+        <input type="button" value="Insérer" onclick="ajouterArticle();"/>
         <input type="button" value="Effacer" onclick="if(confirm('Souhaitez-vous effacer tous les champs ?'))this.form.reset();"/>  
     </form>
     <div id="resultAdd"></div>

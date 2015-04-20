@@ -6,7 +6,7 @@
 	 <div>
         <ul>
 			<li>Auteurs / Editeurs</li>
-				<a href="?content=includes%2Fmodels%2Fdisplay%2Fauteurs.php&pg_BEGIN_AUTHOR=A">A</a>
+				<a href="auteurs.html?pg_BEGIN_AUTHOR=A">A</a>
 				<a href="includes/models/display/auteurs.php?pg_BEGIN_AUTHOR=B">B</a>
 				<a href="includes/models/display/auteurs.php?pg_BEGIN_AUTHOR=C">C</a>
 				<a href="includes/models/display/auteurs.php?pg_BEGIN_AUTHOR=D">D</a>

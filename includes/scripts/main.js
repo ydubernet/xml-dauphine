@@ -158,22 +158,19 @@ function onChangeInputsPourAttributs(){
     });
 }
 
-function ajouterModifierArticle(act){
+function ajouterArticle(){
     $("#resultAdd").empty();
     $("#resultAdd").append('Envoi en cours  <progress>working...</progress>');
     if($("#key_add").val() === ""){
         alert("Vous devez renseigner l'attribut key de votre article.");
         return false;
     }
-    else if(act !== "modifier" && testExistsArticle()){
+    else if(testExistsArticle()){
         //On ne teste l'existance d'un article que si l'on essaye de l'ajouter.
         return false;
     }
     else{
-        if(act === "modifier")
-            url = "includes/models/scripts/articleModify.php";
-        else
-            url = "includes/models/scripts/articleAdd.php";
+        url = "articleAdd.php";//"includes/models/scripts/articleAdd.php";
         
         /* Appel ajax - récupération des données selon les critères */
         $.ajax({
