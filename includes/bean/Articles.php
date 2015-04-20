@@ -11,11 +11,11 @@ class articles {
 
         $_xslDoc = new DOMDocument(); 
 	//En production :
-        $_xslDoc->load("includes/xslt/articles.xsl");
-	$xmlPath = 'includes/xml/dblp_prod.xml';
+        //$_xslDoc->load("includes/xslt/articles.xsl");
+		//$xmlPath = 'includes/xml/dblp_prod.xml';
 		//Pour Florian :
-		//$_xslDoc->load("../../xslt/articles.xsl");
-		//$xmlPath = "../../xml/dblp_prod.xml";
+		$_xslDoc->load("../../xslt/articles.xsl");
+		$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
 
@@ -57,7 +57,7 @@ class articles {
         if (!$nodeList || $nodeList->length == 0)
             return false;
         foreach ($nodeList as $node) {
-            $node->getElementsByTagName('title')[0]->nodeValue = $title;
+            $node->getElementsByTagName('title')->item(0)->nodeValue = $title;
             $test = $node->getElementsByTagName('volume');
 			if ($test->length==0){
 				$nod = $this->xmlDoc->createElement('volume');
@@ -65,7 +65,7 @@ class articles {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('volume')[0]->nodeValue = $volume;
+				$node->getElementsByTagName('volume')->item(0)->nodeValue = $volume;
 			}
 			
             $test = $node->getElementsByTagName('pages');
@@ -75,7 +75,7 @@ class articles {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('pages')[0]->nodeValue = $pages;
+				$node->getElementsByTagName('pages')->item(0)->nodeValue = $pages;
 			}
 			$test = $node->getElementsByTagName('journal');
 			if ($test->length==0){
@@ -84,7 +84,7 @@ class articles {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('journal')[0]->nodeValue = $journal;
+				$node->getElementsByTagName('journal')->item(0)->nodeValue = $journal;
 			}
         }
         $result = $this->xmlDoc->save($this->xmlPath);

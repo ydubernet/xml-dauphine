@@ -55,7 +55,7 @@ class proceedings {
             return false;
         foreach ($nodeList as $node) {
             
-            $node->getElementsByTagName('title')[0]->nodeValue = $title;
+            $node->getElementsByTagName('title')->item(0)->nodeValue = $title;
 			$test = $node->getElementsByTagName('volume');
 			if ($test->length==0){
 				$nod = $this->xmlDoc->createElement('volume');
@@ -63,7 +63,7 @@ class proceedings {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('volume')[0]->nodeValue = $volume;
+				$node->getElementsByTagName('volume')->item(0)->nodeValue = $volume;
 			}
 			$test = $node->getElementsByTagName('series');
 			if ($test->length==0){
@@ -72,7 +72,7 @@ class proceedings {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('series')[0]->nodeValue = $series;
+				$node->getElementsByTagName('series')->item(0)->nodeValue = $series;
 			}
             $test = $node->getElementsByTagName('publisher');
 			if ($test->length==0){
@@ -81,7 +81,7 @@ class proceedings {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('publisher')[0]->nodeValue = $publisher;
+				$node->getElementsByTagName('publisher')->item(0)->nodeValue = $publisher;
 			}
 			$test = $node->getElementsByTagName('booktitle');
 			if ($test->length==0){
@@ -90,7 +90,7 @@ class proceedings {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('booktitle')[0]->nodeValue = $book;
+				$node->getElementsByTagName('booktitle')->item(0)->nodeValue = $book;
 			}
             
         }

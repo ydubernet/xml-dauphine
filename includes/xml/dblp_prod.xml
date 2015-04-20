@@ -10632,7 +10632,7 @@
 <article mdate="2012-06-08" key="journals/ijtm/McLoughlinP10">
 <author>Ian McLoughlin</author>
 <author>David Preece</author>
-<title>'Last orders' at the rural 'cyber pub': a failure of 'social learning'?</title>
+<title>'Last orders' at the rural 'cyber pub': a failure of 'social learning'?t</title>
 <pages>75-91</pages>
 <year>2010</year>
 <volume>51</volume>
@@ -52013,14 +52013,14 @@
 <editor>H. Chad Lane</editor>
 <editor>Louis-Philippe Morency</editor>
 <title>10th International Conference on Creating, Connecting and Collaborating through Computing, C5 2012, Playa Vista, CA, USA, January 18-20, 2012</title>
-<publisher></publisher>
+<publisher/>
 <year>2012</year>
 <isbn>978-1-4673-1009-3</isbn>
 <ee>http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6195084</ee>
 <ee>http://www.computer.org/csdl/proceedings/c5/2012/4672/00/index.html</ee>
 <booktitle>IEEE Computer Society</booktitle>
 <url>db/conf/c5/c5-2012.html</url>
-<volume>IEEE Computer Society</volume><series></series></proceedings>
+<volume>IEEE Computer Society</volume><series/></proceedings>
 <proceedings key="conf/cibd/2014" mdate="2015-01-29">
 <title>2014 IEEE Symposium on Computational Intelligence in Big Data, CIBD 2014, Orlando, FL, USA, December 9-12, 2014</title>
 <booktitle>CIBD</booktitle>

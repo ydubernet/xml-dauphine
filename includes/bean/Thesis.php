@@ -53,8 +53,8 @@ class thesis {
         if (!$nodeList || $nodeList->length == 0)
             return false;
         foreach ($nodeList as $node) {
-            $node->getElementsByTagName('author')[0]->nodeValue = $author;
-            $node->getElementsByTagName('title')[0]->nodeValue = $title;
+            $node->getElementsByTagName('author')->item(0)->nodeValue = $author;
+            $node->getElementsByTagName('title')->item(0)->nodeValue = $title;
             $test = $node->getElementsByTagName('school');
 			if ($test->length==0){
 				$nod = $this->xmlDoc->createElement('school');
@@ -62,7 +62,7 @@ class thesis {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('school')[0]->nodeValue = $school;
+				$node->getElementsByTagName('school')->item(0)->nodeValue = $school;
 			}
 			$test = $node->getElementsByTagName('isbn');
 			if ($test->length==0){
@@ -71,7 +71,7 @@ class thesis {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('isbn')[0]->nodeValue = $isbn;
+				$node->getElementsByTagName('isbn')->item(0)->nodeValue = $isbn;
 			}
             
 			$test = $node->getElementsByTagName('pages');
@@ -81,7 +81,7 @@ class thesis {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('pages')[0]->nodeValue = $pages;
+				$node->getElementsByTagName('pages')->item(0)->nodeValue = $pages;
 			}
         }
         $result = $this->xmlDoc->save($this->xmlPath);

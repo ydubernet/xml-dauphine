@@ -52,8 +52,8 @@ class books {
         if (!$nodeList || $nodeList->length == 0)
             return false;
         foreach ($nodeList as $node) {
-            $node->getElementsByTagName('series')[0]->nodeValue = $series;
-            $node->getElementsByTagName('title')[0]->nodeValue = $title;
+            $node->getElementsByTagName('series')->item(0)->nodeValue = $series;
+            $node->getElementsByTagName('title')->item(0)->nodeValue = $title;
 			$test = $node->getElementsByTagName('volume');
 			if ($test->length==0){
 				$nod = $this->xmlDoc->createElement('volume');
@@ -61,7 +61,7 @@ class books {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('volume')[0]->nodeValue = $volume;
+				$node->getElementsByTagName('volume')->item(0)->nodeValue = $volume;
 			}
             $test = $node->getElementsByTagName('publisher');
 			if ($test->length==0){
@@ -70,7 +70,7 @@ class books {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('publisher')[0]->nodeValue = $publisher;
+				$node->getElementsByTagName('publisher')->item(0)->nodeValue = $publisher;
 			}
 			$test = $node->getElementsByTagName('isbn');
 			if ($test->length==0){
@@ -79,7 +79,7 @@ class books {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('isbn')[0]->nodeValue = $isbn;
+				$node->getElementsByTagName('isbn')->item(0)->nodeValue = $isbn;
 			}
             
 			$test = $node->getElementsByTagName('pages');
@@ -89,7 +89,7 @@ class books {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('pages')[0]->nodeValue = $pages;
+				$node->getElementsByTagName('pages')->item(0)->nodeValue = $pages;
 			}
         }
         $result = $this->xmlDoc->save($this->xmlPath);

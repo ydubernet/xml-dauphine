@@ -53,7 +53,7 @@ class collections {
         if (!$nodeList || $nodeList->length == 0)
             return false;
         foreach ($nodeList as $node) {
-            $node->getElementsByTagName('title')[0]->nodeValue = $title;
+            $node->getElementsByTagName('title')->item(0)->nodeValue = $title;
             $test = $node->getElementsByTagName('booktitle');
 			if ($test->length==0){
 				$nod = $this->xmlDoc->createElement('booktitle');
@@ -61,7 +61,7 @@ class collections {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('booktitle')[0]->nodeValue = $book;
+				$node->getElementsByTagName('booktitle')->item(0)->nodeValue = $book;
 			}            
 			$test = $node->getElementsByTagName('pages');
 			if ($test->length==0){
@@ -70,7 +70,7 @@ class collections {
 				$node->appendChild($nod);
 			}
 			else{
-				$node->getElementsByTagName('pages')[0]->nodeValue = $pages;
+				$node->getElementsByTagName('pages')->item(0)->nodeValue = $pages;
 			}
         }
         $result = $this->xmlDoc->save($this->xmlPath);
