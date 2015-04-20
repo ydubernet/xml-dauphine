@@ -79,7 +79,7 @@
 	
 <?php
 	//En production :
-	require_once ("includes/bean/Phdthesis.php");
+	require_once ("includes/bean/Thesis.php");
 	//Pour Florian :
 	//require_once ("../../bean/Thesis.php");
 	$a = new thesis();

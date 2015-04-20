@@ -11,11 +11,11 @@ class articles {
 
         $_xslDoc = new DOMDocument(); 
 	//En production :
-        //$_xslDoc->load("includes/xslt/articles.xsl");
-		//$xmlPath = 'includes/xml/dblp_prod.xml';
+        $_xslDoc->load("includes/xslt/articles.xsl");
+	$xmlPath = 'includes/xml/dblp_prod.xml';
 		//Pour Florian :
-		$_xslDoc->load("../../xslt/articles.xsl");
-		$xmlPath = "../../xml/dblp_prod.xml";
+		//$_xslDoc->load("../../xslt/articles.xsl");
+		//$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
 
