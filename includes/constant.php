@@ -83,7 +83,15 @@ $const_sub_menu = array(
     'rechercher' => $arrayRecherche,
     'inserer' => array(),
     'stats' => array(),
-    'propos' => array()
+    'propos' => array(),
+    'journals' => $arrayRecherche,
+    'articles' => $arrayRecherche,
+    'auteurs' => $arrayRecherche,
+    'books' => $arrayRecherche,
+    'collections' => $arrayRecherche,
+    'proceedings' => $arrayRecherche,
+    'series' => $arrayRecherche,
+    'theses' => $arrayRecherche,
     //'modifier' => array(),
     //'supprimer' => array()
 );

@@ -1,11 +1,10 @@
 <?php
     require_once 'includes/bean/Articles.php';
     //print_r($_POST);
-    //$result = true;
+    $result = true;
     
     $a = new articles();
-    
-    $result = $a->addArticles($_POST);
+    $result = $a->addArticles($_POST, $_POST["typeArticle"]);
     
     if($result === false){
          echo "<span class='failure'> L'ajout de la publication a échoué. </span>";

@@ -10,7 +10,7 @@
 
 
    <xsl:template match="/dblp">
-		<h2 style="text-align:center;">Les Journals</h2>
+		<h2 style="text-align:center;">Les Journaux</h2>
 			<ul style="width: 100% ;">
             <xsl:apply-templates select="descendant::journal[contains(.,$journal)][starts-with(.,$begin_journal)][not(preceding::journal/. = .)]">
 				<xsl:sort select="." data-type="text" />
@@ -87,12 +87,7 @@
 	
 		<xsl:if test="position()&gt; $begin and position()&lt; ($end+1)">
 			<li style="width : 33%;float:left;">
-				<a>
-					<xsl:attribute name="href">
-						<xsl:value-of select="concat('publications.php?journal=',.)"/>
-					</xsl:attribute>
-					<xsl:value-of select="."/>
-				</a>
+                            <xsl:value-of select="."/>
 			</li>			
 		</xsl:if>
 	</xsl:template>

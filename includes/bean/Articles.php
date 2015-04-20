@@ -105,11 +105,19 @@ class articles {
         return !$result ? $result : true;
     }
 
-    
-    public function addArticles($tabInput){
+    /**
+     * Fonction générique étant capable de créer n'importe quel type d'élément.
+     * TODO : Envisager de la déplacer dans une classe mère.
+     * TODO : Envisager de ne pas créer les éléments/attributs s'ils sont vides dans le $tabInput.
+     * 
+     * @param type $tabInput
+     * @param type $nomElementRacine
+     * @return type
+     */
+    public function addArticles($tabInput, $nomElementRacine){
         $this->element = new Element($tabInput);
         
-        $newArticle = $this->xmlDoc->createElement("article");    
+        $newArticle = $this->xmlDoc->createElement($nomElementRacine);    
         $this->xmlDoc->documentElement
                 ->appendChild($newArticle);
         
@@ -117,9 +125,11 @@ class articles {
         $newArticle->setAttributeNode(new DOMAttr("key", $this->element->getKey()));
         $newArticle->setAttributeNode(new DOMAttr("mdate", $this->element->getMdate()));
         $newArticle->setAttributeNode(new DOMAttr("publtype", $this->element->getPubltype()));
-        $newArticle->setAttributeNode(new DOMAttr("reviewid", $this->element->getReviewid()));
-        $newArticle->setAttributeNode(new DOMAttr("rating", $this->element->getRating()));
         
+        if("article" === $nomElementRacine){
+            $newArticle->setAttributeNode(new DOMAttr("reviewid", $this->element->getReviewid()));
+            $newArticle->setAttributeNode(new DOMAttr("rating", $this->element->getRating()));
+        }
         // Eléments de article, et leurs attributs si nécessaire
         // author
         $i = 0;
