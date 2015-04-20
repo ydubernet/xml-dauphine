@@ -5,7 +5,7 @@
     <xsl:param name="author"/>
 	<xsl:param name="title"/>
 	<xsl:param name="year"/>
-	<xsl:param name="publisher"/>
+	<xsl:param name="book"/>
 	<xsl:param name="order"/>
 	<xsl:param name="order_type"/>
 	<xsl:param name="begin"/>
@@ -15,18 +15,15 @@
 	
 	
     <xsl:template match="/dblp">
-		<h2 style="text-align:center;">Les Livres</h2>
+		<h2 style="text-align:center;">Les Collections</h2>
 			<table width="100%" style="text-align:center;">
 				<th>Auteur(s)</th>
 				<th>Titre</th>
-				<th>Série</th>
-				<th>Volume</th>
+				<th>Livre</th>
 				<th>Année</th>
 				<th>Pages</th>
-				<th>Publieur</th>
-				<th>ISBN</th>
 				<th>Lien</th>
-            <xsl:apply-templates select="book[contains(title,$title)][contains(year,$year)][contains(publisher,$publisher)]/author[contains(.,$author)]/parent::*">
+            <xsl:apply-templates select="incollection[contains(title,$title)][contains(year,$year)][contains(author,$author)][contains(booktitle,$book)]">
 				<xsl:sort select="*[name()=$order]" data-type="text" order="{$order_type}" />
 			</xsl:apply-templates>
 			</table>
@@ -34,7 +31,7 @@
 	
 
 	
-	<xsl:template match="book">
+	<xsl:template match="incollection">
 		<xsl:if test="position() = ($begin + 1) ">
 			<xsl:if test="$begin &gt; 0">
 				<form method="POST">
@@ -59,9 +56,9 @@
 							<xsl:value-of select="$year"/>
 						</xsl:attribute>
 					</input>
-					<input type="hidden" name="pp_PUBLISHER" >
+					<input type="hidden" name="pp_BOOK" >
 					<xsl:attribute name="value">
-							<xsl:value-of select="$publisher"/>
+							<xsl:value-of select="$book"/>
 						</xsl:attribute>
 					</input>
 					<input type="hidden" name="pp_ORDER_TYPE" >
@@ -100,9 +97,9 @@
 							<xsl:value-of select="$year"/>
 						</xsl:attribute>
 					</input>
-					<input type="hidden" name="pp_PUBLISHER" >
+					<input type="hidden" name="pp_BOOK" >
 					<xsl:attribute name="value">
-							<xsl:value-of select="$publisher"/>
+							<xsl:value-of select="$book"/>
 						</xsl:attribute>
 					</input>
 					<input type="hidden" name="pp_ORDER_TYPE" >
@@ -152,9 +149,9 @@
 						<xsl:value-of select="$year"/>
 					</xsl:attribute>
 				</input>
-				<input type="hidden" name="pp_PUBLISHER" >
+				<input type="hidden" name="pp_BOOK" >
 					<xsl:attribute name="value">
-							<xsl:value-of select="$publisher"/>
+							<xsl:value-of select="$book"/>
 						</xsl:attribute>
 					</input>
 				<input type="hidden" name="pp_ORDER_TYPE" >
@@ -183,7 +180,7 @@
 					</xsl:attribute>
 				</input>
 				<input type="hidden" name="MODE"  value="M"/>
-				<td style="width:12%;">
+				<td style="width:13%;">
 					<xsl:for-each select="author">
 						<xsl:if test="position()>1">
 							<br/>
@@ -198,20 +195,14 @@
 						</xsl:attribute>
 					</input>
 				</td>
-				<td style="width:15%;">   
-					<input style="width:100%;" type="text" name="series">
+				<td style="width:20%;">
+					<input style="width:100%;" type="text" name="book">
 						<xsl:attribute name="value">
-							<xsl:value-of select="series"/>
+							<xsl:value-of select="booktitle"/>
 						</xsl:attribute>
 					</input>
 				</td>
-				<td style="width:3%;">
-					<input style="width:100%;" type="text" name="volume">
-						<xsl:attribute name="value">
-							<xsl:value-of select="volume"/>
-						</xsl:attribute>
-					</input>
-				</td>
+				
 				<td style="width:3%;">   
 					<xsl:value-of select="year"/>
 				</td>
@@ -219,20 +210,6 @@
 					<input style="width:100%;" type="text" name="pages">
 						<xsl:attribute name="value">
 							<xsl:value-of select="pages"/>
-						</xsl:attribute>
-					</input>
-				</td>
-				<td style="width:7%;">
-					<input style="width:100%;" type="text" name="publisher">
-						<xsl:attribute name="value">
-							<xsl:value-of select="publisher"/>
-						</xsl:attribute>
-					</input>
-				</td>
-				<td style="width:10%;">
-					<input style="width:100%;" type="text" name="isbn">
-						<xsl:attribute name="value">
-							<xsl:value-of select="isbn"/>
 						</xsl:attribute>
 					</input>
 				</td>
@@ -268,9 +245,9 @@
 						<xsl:value-of select="$year"/>
 					</xsl:attribute>
 				</input>
-				<input type="hidden" name="pp_PUBLISHER" >
+				<input type="hidden" name="pp_BOOK" >
 					<xsl:attribute name="value">
-							<xsl:value-of select="$publisher"/>
+							<xsl:value-of select="$book"/>
 						</xsl:attribute>
 				</input>
 				<input type="hidden" name="pp_ORDER_TYPE" >
