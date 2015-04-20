@@ -1,10 +1,6 @@
 <?php
 
-/**
- * Description of articles
- *
- * @author MinhHieu
- */
+
 class articles {
 
     private $xmlPath;
@@ -13,12 +9,15 @@ class articles {
 
     public function __construct($xmlPath) {
 
-        $_xslDoc = new DOMDocument();
-        $_xslDoc->load("includes/xslt/articles.xsl");
-
+        $_xslDoc = new DOMDocument(); 
+		//En production :
+        //$_xslDoc->load("includes/xslt/articles.xsl");
+		//$xmlPath = $const_xmlfile;
+		//Pour Florian :
+		$_xslDoc->load("../../xslt/articles.xsl");
+		$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
-        $_xmlDoc->validateOnParse = true;
-        $_xmlDoc->load($xmlPath);
+        $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
 
         $this->xmlDoc = $_xmlDoc;
         $this->xslDoc = $_xslDoc;
@@ -79,6 +78,57 @@ class articles {
         return !$result ? $result : true;
     }
 
+    
+    public function addArticles($tabInput){
+        $element = new Element($tabInput);
+        
+        $newArticle = $this->xmlDoc->createElement("article");    
+        $this->xmlDoc->documentElement
+                ->appendChild($newArticle);
+        
+        // Attributs de article
+        $newArticle->setAttributeNode(new DOMAttr("key", $element->getBean()->getKey()));
+        $newArticle->setAttributeNode(new DOMAttr("mdate", $element->getBean()->getMdate()));
+        $newArticle->setAttributeNode(new DOMAttr("publtype", $element->getBean()->getPubltype()));
+        $newArticle->setAttributeNode(new DOMAttr("reviewid", $element->getBean()->getReviewid()));
+        $newArticle->setAttributeNode(new DOMAttr("rating", $element->getBean()->getRating()));
+        
+        // Eléments de article, et leurs attributs si nécessaire
+        // author
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getAuthor()) as $e){
+            $authors[$i] = $this->xmlDoc
+                ->createElement("author", $e);
+            $i ++;
+        }
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getBibtexAuthor()) as $a){
+            $authors[$i]->setAttributeNode(new DOMAttr("bibtex", $a));
+            $i++;
+        }
+        
+        foreach($authors as $author){
+           $newArticle->appendChild($author);
+        }
+        
+        // editor
+        foreach(explode(";", $element->getBean()->getEditor()) as $e){
+            $editor = $this->xmlDoc->createElement("editor", $e);
+            $newArticle->appendChild($editor);
+        }
+        
+        // address
+        foreach(explode(";", $element->getBean()->getAddress()) as $e){
+            $address = $this->xmlDoc->createElement("address", $e);
+            $newArticle->appendChild($address);
+        }
+        
+        // TODO : terminer...
+        
+        // save the document 
+        $this->xmlDoc->save($this->xmlPath);
+    }
+    
     public function addArticle($key, $mdate, $title, $author, $page, $year, $volume, $journal, $url, $ee) {
         $newArticle = $this->xmlDoc->createElement("article");    
         $this->xmlDoc->documentElement

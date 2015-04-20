@@ -41,7 +41,7 @@ class Element {
         
         // Attributs
         $bean->setKey($tableauInput["key"]);
-        $bean->setMdate($tableauIntput["mdate"]);
+        $bean->setMdate($tableauInput["mdate"]);
         $bean->setPubltype($tableauInput["publtype"]);
       
         //Attributs spécifiques à l'objet de type article
