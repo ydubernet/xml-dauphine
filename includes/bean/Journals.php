@@ -10,11 +10,12 @@ class journals {
 		
         $_xslDoc = new DOMDocument();
         //En production :
-        //$_xslDoc->load("includes/xslt/authors.xsl");
+        $_xslDoc->load("includes/xslt/authors.xsl");
+        $xmlPath = "includes/xml/dblp_prod.xml";
 		//$xmlPath = $const_xmlfile;
 		//Pour Florian :
-		$_xslDoc->load("../../xslt/journals.xsl");
-		$xmlPath = "../../xml/dblp_prod.xml";
+		//$_xslDoc->load("../../xslt/journals.xsl");
+		//$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
 

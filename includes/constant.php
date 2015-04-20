@@ -43,6 +43,7 @@ $const_pages = array(
     'presentation' => array('Accueil', 'Accueil', 'Accueil'),
     'rechercher' => array('Recherche', 'Rechercher des publications', 'Recherche de publications'),
     'inserer' => array('Insertion', 'Insérer des publications', 'Insertion de publications'),
+    'stats' => array('Statistiques', 'Statistiques', 'Statistiques'), 
     //'supprimer' => array('Suppression', 'Supprimer des publications', 'Suppression de publications'),
     //'modifier' => array('Modification', 'Modifier des publications', 'Modification de publications'),
     'propos' => array('Aide', 'Aide', 'Aide'),
@@ -51,6 +52,14 @@ $const_pages = array(
     'journals' => array('Rechercher sur les journaux', 'Rechercher sur les journaux', 'Recherche de journaux'),
     'articles' => array('Rechercher sur les articles', 'Rechercher sur les articles', 'Recherche d\'articles'),
     'auteurs' => array('Rechercher sur les auteurs', 'Rechercher sur les auteurs', 'Recherche d\'auteurs'),
+    'books' => array('Rechercher sur les livres', 'Rechercher sur les livres', 'Recherche de livres'),
+    'collections' => array('Rechercher sur les collections', 'Rechercher sur les collections', 'Recherche de collections'),
+    'proceedings' => array('Rechercher sur les conférences/workshops', 'Rechercher sur les conférences/workshops', 'Recherche de conférences/workshops'),
+    'series' => array('Rechercher sur les séries', 'Rechercher sur les séries', 'Recherche de séries'),
+    'theses' => array('Rechercher sur les thèses', 'Rechercher sur les thèses', 'Recherche de thèses'),
+    'auteurs' => array('Rechercher sur les auteurs', 'Rechercher sur les auteurs', 'Recherche d\'auteurs'),    
+    
+    
     
     //-- ERROR --//
     '404' => array('Erreur 404', 'Erreur 404', 'Erreur 404'),
@@ -62,19 +71,21 @@ $const_pages = array(
 $const_menu = array(
     'presentation',
     'rechercher',
+    'stats',
     'inserer',
     //'modifier',
     //'supprimer',
     'propos'
 );
 
-$arrayRecherche = array('articles', 'journals', 'auteurs');
+$arrayRecherche = array('articles', 'journals', 'auteurs', 'books', 'collections', 'proceedings', 'series', 'theses');
 
 // Les sections ci-dessous servent pour les sous-menus.
 
 $const_sub_menu = array(
     'rechercher' => $arrayRecherche,
     'inserer' => array(),
+    'stats' => array(),
     'propos' => array()
     //'modifier' => array(),
     //'supprimer' => array()
@@ -86,7 +97,13 @@ $const_submenu_reverse = array(
     'rechercher' => 'rechercher',
     'articles' => 'rechercher',
     'journals' => 'rechercher',
-    'auteurs' => 'rechercher'
+    'auteurs' => 'rechercher',
+    'books' => 'rechercher',
+    'collections' => 'rechercher',
+    'proceedings' => 'rechercher', 
+    'series' => 'rechercher', 
+    'theses' => 'rechercher'
+    
 );
 
 
