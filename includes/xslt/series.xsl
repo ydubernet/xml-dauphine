@@ -87,12 +87,7 @@
 	
 		<xsl:if test="position()&gt; $begin and position()&lt; ($end+1)">
 			<li style="width : 33%;float:left;">
-				<a>
-					<xsl:attribute name="href">
-						<xsl:value-of select="concat('publications.php?journal=',.)"/>
-					</xsl:attribute>
-					<xsl:value-of select="."/>
-				</a>
+                            <xsl:value-of select="."/>
 			</li>			
 		</xsl:if>
 	</xsl:template>

@@ -6,8 +6,6 @@
  * @author Yoann
  */
 
-require_once 'AllElementsBean.php';
-
 class Element {
     
     public function __construct($tableauInput){

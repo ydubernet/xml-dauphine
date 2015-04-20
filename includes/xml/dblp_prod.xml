@@ -52000,7 +52000,7 @@
 <editor>H. Chad Lane</editor>
 <editor>Louis-Philippe Morency</editor>
 <title>10th International Conference on Creating, Connecting and Collaborating through Computing, C5 2012, Playa Vista, CA, USA, January 18-20, 2012</title>
-<publisher/>
+<publisher>moi</publisher>
 <year>2012</year>
 <isbn>978-1-4673-1009-3</isbn>
 <ee>http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=6195084</ee>
@@ -78427,4 +78427,4 @@
 <series href=""/>
 </article>
 
-<article key="test;42" mdate="" publtype="test34" reviewid="" rating=""><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="">Coucou, toi, qu'est-ce que t'es beau.</title><booktitle/><pages/><year/><journal/><volume/><number/><month/><url/><ee/><cite label="">moi</cite><cite>elle</cite><cite>eux</cite><cite>nous</cite><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href=""/></article></dblp>
+<article key="test;42" mdate="" publtype="test34" reviewid="" rating=""><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="">Coucou, toi, qu'est-ce que t'es beau.</title><booktitle/><pages/><year/><journal/><volume/><number/><month/><url/><ee/><cite label="">moi</cite><cite>elle</cite><cite>eux</cite><cite>nous</cite><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href=""/></article><incollection key="test;42" mdate="" publtype="test34"><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="test">Aaaaaa</title><booktitle>test</booktitle><pages>35-43</pages><year/><journal/><volume/><number/><month>décembre</month><url/><ee/><cite label=""/><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href="">t1</series></incollection></dblp>
