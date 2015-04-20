@@ -10629,18 +10629,7 @@
 <ee>http://dx.doi.org/10.1504/IJTM.2012.049109</ee>
 <url>db/journals/ijtm/ijtm60.html#BorzacchielloC12</url>
 </article>
-<article mdate="2012-06-08" key="journals/ijtm/McLoughlinP10">
-<author>Ian McLoughlin</author>
-<author>David Preece</author>
-<title>'Last orders' at the rural 'cyber pub': a failure of 'social learning'?t</title>
-<pages>75-91</pages>
-<year>2010</year>
-<volume>51</volume>
-<journal>IJTM</journal>
-<number>1</number>
-<ee>http://dx.doi.org/10.1504/IJTM.2010.033129</ee>
-<url>db/journals/ijtm/ijtm51.html#McLoughlinP10</url>
-</article>
+
 <article mdate="2012-06-13" key="journals/ijtm/SuCS07">
 <author>Chao-Ton Su</author>
 <author>Yung-Hsin Chen</author>
@@ -38589,20 +38578,7 @@
 <isbn>978-3-319-04645-7</isbn>
 <ee>http://dx.doi.org/10.1007/978-3-319-04645-7</ee>
 </book>
-<book mdate="2013-11-26" key="series/sbcs/ZhangCW13">
-<author>Haijun Zhang</author>
-<author>Xiaoli Chu</author>
-<author>Xiangming Wen</author>
-<title>4G Femtocells - Resource Allocation and Interference Management.</title>
-<year>2013</year>
-<pages>i-ix, 1-77</pages>
-<publisher>Springer</publisher>
-<series href="db/series/sbcs/index.html">Springer Briefs in Computer Science</series>
-<isbn>978-1-4614-9079-1</isbn>
-<isbn>978-1-4614-9080-7</isbn>
-<ee>http://dx.doi.org/10.1007/978-1-4614-9080-7</ee>
-<url>http://dx.doi.org/10.1007/978-1-4614-9080-7</url>
-</book>
+
 <book mdate="2013-11-26" key="series/sbcs/EscaleraBPVR11">
 <author>Sergio Escalera</author>
 <author>Xavier Baró</author>
@@ -51784,7 +51760,7 @@
 <isbn>978-3-642-01731-5</isbn>
 <isbn>978-3-642-01732-2</isbn>
 <ee>http://dx.doi.org/10.1007/978-3-642-01732-2</ee>
-</book>
+<volume>yutu</volume></book>
 <book mdate="2014-02-24" key="series/xmp/DeussenL05">
 <author>Oliver Deussen</author>
 <author>Bernd Lintermann</author>
@@ -62390,17 +62366,7 @@
 <isbn>3-18-374410-4</isbn>
 <note type="dnb">http://d-nb.info/972402659</note>
 </phdthesis>
-<phdthesis mdate="2012-04-19" key="phd/de/Etriby2008">
-<author>Sherif Said Aly el-Etriby</author>
-<title>3-D surface reconstruction using spatial frequency based approaches under influence of perspective distortion.</title>
-<year>2008</year>
-<school>Otto von Guericke University Magdeburg</school>
-<pages>1-138</pages>
-<ee>http://diglib.uni-magdeburg.de/Dissertationen/2008/sheel-etriby.htm</ee>
-<url>http://diglib.uni-magdeburg.de/Dissertationen/2008/sheel-etriby.htm</url>
-<note type="urn">urn:nbn:de:101:1-201010182443</note>
-<note type="dnb">http://d-nb.info/988858452</note>
-</phdthesis>
+
 <phdthesis mdate="2012-04-18" key="phd/de/Ihlemann2010">
 <author>Carsten Ihlemann</author>
 <title>Reasoning in combinations of theories.</title>
