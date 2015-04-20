@@ -46,7 +46,6 @@ class allElementsBean {
      private $label;
      private $hrefPublisher;
      private $hrefSeries;
-     private $hrefRef;
      private $logo;
         
     
@@ -281,11 +280,7 @@ class allElementsBean {
     public function getHrefSeries() {
         return $this->hrefSeries;
     }
-
-    public function getHrefRef() {
-        return $this->hrefRef;
-    }
-
+    
     public function getLogo() {
         return $this->logo;
     }
@@ -336,10 +331,6 @@ class allElementsBean {
 
     public function setHrefSeries($hrefSeries) {
         $this->hrefSeries = $hrefSeries;
-    }
-
-    public function setHrefRef($hrefRef) {
-        $this->hrefRef = $hrefRef;
     }
 
     public function setLogo($logo) {
