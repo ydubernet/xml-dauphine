@@ -1,8 +1,10 @@
 <div id="article-inserer">
     <form>
         <input type="hidden" name="MODE"  value="I"/>
-        <p>Pour chaque élément, il est possible d'en préciser plusieurs en les séparant par un ; . Ceci n'est pas possible pour les attributs.</p>
-        <p>Exemple : votre article a 3 auteurs, pour author, faire : "Toi;Moi;Lui". Mais vous ne pouvez pas faire key : "journals/acta/Saxena96;journals/acta/Saxena95".</p>
+        <p>Pour chaque élément, il est possible d'en préciser plusieurs en les séparant par un ; .</p>
+        <p>Exemple : votre article a 3 auteurs, pour author, faire : "Toi;Moi;Lui". Pour ses attributs, vous pouvez les séparer en faisant "att1;att2;att3".</p>
+        <p>Les attributs sont attribués à leurs éléments respectifs dans le même ordre. S'il y a moins d'attributs que d'élements, les premiers sont considérés.</p>
+        <p>Exemple : "e1;e2;e3;e4" et "att1;att2" créera 4 objets dont les deux premiers e1 et e2 auront pour attributs respectifs "att1" et "att2".</p>
         <table cellpadding="15px" cellspacing="0">
             <tr>
                 <td>Type de contenu *</td>
