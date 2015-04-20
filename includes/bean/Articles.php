@@ -123,7 +123,149 @@ class articles {
             $newArticle->appendChild($address);
         }
         
+        // title
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getTitle()) as $e){
+            $titles[$i] = $this->xmlDoc->createElement("title", $e);
+            $i++;     
+        }
+        
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getBibtexTitle()) as $a){
+            $titles[$i]->setAttributeNode(new DOMAttr("bibtex", $a));
+            $i++;
+        }
+        
+        foreach($titles as $title){
+            $newArticle->appendChild($title);
+        }
+        
+        // booktitle
+        foreach(explode(";", $element->getBean()->getBooktitle()) as $e){
+            $booktitle = $this->xmlDoc->createElement("boktitle", $e);
+            $newArticle->appendChild($booktitle);
+        }
+        
+        // pages
+        foreach(explode(";", $element->getBean()->getPages()) as $e){
+            $pages = $this->xmlDoc->createElement("pages", $e);
+            $newArticle->appendChild($pages);
+        } 
+        
+        // year
+        foreach(explide(";", $element->getBean()->getYear()) as $e){
+            $year = $this->xmlDoc->createElement("year", $e);
+            $newArticle->appendChild($year);
+        }
+        
+        // journal
+        foreach(explode(";", $element->getBean()->getJournal()) as $e){
+            $journal = $this->xmlDoc->createElement("journal", $e);
+            $newArticle->appendChild($journal);
+        }
+        
+        // volume
+        foreach(explode(";", $element->getBean()->getVolume()) as $e){
+            $volume = $this->xmlDoc->createElement("volume", $e);
+            $newArticle->appendChild($volume);
+        }
+        
+        // number
+        foreach(explode(";", $element->getBean()->getNumber()) as $e){
+            $number = $this->xmlDoc->createElement("number", $e);
+            $newArticle->appendChild($number);
+        }
+        
+        // month
+        foreach(explode(";", $element->getBean()->getMonth()) as $e){
+            $month = $this->xmlDoc->createElement("month", $e);
+            $newArticle->appendChild($month);
+        }
+        
+        // url
+        foreach(explode(";", $element->getBean()->getUrl()) as $e){
+            $url = $this->xmlDoc->createElement("url", $e);
+            $newArticle->appendChild($url);
+        }
+        
+        // ee
+        foreach(explode(";", $element->getBean()->getEe()) as $e){
+            $ee = $this->xmlDoc->createElement("ee", $e);
+            $newArticle->appendChild($ee);
+        }
+        
+        // cite
+        // TODO ajouter son attribut "label"
+        foreach(explode(";", $element->getBean()->getCite()) as $e){
+            $cite = $this->xmlDoc->createElement("cite", $e);
+            $newArticle->appendChild($cite);
+        }
+        
+        // school
+        foreach(explode(";", $element->getBean()->getSchool()) as $e){
+            $school = $this->xmlDoc->createElement("school", $e);
+            $newArticle->appendChild($school);
+        }
+        
+        // publisher
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getPublisher()) as $e){
+            $publishers[$i] = $this->xmlDoc->createElement("publisher", $e);
+            $i++;
+        }
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getHrefPublisher()) as $a){
+            $publishers[$i]->setAttributeNode(new DOMAttr("href", $a));
+        }
+        
+        foreach($publishers as $publisher){
+            $newArticle->appendChild($publisher);
+        }
+        
+        // note
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getNote()) as $e){
+            $notes[$i] = $this->xmlDoc->createElement("note", $e);
+            $i++;
+        }
+        
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getType()) as $a){
+            $notes[$i]->setAttributeNode(new DOMAttr("type", $a));
+        }
+        
+        foreach($notes as $note){
+            $newArticle->appendChild($note);
+        }
+        
+        // cdrom
+        foreach(explode(";", $element->getBean()->getCdrom()) as $e){
+            $cdrom = $this->xmlDoc->createElement("cdrom", $e);
+            $newArticle->appendChild($cdrom);
+        }
+        
+        // crossref
+        foreach(explode(";", $element->getBean()->getCrossref()) as $e){
+            $crossref = $this->xmlDoc->createElement("crossref", $e);
+            $newArticle->appendChild($crossref);
+        }
+        
+        // isbn
+        foreach(explode(";", $element->getBean()->getIsbn()) as $e){
+            $isbn = $this->xmlDoc->createElement("isbn", $e);
+            $newArticle->appendChild($isbn);
+        }
+        
+        // chapter
+        foreach(explide(";", $element->getBean()->getChapter()) as $e){
+            $chapter = $this->xmlDoc->createElement("chapter", $e);
+            $newArticle->appendChild($chapter);
+        }
+        
+        
+        
         // TODO : terminer...
+        
         
         // save the document 
         $this->xmlDoc->save($this->xmlPath);
