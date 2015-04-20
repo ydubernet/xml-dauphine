@@ -88,8 +88,16 @@
 				<a href="http://dblp.uni-trier.de/pers?prefix=Y">Y</a>
 				<a href="http://dblp.uni-trier.de/pers?prefix=Z">Z</a>
 			<li>Séries</li>
-			
+				<a href="includes/models/display/series.php?pg_CODE_SERIE=sci">SCI</a>
+				<a href="includes/models/display/series.php?pg_CODE_SERIE=rnti">RNTI</a>
+				<a href="includes/models/display/series.php?pg_CODE_SERIE=sfsc">SFSC</a>
+				<a href="includes/models/display/series.php?pg_CODE_SERIE=ais">AIS</a>
+				<a href="includes/models/display/series.php?pg_CODE_SERIE=sbcs">SBCS</a>
+				<a href="includes/models/display/series.php">others</a>
 			<li>Monographs</li>
+			<a href="includes/models/display/books.php">books</a>
+			<a href="includes/models/display/theses.php">thèses</a>
+			<a href="includes/models/display/collections.php">collections</a>
     </div>
 		
     <p>Rendez-vous dans chaque catégorie pour insérer, rechercher, modifier ou supprimer des publications.</p>
