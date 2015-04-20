@@ -79,9 +79,9 @@
 	
 <?php
 	//En production :
-	//require_once ("includes/bean/Phdthesis.php");
+	require_once ("includes/bean/Phdthesis.php");
 	//Pour Florian :
-	require_once ("../../bean/Thesis.php");
+	//require_once ("../../bean/Thesis.php");
 	$a = new thesis();
 	
 	//Gestion de la suppression et de la modification

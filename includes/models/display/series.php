@@ -55,9 +55,9 @@
 	
 <?php
 	//En production :
-	//require_once "includes/bean/Series.php";
+	require_once "includes/bean/Series.php";
 	//Pour Florian :
-	require_once "../../bean/Series.php";
+	//require_once "../../bean/Series.php";
 	$a = new series();
 	
 	$search['code_serie']=$pg_CODE_SERIE;

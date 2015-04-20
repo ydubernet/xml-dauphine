@@ -79,9 +79,9 @@
 	
 <?php
 	//En production :
-	//require_once ("includes/bean/Collections.php");
+	require_once ("includes/bean/Collections.php");
 	//Pour Florian :
-	require_once ("../../bean/Collections.php");
+	//require_once ("../../bean/Collections.php");
 	$a = new collections();
 	
 	//Gestion de la suppression et de la modification

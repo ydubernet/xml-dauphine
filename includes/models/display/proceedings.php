@@ -85,9 +85,9 @@
 	
 <?php
 	//En production :
-	//require_once ("includes/bean/Proceedings.php");
+	require_once ("includes/bean/Proceedings.php");
 	//Pour Florian :
-	require_once ("../../bean/Proceedings.php");
+	//require_once ("../../bean/Proceedings.php");
 	$a = new proceedings();
 	
 	//Gestion de la suppression et de la modification

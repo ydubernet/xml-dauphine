@@ -76,9 +76,9 @@
 	
 <?php
 	//En production :
-	//require_once "includes/bean/Authors.php";
+	require_once "includes/bean/Authors.php";
 	//Pour Florian :
-	require_once "../../bean/Authors.php";
+	//require_once "../../bean/Authors.php";
 	$a = new authors();
 	
 	$search['begin_author']=$pg_BEGIN_AUTHOR;

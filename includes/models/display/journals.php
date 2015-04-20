@@ -76,9 +76,9 @@
 	
 <?php
 	//En production :
-	//require_once "includes/bean/Journals.php";
+	require_once "includes/bean/Journals.php";
 	//Pour Florian :
-	require_once "../../bean/Journals.php";
+	//require_once "../../bean/Journals.php";
 	$a = new journals();
 	
 	$search['begin_journal']=$pg_BEGIN_JOURNAL;

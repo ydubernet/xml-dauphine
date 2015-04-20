@@ -10,12 +10,13 @@ class books {
     public function __construct() {
 
         $_xslDoc = new DOMDocument(); 
-		//En production :
-        //$_xslDoc->load("includes/xslt/book.xsl");
-		//$xmlPath = $const_xmlfile;
-		//Pour Florian :
-		$_xslDoc->load("../../xslt/books.xsl");
-		$xmlPath = "../../xml/dblp_prod.xml";
+	//En production :
+        $_xslDoc->load("includes/xslt/book.xsl");
+	$xmlPath = $const_xmlfile;
+	
+        //Pour Florian :
+	//$_xslDoc->load("../../xslt/books.xsl");
+	//$xmlPath = "../../xml/dblp_prod.xml";
         $_xmlDoc = new DOMDocument();
         $_xmlDoc->load($xmlPath,LIBXML_NOENT | LIBXML_DTDVALID);
 

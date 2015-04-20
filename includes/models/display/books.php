@@ -79,9 +79,9 @@
 	
 <?php
 	//En production :
-	//require_once ("includes/bean/Books.php");
+	require_once ("includes/bean/Books.php");
 	//Pour Florian :
-	require_once ("../../bean/Books.php");
+	//require_once ("../../bean/Books.php");
 	$a = new books();
 	
 	//Gestion de la suppression et de la modification
