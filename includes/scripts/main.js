@@ -32,7 +32,6 @@ $(document).ready(function() {
     $("#href_publisher").hide();
     $("#href_series").hide();
     $("#href_ref").hide();
-    $("#logo").hide();
     
     $("#key_add").change(function(){
         testExistsArticle();
@@ -146,16 +145,7 @@ function onChangeInputsPourAttributs(){
             $("#href_ref_add").prop('disabled', false);
         }
     });
-    
-    $("#layout_add").blur(function(){
-       if(!$("#layout_add").val()){ //Input à valeur vide.
-           $("#logo").hide();
-           $("#logo_add").prop('disabled', true);// Important pour ne pas envoyer ce champ lors de la soumission.
-       } else { //Input non vide
-           $("#logo").show('slow');
-           $("#logo_add").prop('disabled', false);
-       }
-    });
+   
 }
 
 function ajouterArticle(){
@@ -193,7 +183,6 @@ function ajouterArticle(){
                 "href_publisher":$("#href_publisher_add").val(),
                 "href_series":$("#href_series_add").val(),
                 "href_ref":$("#href_ref_add").val(),
-                "logo":$("#logo_add").val(),
                 
                 
                 //Elements
@@ -219,7 +208,6 @@ function ajouterArticle(){
                 "series":$("#series_add").val(),
                 "school":$("#school_add").val(),
                 "chapter":$("#chapter_add").val(),
-                "layout":$("#layout_add").val()
                 
             },
             dataType: "html"

@@ -37,7 +37,6 @@ class Element {
         $this->setUrl($tableauInput["url"]);
         $this->setVolume($tableauInput["volume"]);
         $this->setYear($tableauInput["year"]);
-        $this->setLayout($tableauInput["layout"]);
         
         // Attributs
         $this->setKey($tableauInput["key"]);
@@ -69,9 +68,6 @@ class Element {
         }
         if(null !== $this->getSeries() && $this->getSeries() != ""){
            $this->setHrefSeries($tableauInput["href_series"]);
-        }
-        if(null !== $this->getLayout() && $this->getLayout() != ""){
-           $this->setLogo($tableauInput["logo"]);
         }
     }
     
@@ -105,7 +101,6 @@ class Element {
     private $series;
     private $school;
     private $chapter;
-    private $layout;
     
     
     // All possible field attributes
@@ -307,10 +302,6 @@ class Element {
         $this->chapter = $chapter;
     }
 
-    public function getLayout() {
-        return $this->layout;
-    }
-
     public function getKey() {
         return $this->key;
     }
@@ -357,10 +348,6 @@ class Element {
     
     public function getLogo() {
         return $this->logo;
-    }
-
-    public function setLayout($layout) {
-        $this->layout = $layout;
     }
 
     public function setKey($key) {

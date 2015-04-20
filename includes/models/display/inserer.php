@@ -100,12 +100,6 @@
                            <td>href series</td>
                            <td><input type='text' class='href' id='href_series_add'/></td>
                         </tr> ";
-                  } else if($un === "layout") {
-                       echo "
-                        <tr id='logo'>
-                           <td>Logo</td>
-                           <td><input type='text' class='logo' id='logo_add'/></td>
-                        </tr> ";
                   } else if($un === "ref"){
                        echo "
                         <tr id='href_ref'>

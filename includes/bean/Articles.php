@@ -391,26 +391,6 @@ class articles {
             }
         }
         
-        
-        // layout
-        $i = 0;
-        foreach(explode(";", $this->element->getLayout()) as $e){
-            $layouts[$i] = $this->xmlDoc->createElement("layout", $e);
-            $i++;
-        }
-        
-        $i = 0;
-        foreach(explode(";", $this->element->getLogo()) as $a){
-          if($a !== ""){
-            $layouts[$i]->setAttributeNode(new DOMAttr("logo", $a));
-          }
-            $i++;
-        }
-        
-        foreach($layouts as $layout){
-            $newArticle->appendChild($layout);
-        }
-        
         // save the document 
         $result = $this->xmlDoc->save($this->xmlPath);
         return !$result ? $result : true;
