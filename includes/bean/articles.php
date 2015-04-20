@@ -58,9 +58,35 @@ class articles {
             return false;
         foreach ($nodeList as $node) {
             $node->getElementsByTagName('title')[0]->nodeValue = $title;
-            $node->getElementsByTagName('pages')[0]->nodeValue = $pages;
-            $node->getElementsByTagName('volume')[0]->nodeValue = $volume;
-            $node->getElementsByTagName('journal')[0]->nodeValue = $journal;
+			
+			$test = $node->getElementsByTagName('volume');
+			if ($test->length==0){
+				$nod = $this->xmlDoc->createElement('volume');
+				$nod->nodeValue = $volume;
+				$node->appendChild($nod);
+			}
+			else{
+				$node->getElementsByTagName('volume')[0]->nodeValue = $volume;
+			}
+			
+            $test = $node->getElementsByTagName('pages');
+			if ($test->length==0){
+				$nod = $this->xmlDoc->createElement('pages');
+				$nod->nodeValue = $pages;
+				$node->appendChild($nod);
+			}
+			else{
+				$node->getElementsByTagName('pages')[0]->nodeValue = $pages;
+			}
+			$test = $node->getElementsByTagName('journal');
+			if ($test->length==0){
+				$nod = $this->xmlDoc->createElement('journal');
+				$nod->nodeValue = $journal;
+				$node->appendChild($nod);
+			}
+			else{
+				$node->getElementsByTagName('journal')[0]->nodeValue = $journal;
+			}
         }
         $result = $this->xmlDoc->save($this->xmlPath);
         return !$result ? $result : true;
@@ -78,6 +104,57 @@ class articles {
         return !$result ? $result : true;
     }
 
+    
+    public function addArticles($tabInput){
+        $element = new Element($tabInput);
+        
+        $newArticle = $this->xmlDoc->createElement("article");    
+        $this->xmlDoc->documentElement
+                ->appendChild($newArticle);
+        
+        // Attributs de article
+        $newArticle->setAttributeNode(new DOMAttr("key", $element->getBean()->getKey()));
+        $newArticle->setAttributeNode(new DOMAttr("mdate", $element->getBean()->getMdate()));
+        $newArticle->setAttributeNode(new DOMAttr("publtype", $element->getBean()->getPubltype()));
+        $newArticle->setAttributeNode(new DOMAttr("reviewid", $element->getBean()->getReviewid()));
+        $newArticle->setAttributeNode(new DOMAttr("rating", $element->getBean()->getRating()));
+        
+        // Eléments de article, et leurs attributs si nécessaire
+        // author
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getAuthor()) as $e){
+            $authors[$i] = $this->xmlDoc
+                ->createElement("author", $e);
+            $i ++;
+        }
+        $i = 0;
+        foreach(explode(";", $element->getBean()->getBibtexAuthor()) as $a){
+            $authors[$i]->setAttributeNode(new DOMAttr("bibtex", $a));
+            $i++;
+        }
+        
+        foreach($authors as $author){
+           $newArticle->appendChild($author);
+        }
+        
+        // editor
+        foreach(explode(";", $element->getBean()->getEditor()) as $e){
+            $editor = $this->xmlDoc->createElement("editor", $e);
+            $newArticle->appendChild($editor);
+        }
+        
+        // address
+        foreach(explode(";", $element->getBean()->getAddress()) as $e){
+            $address = $this->xmlDoc->createElement("address", $e);
+            $newArticle->appendChild($address);
+        }
+        
+        // TODO : terminer...
+        
+        // save the document 
+        $this->xmlDoc->save($this->xmlPath);
+    }
+    
     public function addArticle($key, $mdate, $title, $author, $page, $year, $volume, $journal, $url, $ee) {
         $newArticle = $this->xmlDoc->createElement("article");    
         $this->xmlDoc->documentElement
