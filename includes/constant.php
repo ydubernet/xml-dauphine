@@ -34,9 +34,6 @@ $const_xml = array(
 // Pour vérifier que l'utilisateur rentre une seule valeur pour un attribut donné.
 $const_attributs = array("key", "mdate", "publtype", "reviewid", "rating", "bibtex", "href", "type", "label", "logo");
 
-// Fichier de lecture du XML
-$const_xmlfile = 'includes/xml/dblp_prod.xml';
-
 /* --[ PAGES ]-- */
 $const_pages = array(
     //URL=>array(Titre de la page, Title au survol de la souris, Titre du contenu de la page)

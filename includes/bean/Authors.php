@@ -11,7 +11,7 @@ class authors {
         $_xslDoc = new DOMDocument();
         //En production :
         $_xslDoc->load("includes/xslt/authors.xsl");
-        $xmlPath = $const_xmlfile;
+        $xmlPath = 'includes/xml/dblp_prod.xml';
 	
         //Pour Florian :
 	//$_xslDoc->load("../../xslt/authors.xsl");

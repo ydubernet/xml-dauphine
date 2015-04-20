@@ -12,7 +12,7 @@ class books {
         $_xslDoc = new DOMDocument(); 
 	//En production :
         $_xslDoc->load("includes/xslt/book.xsl");
-	$xmlPath = $const_xmlfile;
+	$xmlPath = 'includes/xml/dblp_prod.xml';
 	
         //Pour Florian :
 	//$_xslDoc->load("../../xslt/books.xsl");

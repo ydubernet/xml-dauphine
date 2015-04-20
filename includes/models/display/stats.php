@@ -8,7 +8,7 @@
         $xslDoc->load("includes/xslt/stats.xsl");
         $xmlDoc = new DOMDocument();
 
-        $xmlDoc->load($const_xmlfile,LIBXML_NOENT | LIBXML_DTDVALID);
+        $xmlDoc->load('includes/xml/dblp_prod.xml',LIBXML_NOENT | LIBXML_DTDVALID);
 		$xsltProcessor = new XSLTProcessor();
         $xsltProcessor->importStyleSheet($xslDoc); 
         $result =  $xsltProcessor->transformToXML($xmlDoc);

@@ -7,12 +7,12 @@ class articles {
     private $xslDoc;
     private $xmlDoc;
 
-    public function __construct($xmlPath) {
+    public function __construct() {
 
         $_xslDoc = new DOMDocument(); 
 	//En production :
         $_xslDoc->load("includes/xslt/articles.xsl");
-	$xmlPath = $const_xmlfile;
+	$xmlPath = 'includes/xml/dblp_prod.xml';
 		//Pour Florian :
 		//$_xslDoc->load("../../xslt/articles.xsl");
 		//$xmlPath = "../../xml/dblp_prod.xml";
