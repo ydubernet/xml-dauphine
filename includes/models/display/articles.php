@@ -79,7 +79,7 @@
 	$a = new articles();
 	
 	//Gestion de la suppression et de la modification
-	if (isset($_POST['REF'])){	
+	if (isset($_POST['REF'])){
 		if ($_POST['MODE']=='S'){
 			//echo 'demande delete : '.$_POST['REF'];
 			$a->deleteArticle($_POST['REF']);
