@@ -81,11 +81,11 @@
 	//Gestion de la suppression et de la modification
 	if (isset($_POST['REF'])){	
 		if ($_POST['MODE']=='S'){
-			echo 'demande delete : '.$_POST['REF'];
+			//echo 'demande delete : '.$_POST['REF'];
 			$a->deleteArticle($_POST['REF']);
 		}
 		else if ($_POST['MODE']=='M'){
-			echo 'demande modif : '.$_POST['REF'];
+			//echo 'demande modif : '.$_POST['REF'];
 			$a->updateArticle($_POST['REF'],$_POST['title'],$_POST['pages'],$_POST['volume'],$_POST['journal']);
 		}
 	}
