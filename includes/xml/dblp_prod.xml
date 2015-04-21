@@ -78402,29 +78402,6 @@
 <school>Univ. of Wisconsin-Madison</school>
 </phdthesis>
 
-<article key="test" mdate="" publtype="" reviewid="" rating="">
-<author bibtex=""/>
-<editor/>
-<address/>
-<title bibtex=""/>
-<booktitle/>
-<pages/>
-<year/>
-<journal/>
-<volume/>
-<number/>
-<month/>
-<url/>
-<ee/>
-<cite label=""/>
-<school/>
-<publisher href="test">t</publisher>
-<note type=""/>
-<cdrom/>
-<crossref/>
-<isbn/>
-<chapter/>
-<series href=""/>
-</article>
 
-<article key="test;42" mdate="" publtype="test34" reviewid="" rating=""><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="">Coucou, toi, qu'est-ce que t'es beau.</title><booktitle/><pages/><year/><journal/><volume/><number/><month/><url/><ee/><cite label="">moi</cite><cite>elle</cite><cite>eux</cite><cite>nous</cite><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href=""/></article><incollection key="test;42" mdate="" publtype="test34"><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="test">Aaaaaa</title><booktitle>test</booktitle><pages>35-43</pages><year/><journal/><volume/><number/><month>décembre</month><url/><ee/><cite label=""/><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href="">t1</series></incollection></dblp>
+
+<article key="test;42" mdate="" publtype="test34" reviewid="" rating=""><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="">Coucou, toi, qu'est-ce que t'es beau.</title><booktitle/><pages/><year/><journal/><volume/><number/><month/><url/><ee/><cite label="">moi</cite><cite>elle</cite><cite>eux</cite><cite>nous</cite><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href=""/></article><incollection key="test;42" mdate="" publtype="test34"><author bibtex="lui">moi</author><author bibtex="elle">toi</author><author>lui</author><editor/><address/><title bibtex="test">Aaaaaa</title><booktitle>test</booktitle><pages>35-43</pages><year/><journal/><volume/><number/><month>décembre</month><url/><ee/><cite label=""/><school>Dauphine, évidemment.</school><publisher href=""/><note type=""/><cdrom/><crossref/><isbn/><chapter/><series href="">t1</series></incollection><article key="test;42"><editor/></article></dblp>

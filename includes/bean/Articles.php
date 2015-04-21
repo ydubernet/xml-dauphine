@@ -196,7 +196,7 @@ class articles {
         }
         
         // booktitle
-        if($this->element>getBooktitle() !== ""){
+        if($this->element->getBooktitle() !== ""){
             foreach(explode(";", $this->element->getBooktitle()) as $e){
                 $booktitle = $this->xmlDoc->createElement("booktitle", $e);
                 $newArticle->appendChild($booktitle);
